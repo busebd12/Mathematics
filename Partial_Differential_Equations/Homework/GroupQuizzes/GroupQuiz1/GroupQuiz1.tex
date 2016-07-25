@@ -1,0 +1,655 @@
+\documentclass[12pt, executivepaper]{article}
+\usepackage{mathtools}
+\usepackage{outlines}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{tikz}
+\everymath{\displaystyle}
+
+\begin{document}
+
+\vspace*{-40mm}
+
+\begin{center}
+
+Group Quiz 1
+
+\end{center}
+
+\begin{flushright}
+
+Brendan Busey
+
+\end{flushright}
+
+\begin{flushleft}
+
+1) \\ 
+
+\vspace{3mm}
+
+The displacement vector starting at $P_{1}$ and ending at $Q_{2}$:
+
+\begin{center}
+
+$Q_{2}-P_{1}=(L_{1}, L_{2}, L_{3})-(L_{1}, 0, 0)$
+
+$Q_{2}-P_{1}=(0, L_{2}, L_{3})$
+
+$\vec v_{1,2}=(0, L_{2}, L_{3})$
+
+\end{center}
+
+\vspace{5mm}
+
+The displacement vector starting at $P_{1}$ and ending at $Q_{3}$:
+
+\begin{center}
+
+$Q_{3}-P_{1}=(0, L_{2}, L_{3})-(L_{1}, 0, 0)$
+
+$Q_{3}-P_{1}=(-L, L_{2}, L_{3})$
+
+$\vec v_{1,3}=(-L, L_{2}, L_{3})$
+
+\end{center}
+
+\vspace{5mm}
+
+The displacement vector starting at $P_{1}$ and ending at $Q_{4}$:
+
+\begin{center}
+
+$Q_{4}-P_{1}=(0, 0, L_{3})-(L_{1}, 0, 0)$
+
+$Q_{4}-P_{1}=(-L, 0, L_{3})$
+
+$\vec v_{1,4}=(-L, 0, L_{3})$
+
+\end{center}
+
+\vspace{5mm}
+
+The displacement vector starting at $P_{3}$ and ending at $Q_{2}$:
+
+\begin{center}
+
+$Q_{2}-P_{3}=(L, L_{2}, L_{3})-(0, L_{2}, 0)$
+
+$Q_{2}-P_{3}=(L_{1}, 0, L_{3})$
+
+$\vec v_{2,3}=(L_{1}, 0, L_{3})$
+
+\end{center}
+
+\vspace{5mm}
+
+The displacement vector starting at $P_{3}$ and ending at $Q_{3}$:
+
+\begin{center}
+
+$Q_{3}-P_{3}=(0, L_{2}, L_{3})-(0, L_{2}, 0)$
+
+$Q_{3}-P_{3}=(0, 0, L_{3})$
+
+$\vec v_{3,3}=(0, 0, L_{3})$
+
+\end{center}
+
+\vspace{5mm}
+
+The displacement vector starting at $P_{3}$ and ending at $Q_{4}$:
+
+\begin{center}
+
+$Q_{4}-P_{3}=(0, 0, L_{3})-(0, L_{2}, 0)$
+
+$Q_{4}-P_{3}=(0, -L_{2}, L_{3})$
+
+$\vec v_{4,3}=(0, -L_{2}, L_{3})$
+
+\end{center}
+
+\end{flushleft}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{flushleft}
+
+2)Let the differential equation $u''(x)+\lambda u(x)=0$ for $0 \leq x \leq L$, and subject to the \textit{Dirichlet boundary conditions} $u(0)=0$ and $u(L_{1})=0$ be given.
+
+\vspace{3mm}
+
+Next, suppose that the solutions are of the form $u(x)=e^{kx}$. Then, $u'(x)=ke^{kx}$ and $u''(x)=k^2e^{kx}$. Plugging back in, we have:
+
+\begin{center}
+
+$k^2e^{kx}+ \lambda e^{kx}=0$
+
+$e^{kx}(k^2+ \lambda)=0$
+
+$k^2+ \lambda=0$, which is our auxiliary equation.
+
+\end{center}
+
+\end{flushleft}
+
+\vspace{5mm}
+
+\begin{flushleft}
+
+3)Consider $\lambda < 0$. Using the auxiliary equation we obtained in question 2, we have \\
+
+\begin{center}
+
+$k^2+ \lambda=0$
+
+$k^2=-\lambda$
+
+$k=\pm \sqrt{\lambda}$
+
+\end{center}
+
+So, $v_{1}(x)=e^{\sqrt{-\lambda} \hspace{1mm} x}$ and $v_{2}=e^{-\sqrt{-\lambda} \hspace{1mm} x}$.
+
+\hspace{3mm}
+
+Now, check the wronskian:
+
+\begin{center}
+
+$w(v_{1}, v_{2})=\begin{vmatrix}
+e^{kx} & e^{-kx} \\ 
+ke^{kx} & -ke^{kx} 
+\end{vmatrix}$
+
+$w(v_{1}, v_{2})=(e^{kx} \cdot -ke^{kx})-(e^{-kx} \cdot ke^{kx})$
+
+$w(v_{1}, v_{2})=(-k(e^{kx})(e^{-kx}))-(k(e^{-kx})(e^{kx}))$
+
+$w(v_{1}, v_{2})=(-k \cdot 1)-(k \cdot 1)=(-k)(k)=-k^2 \neq 0$
+
+\end{center}
+
+Since $w(v_{1}, v{2}) \neq 0$, the solutions $v_{1}(x)$ and $v_{2}(x)$ are linearly independent and thus form a fundamental set of solutions. Now, the astute reader can observer that plugging in any values (say, $\sqrt{-\lambda}$) will have the same result.
+
+\end{flushleft}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{flushleft}
+
+4)Now, consider $\lambda=0$. Then, the differential equation becomes
+
+\begin{center}
+
+$u''(x)=0$
+
+\end{center}
+
+Then, if we integrate, we have: 
+
+\begin{center}
+
+$u'(x)=c$
+
+$u(x)=c_{1}x+c_{0}$, for some constants $c_{1} \; and \; c_{0}$
+
+\end{center}
+
+Using $u(0)=0$, we have:
+
+\begin{center}
+
+$u(0)=c_{1}(0)+c_{0}$
+
+$0=0$
+
+\end{center}
+
+Using $u(L_{1})=0$, we have: 
+
+\begin{center}
+
+$u(L_{1})=c_{1}(L_{1})+c_{0}$
+
+$0=c_{0}$
+
+\end{center}
+
+So, our two solutions are $h_{1}(x)=1$ and $h_{2}(x)=x$
+
+\vspace{3mm}
+
+Now, check the wronskian:
+
+\begin{center}
+
+$w(h_{1}(x), h_{2}(x))=\begin{vmatrix}
+1 & x \\ 
+0 & 1 
+\end{vmatrix}$
+
+$w(h_{1}(x), h_{2}(x))=(1 \cdot 1)-(0 \cdot x)$
+
+$w(h_{1}(x), h_{2}(x))=1-0=1 \neq 0$
+
+\end{center}
+
+Since $w(h_{1}(x), h_{2}(x)) \neq 0$, our two solutions are linearly independent and thus form a fundamental set of solutions.
+
+Using $u(0)=0$, we have: 
+
+\begin{center}
+
+$h_{1}(0)=1$ \quad \quad \quad $h_{2}(0)=1$
+
+$0=1$ \quad \quad \quad $0=0$
+
+\vspace{3mm}
+
+$h_{1}(L_{1})=1$ \quad \quad \quad $h_{2}(L_{1})=1$
+
+$0=1$ \quad \quad \quad $0=L_{1}$
+
+\end{center}
+
+Since the functions don't satisfy the boundary conditions, they are not \textit{Dirichlet-Laplacian eigenfunctions}.
+
+\end{flushleft}
+
+\vspace{5mm}
+
+\begin{flushleft}
+
+5)Now, consider $\lambda > 0$. Then, suppose the solutions are of the form $u(x)=e^{kx}$. Then, $u'(x)=ke^{kx}$ and $u''(x)=k^2e^{kx}$. Plugging in, we have: 
+
+\begin{center}
+
+$k^2e^{kx}+ \lambda e^{kx}=0$
+
+$e^{kx}(k^2+ \lambda)=0$
+
+$k^2+ \lambda=0$
+
+$k=\pm \sqrt{-\lambda}$
+
+$k=\pm i \sqrt{\lambda}$
+
+\end{center}
+
+So, $u_{1}(x)=e^{i \sqrt{\lambda}}$ and $u_{2}(x)=e^{-i \sqrt{\lambda}}$. \\
+
+Next, let $u_{\lambda}(x)=\frac{1}{2}\bigg[u_{1}(x)+u_{2}(x)\bigg]$. \\
+
+Then, \\ 
+$u_{\lambda}(x)=\frac{1}{2}\bigg[\cos(\sqrt{\lambda} \; x)+i\sin(\sqrt{\lambda} \; x)+\cos(-\sqrt{\lambda} \; x)+i\sin(\sqrt{\lambda} \; x)\bigg]$ \\
+
+$u_{\lambda}(x)=\cos(\sqrt{\lambda} \; x)$
+
+\vspace{3mm}
+
+Let $v_{\lambda}(x)=\frac{1}{2i}\bigg[\cos(\sqrt{\lambda} \; x)+i\sin(\sqrt{\lambda} \; x)-\cos(-\sqrt{\lambda} \; x)+i\sin(\sqrt{\lambda} \; x)\bigg]$ \\
+
+$u_{\lambda}(x)=\sin(\sqrt{\lambda} \; x)$
+
+\vspace{3mm}
+
+Now, consider $u_{\lambda}(x)=\cos(\sqrt{\lambda} \; x)$. Using $u(0)=0$, we have:
+
+\begin{center}
+
+$u_{\lambda}(0)=\cos(\sqrt{\lambda} \; (0))$
+
+$0=\cos(0)$
+
+$0=1$
+
+\end{center}
+
+\vspace{3mm}
+
+Then, using $u(L_{1})=0$, we have: 
+
+\begin{center}
+
+$u_{\lambda}(0)=\cos(\sqrt{\lambda} \; L_{1})$
+
+$0=\cos(\sqrt{\lambda} \; L_{1})$
+
+$\sqrt{\lambda} \; L_{1}=0$
+
+\end{center}
+
+\end{flushleft}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{flushleft}
+
+Now, consider $u_{\lambda}(x)=\sin(\sqrt{\lambda} \; x)$. Using, Using $u(0)=0$, we have:
+
+\begin{center}
+
+$u_{\lambda}(0)=\sin(\sqrt{\lambda} \; (0))$
+
+$0=0$
+
+\end{center}
+
+\vspace{3mm}
+
+Then, using $u(L_{1})=0$, we have: 
+
+\begin{center}
+
+$u_{\lambda}(0)=\sin(\sqrt{\lambda} \; L_{1})$
+
+$0=\sin(\sqrt{\lambda} \; L_{1})$
+
+$\sqrt{\lambda} \; L_{1}$, $n\pi$, where $n \in \mathbb{N}$
+
+\end{center}
+
+\vspace{3mm}
+
+So, $\lambda= \hspace{-1mm} \bigg(\frac{n\pi}{L_{1}}\bigg)^2$, where $n \in \mathbb{N}$. These are the allowable eigenvalues. Denote this result as $\lambda_{n,D}$. Finally, let $u_{n,D}(x)=\sin \hspace{-1mm} \bigg(\frac{n \pi x}{L_{1}}\bigg)$, where $n \in \mathbb{N}$.
+
+\end{flushleft}
+
+\vspace{5mm}
+
+\begin{flushleft}
+
+6) Let the differential equation $u''(y)+\lambda u(y)=0$ for $0 \leq y \leq L_{2}$ and subject to the \textit{Neumann boundary conditions} $u'(0)=0$ and $u'(L_{2})=0$ be given. Next, suppose that the solutions are of the form $u(x)=e^{kx}$. Then, $u'(x)=ke^{kx}$ and $u''(x)=k^2e^{kx}$. Plugging in, we have: 
+
+\begin{center}
+
+$k^2e^{kx}+ \lambda e^{kx}=0$
+
+$e^{kx}(k^2+ \lambda)=0$
+
+$k^2+ \lambda=0$, which is, again, our auxiliary equation.
+
+\end{center}
+
+Note how this auxiliary equation is exactly the same as the one we obtained in number two.
+
+\end{flushleft}
+
+\vspace{5mm}
+
+\begin{flushleft}
+
+7)Consider $\lambda < 0$. Using the auxiliary equation we obtained in question six, we have \\
+
+\begin{center}
+
+$k^2+ \lambda=0$
+
+$k^2=-\lambda$
+
+$k=\pm \sqrt{\lambda}$
+
+\end{center}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+So, $v_{1}(y)=e^{\sqrt{-\lambda} \hspace{1mm} x}$ and $v_{2}(y)=e^{-\sqrt{-\lambda} \hspace{1mm} x}$.
+
+\hspace{3mm}
+
+Now, check the wronskian:
+
+\begin{center}
+
+$w(v_{1}(y), v_{2}(y))=\begin{vmatrix}
+e^{ky} & e^{-ky} \\ 
+ke^{ky} & -ke^{ky} 
+\end{vmatrix}$
+
+$w(v_{1}(y), v_{2}(y))=(e^{ky} \cdot -ke^{ky})-(e^{-ky} \cdot ke^{ky})$
+
+$w(v_{1}(y), v_{2}(y))=(-k(e^{ky})(e^{-ky}))-(k(e^{-ky})(e^{ky}))$
+
+$w(v_{1}(y), v_{2}(y))=(-k \cdot 1)-(k \cdot 1)=(-k)(k)=-k^2 \neq 0$
+
+\end{center}
+
+Since $w(v_{1}(y), v{2}(y)) \neq 0$, the solutions $v_{1}(y)$ and $v_{2}(y)$ are linearly independent and thus form a fundamental set of solutions. Now, the astute reader can observer that plugging in any values (say, $\sqrt{-\lambda}$) will have the same result.
+
+\vspace{3mm}
+
+Next, taking derivatives, we have: 
+
+\begin{center}
+
+$v_{1}'(y)=\sqrt{-\lambda}e^{\sqrt{-\lambda} \hspace{1mm} y}$ and $v_{2}'(y)=-\sqrt{-\lambda}e^{-\sqrt{-\lambda} \hspace{1mm} y}$.
+
+\end{center}
+
+Using $u'(0)=0$, we have:
+
+\begin{center}
+
+$v_{1}'(0)=\sqrt{-\lambda}e^{\sqrt{-\lambda} \hspace{1mm} (0)} \quad \quad \quad v_{2}'(0)=-\sqrt{-\lambda}e^{\sqrt{-\lambda} \hspace{1mm} (0)}$
+
+$v_{1}'(0)=\sqrt{-\lambda} \quad \quad \quad v_{2}'(0)=-\sqrt{-\lambda}$
+
+$0=\sqrt{-\lambda} \quad \quad \quad 0=-\sqrt{-\lambda}$
+
+\end{center}
+
+\vspace{3mm}
+
+Using $u'(L_{2})=0$, we have:
+
+\begin{center}
+
+$v_{1}'(L_{2})=\sqrt{-\lambda}e^{\sqrt{-\lambda} \hspace{1mm} (L_{2})} \quad \quad \quad v_{2}'(0)=-\sqrt{-\lambda}e^{\sqrt{-\lambda} \hspace{1mm} (L_{2})}$
+
+$0=\sqrt{-\lambda}e^{\sqrt{-\lambda} \hspace{1mm} (L_{2})} \quad \quad \quad 0=-\sqrt{-\lambda}e^{\sqrt{-\lambda} \hspace{1mm} (L_{2})}$
+
+\end{center}
+
+Since the functions $v_{1}(y)$ and $v_{2}(y)$ do not satisfy the boundary conditions, they are not \textit{Neumann-Laplacian eigenfunctions}.
+
+\end{flushleft}
+
+\vspace{5mm}
+
+\begin{flushleft}
+
+8)Now, consider $\lambda=0$. Then, the differential equation becomes
+
+\begin{center}
+
+$u''(y)=0$
+
+\end{center}
+
+Then, if we integrate, we have: 
+
+\begin{center}
+
+$u'(y)=c$
+
+$u(y)=c_{1}y+c_{0}$, for some constants $c_{1} \; and \; c_{0}$
+
+\end{center}
+
+Using $u(0)=0$, we have:
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{center}
+
+$u(0)=c_{1}(0)+c_{0}$
+
+$0=0$
+
+\end{center}
+
+Using $u(L_{1})=0$, we have: 
+
+\begin{center}
+
+$u(L_{1})=c_{1}(L_{1})+c_{0}$
+
+$0=c_{0}$
+
+\end{center}
+
+Similar to the \textit{Dirichlet-Laplacian eigenproblem}, our two solutions are $h_{1}(y)=1$ and $h_{2}(y)=y$
+
+\vspace{3mm}
+
+Now, check the wronskian:
+
+\begin{center}
+
+$w(h_{1}(y), h_{2}(y))=\begin{vmatrix}
+1 & x \\ 
+0 & 1 
+\end{vmatrix}$
+
+$w(h_{1}(y), h_{2}(y))=(1 \cdot 1)-(0 \cdot x)$
+
+$w(h_{1}(y), h_{2}(y))=1-0=1 \neq 0$
+
+\end{center}
+
+Since $w(h_{1}(y), h_{2}(y)) \neq 0$, our two solutions are linearly independent and thus form a fundamental set of solutions.
+
+Calculating some derivatives, we have:
+
+\begin{center}
+
+$h_{1}'(y)=0 \quad and \quad h_{2}'(y)=1$
+
+\end{center}
+
+Using $u'(0)=0$, we have: 
+
+\begin{center}
+
+$h_{1}'(0)=0$ \quad \quad \quad $h_{2}'(0)=1$
+
+$0=0$ \quad \quad \quad $0=1$
+
+\end{center}
+
+Using $u'(L_{2})=0$, we have:
+
+\begin{center}
+
+$h_{1}'(L_{2})=0$ \quad \quad \quad $h_{2}'(L_{2})=1$
+
+$0=0$ \quad \quad \quad $0=1$
+
+\end{center}
+
+Just as in the \textit{Dirichlet-Laplacian eigenproblem}, the corresponding harmonic functions do not satisfy the boundary conditions, and in this case, are not \textit{Neumann-Laplacian eigenfunctions}.
+
+\end{flushleft}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{flushleft}
+
+9)Now, consider $\lambda > 0$. Then, suppose the solutions are of the form $u(y)=e^{ky}$. Then, $u'(y)=ke^{ky}$ and $u''(y)=k^2e^{ky}$. Plugging in, we have: 
+
+\begin{center}
+
+$k^2e^{ky}+ \lambda e^{ky}=0$
+
+$e^{ky}(k^2+ \lambda)=0$
+
+$k^2+ \lambda=0$
+
+$k=\pm \sqrt{-\lambda}$
+
+$k=\pm i \sqrt{\lambda}$
+
+\end{center}
+
+So, $u_{1}(y)=e^{i \sqrt{\lambda}}$ and $u_{2}(y)=e^{-i \sqrt{\lambda}}$. \\
+
+Next, let $u_{\lambda}(y)=\frac{1}{2}\bigg[u_{1}(y)+u_{2}(y)\bigg]$. \\
+
+Then, \\ 
+$u_{\lambda}(y)=\frac{1}{2}\bigg[\cos(\sqrt{\lambda} \; y)+i\sin(\sqrt{\lambda} \; y)+\cos(-\sqrt{\lambda} \; y)+i\sin(\sqrt{\lambda} \; y)\bigg]$ \\
+
+$u_{\lambda}(y)=\cos(\sqrt{\lambda} \; y)$
+
+\vspace{3mm}
+
+Let $v_{\lambda}(y)=\frac{1}{2i}\bigg[\cos(\sqrt{\lambda} \; y)+i\sin(\sqrt{\lambda} \; y)-\cos(-\sqrt{\lambda} \; y)+i\sin(\sqrt{\lambda} \; y)\bigg]$ \\
+
+$v_{\lambda}(y)=\sin(\sqrt{\lambda} \; y)$
+
+\vspace{3mm}
+
+Now, calculating some derivatives, we have:
+
+\begin{center}
+
+$u_{\lambda}'(y)=-\sqrt{\lambda}\sin(\sqrt{\lambda} \; y)$
+
+$v_{\lambda}(y)=\sqrt{\lambda}\cos(\sqrt{\lambda} \; y)$
+
+\end{center}
+
+Now, consider $u_{\lambda}(x)=\cos(\sqrt{\lambda} \; x)$. Using $u'(0)=0$, we have:
+
+\begin{center}
+
+$u_{\lambda}'(0)=-\sqrt{\lambda}\sin(\sqrt{\lambda} \; y)$
+
+$u_{\lambda}'(0)=0$
+
+$0=0$
+
+\end{center}
+
+\vspace{3mm}
+
+Then, using $u'(L_{2})=0$, we have: 
+
+\begin{center}
+
+$u_{\lambda}'(L_{2})=-\sqrt{\lambda}\sin(\sqrt{\lambda} \; l_{2})$
+
+$0=\sqrt{\lambda}\sin(\sqrt{\lambda} \; L_{2})$
+
+$0=\sin(\sqrt{\lambda} \; L_{2})$
+
+$\sqrt{\lambda} \; L_{1}$, $n\pi$, where $n \in \mathbb{N}$
+
+\end{center}
+
+\vspace{3mm}
+
+So, $\lambda= \hspace{-1mm} \bigg(\frac{n\pi}{L_{2}}\bigg)^2$, where $n \in \mathbb{N}$. These are the allowable eigenvalues. Denote this result as $\lambda_{n,N}$. Finally, let $u_{n,N}(y)=\sin \hspace{-1mm} \bigg(\frac{n \pi y}{L_{2}}\bigg)$, where $n \in \mathbb{N}$.
+
+\end{flushleft}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+10)The two sets of \textit{eigendata} that were obtained from the two problems for the one-dimensional \textit{Laplacian} are identical except for some notation changes here and there.
+
+\end{document}

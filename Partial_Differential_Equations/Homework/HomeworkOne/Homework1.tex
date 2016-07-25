@@ -1,0 +1,1033 @@
+\documentclass[12pt, executivepaper]{article}
+\usepackage {mathtools}
+\everymath{\displaystyle}
+\usepackage{kantlipsum,graphicx}
+\usepackage{amsthm}
+\usepackage{pgfplots}
+
+\vspace*{-40mm}
+
+\begin{document}
+
+\begin{center}
+
+\large{Homework 1}
+
+\end{center}
+
+\begin{flushright}
+
+Brendan Busey
+
+\end{flushright}
+
+\begin{flushleft}
+
+1) For class one, there are two distinct functions.
+For class two, there are two distinct functions.
+For class three, there are two distinct functions.
+For class four, there are two distinct functions.
+
+\vspace{5mm}
+
+2) \\
+Class 1: \\
+For $S_{0}(x,y)=1$,
+$S_{0}(-x,-y)=1$, so the function is even. \\
+
+\vspace{3mm}
+
+For $S_{1,1}(x,y)=\cosh(vx)\cos(vy)$, \\
+
+$S_{1,1}(-x,-y)=\cosh(-vx)\cos(-vy)$ \\
+
+Since $S_{1,1}(x,y) \neq S_{1,1}(-x,-y)$, the function is odd.
+
+\vspace{3mm}
+
+For $S_{1,2}(x,y)=\cos(vx)\cosh(vy)$, \\
+
+$S_{1,2}(-x,-y)=\cos(-vx)\cosh(-vy)$ \\
+
+Since $S_{1,2}(-x,-y) \neq S_{1,2}(x,y)$, the function is odd. \\
+
+\vspace{3mm}
+
+Class 2: \\
+For $S_{3}(x,y)=xy$, \\
+
+$S_{3}(-x, -y)=-x \cdot -y=xy$ \\
+
+Since $S_{3}(-x,-y)=S_{3}(x,y)$, the function is even. \\
+
+\vspace{3mm}
+
+For $S_{2,1}(x,y)=\sinh(vx)\sin(vy)$, \\
+
+$S_{2,1}(-x,-y)=\sinh(-vx)\sin(-vy)$ \\
+
+Since $S_{2,1}(x,y) \neq S_{2,1}(x,y)$, the function is odd. \\
+
+\vspace{3mm}
+
+For $S_{2,2}(x,y)=\sin(vx)\sinh(vy)$, \\
+
+$S_{2,2}(-x,-y)=\sin(-vx)\sinh(-vy)$ \\
+
+Since $S_{2,2}(-x,-y) \neq S_{2,2}(x,y)$, the function is odd.
+
+\vspace{3mm}
+
+Class 3: \\
+For $S_{3,1}(x,y)=\cosh(vx)\sin(vy)$, \\
+
+$S_{3,1}(-x,-y)=\cosh(-vx)\sin(-vy)$ \\
+
+Since $S_{3,1}(x,y) \neq S_{3,1}(-x,-y)$, the function is odd. \\
+
+\vspace{3mm}
+
+For $S_{3,2}(x,y)=\cos(vx)\sinh(vy)$, \\
+
+$S_{3,2}(-x,-y)=\cos(-vx)\sinh(-vy)$ \\
+
+Since $S_{3,2}(x,y) \neq S_{3,2}(-x,-y)$, the function is odd. \\
+
+\vspace{3mm}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+Class 4: \\
+For $S_{4,1}(x,y)=\sinh(vx)\cos(vy)$, \\
+
+$S_{4,1}(-x,-y)=\sinh(-vx)\cos(-vy)$ \\
+
+Since $S_{4,1}(x,y) \neq S_{4,1}(-x,-y)$, the function is odd. \\
+
+\vspace{3mm}
+
+For $S_{4,2}(x,y)=\sin(vx)\cosh(vy)$, \\
+
+$S_{4,2}(-x,-y)=\sin(-vx)\cosh(-vy)$ \\
+
+Since $S_{4,2}(x,y) \neq S_{4,2}(-x,-y)$, the function is odd. \\
+ 
+\vspace{5mm}
+
+3) \\
+
+Class 1: \\
+
+For $S_{0}(x,y)=1$, \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{0}}{\partial x}=0 \quad \frac{\partial S_{0}}{\partial y}=0 \quad \frac{\partial S_{0}}{\partial xx}=0 \quad \frac{\partial S_{0}}{\partial yy}=0 \quad \frac{\partial S_{0}}{\partial xy}=0 \quad \frac{\partial S_{0}}{\partial yx}=0$ \\
+
+\vspace{3mm}
+
+$\nabla S_{0}(x,y)=
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$D^2 S_{0}(x,y)=
+\begin{bmatrix}
+0 & 0 \\
+0 & 0
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$\Delta S_{0}(x,y)=0+0=0$
+
+\vspace{5mm}
+
+For $S_{1,1}(x,y)=\cosh(vx)\cos(vy)$, \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{1,1}}{\partial x}=0=v\sinh(vx)\cos(vy) \quad \frac{\partial S_{1,1}}{\partial y}=-v\cosh(vx)\sin(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{1,1}}{\partial xy}=-v^2\sinh(vx)\sin(vy) \quad \frac{\partial S_{1,1}}{\partial yx}=-v^2\sinh(vx)\sin(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{1,1}}{\partial xx}=v^2\cosh(vx)\cos(vy) \quad \frac{\partial S_{1,1}}{\partial yy}=-v^2\cosh(vx)\cos(vy)$ \\
+
+\vspace{3mm}
+
+
+$\nabla S_{1,1}(x,y)=
+\begin{bmatrix}
+v\sinh(vx)\cos(vy) \\
+-v\cosh(vx)\sin(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$D^2 S_{1,1}(x,y)=
+\begin{bmatrix}
+v^2\cosh(vx)\cos(vy) & -v^2\sinh(vx)\sin(vy) \\
+-v^2\sinh(vx)\sin(vy) & -v^2\cosh(vx)\cos(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$\Delta S_{1,1}(x,y)=v^2\cosh(vx)\cos(vy)-v^2\cosh(vx)\cos(vy)=0$
+
+\vspace{3mm}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+For $S_{1,2}(x,y)=\cos(vx)\cosh(vy)$, \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{1,2}}{\partial x}=-v\sin(vx)\cosh(vy) \quad \frac{\partial S_{1,2}}{\partial y}=v\cos(vx)\sinh(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{1,2}}{\partial xy}=-v^2\sin(vx)\sinh(vy) \quad \frac{\partial S_{1,2}}{\partial yx}=-v^2\sin(vx)\sinh(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{1,2}}{\partial xx}=-v^2\cos(vx)\cosh(vy) \quad \frac{\partial S_{1,2}}{\partial yy}=v^2\cos(vx)\cosh(vy)$ \\
+
+\vspace{3mm}
+
+
+$\nabla S_{1,2}(x,y)=
+\begin{bmatrix}
+-v\sin(vx)\cosh(vy) \\
+v\cos(vx)\sinh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$D^2 S_{1,2}(x,y)=
+\begin{bmatrix}
+v^2\cos(vx)\cosh(vy) & -v^2\sin(vx)\sinh(vy) \\
+-v^2\sin(vx)\sinh(vy) & v^2\cos(vx)\cosh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$\Delta S_{1,2}(x,y)=-v^2\cos(vx)\cosh(vy)+v^2\cos(vx)\cosh(vy)=0$
+
+\vspace{5mm}
+
+Class 2: \\
+
+For $S_{3}(x,y)=xy$, \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{3}}{\partial x}=y \quad \frac{\partial S_{3}}{\partial y}=x \quad \frac{\partial S_{3}}{\partial xx}=0 \quad \frac{\partial S_{3}}{\partial yy}=0 \quad \frac{\partial S_{3}}{\partial xy}=0 \quad \frac{\partial S_{3}}{\partial yx}=0$ \\
+
+\vspace{3mm}
+
+$\nabla S_{3}(x,y)=
+\begin{bmatrix}
+y \\
+x
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$D^2 S_{3}(x,y)=
+\begin{bmatrix}
+0 & 0 \\
+0 & 0
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$\Delta S_{3}(x,y)=0+0=0$
+
+\vspace{5mm}
+
+For $S_{2,1}(x,y)=\sinh(vx)\sin(vy)$, \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{2,1}}{\partial x}=v\cosh(vx)\sin(vy) \quad \frac{\partial S_{2,1}}{\partial y}=v\sinh(vx)\cos(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{2,1}}{\partial xy}=v^2\cosh(vx)\cos(vy) \quad \frac{\partial S_{2,1}}{\partial yx}=v^2\cosh(vx)\cos(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{2,1}}{\partial xx}=v^2\sinh(vx)\sin(vy) \quad \frac{\partial S_{1,2}}{\partial yy}=-v^2\sinh(vx)\sin(vy)$ \\
+
+\vspace{3mm}
+
+$\nabla S_{2,1}(x,y)=
+\begin{bmatrix}
+v\cosh(vx)\sin(vy) \\
+v\sinh(vx)\cos(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$D^2 S_{2,1}(x,y)=
+\begin{bmatrix}
+v^2\sinh(vx)\sin(vy) & v^2\cosh(vx)\cos(vy) \\
+v^2\cosh(vx)\cos(vy) & -v^2\sinh(vx)\sin(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$\Delta S_{2,1}(x,y)=v^2\sinh(vx)\sin(vy)-v^2\sinh(vx)\sin(vy)=0$
+
+\vspace{5mm}
+
+For $S_{2,2}(x,y)=\sin(vx)\sinh(vy)$, \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{2,2}}{\partial x}=v\cos(vx)\sinh(vy) \quad \frac{\partial S_{2,2}}{\partial y}=v\sin(vx)\cosh(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{2,2}}{\partial xy}=v^2\cos(vx)\cosh(vy) \quad \frac{\partial S_{2,2}}{\partial yx}=v^2\cos(vx)\cosh(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{2,2}}{\partial xx}=-v^2\sin(vx)\sinh(vy) \quad \frac{\partial S_{2,2}}{\partial yy}=v^2\sin(vx)\sinh(vy)$ \\
+
+\vspace{3mm}
+
+$\nabla S_{2,2}(x,y)=
+\begin{bmatrix}
+v\cos(vx)\sinh(vy) \\
+v\sin(vx)\cosh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$D^2 S_{2,2}(x,y)=
+\begin{bmatrix}
+-v^2\sin(vx)\sinh(vy) & v^2\cos(vx)\cosh(vy) \\
+v^2\cos(vx)\cosh(vy) & v^2\sin(vx)\sinh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$\Delta S_{2,2}(x,y)=-v^2\sin(vx)\sinh(vy)+v^2\sin(vx)\sinh(vy)=0$
+
+\vspace{5mm}
+
+Class 3: \\
+
+For $S_{3,1}(x,y)=\cosh(vx)\sin(vy)$, \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{3,1}}{\partial x}=v\sinh(vx)\sin(vy) \quad \frac{\partial S_{3,1}}{\partial y}=v\cosh(vx)\cos(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{3,1}}{\partial xy}=v^2\sinh(vx)\cos(vy) \quad \frac{\partial S_{3,1}}{\partial yx}=v^2\sinh(vx)\cos(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{3,1}}{\partial xx}=v^2\cosh(vx)\sin(vy) \quad \frac{\partial S_{3,1}}{\partial yy}=-v^2\cosh(vx)\sin(vy)$ \\
+
+\vspace{3mm}
+
+$\nabla S_{3,1}(x,y)=
+\begin{bmatrix}
+v\sinh(vx)\sin(vy) \\
+v\cosh(vx)\cos(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$D^2 S_{3,1}(x,y)=
+\begin{bmatrix}
+v^2\cosh(vx)\sin(vy) & v^2\sinh(vx)\cos(vy) \\
+v^2\sin(vx)\cos(vy) & -v^2\cosh(vx)\sin(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$\Delta S_{3,1}(x,y)=v^2\cosh(vx)\sin(vy)-v^2\cosh(vx)\sin(vy)=0$
+
+\vspace{5mm}
+
+For $S_{3,2}(x,y)=\cos(vx)\sin(vy)$, \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{3,2}}{\partial x}=-v\sin(vx)\sinh(vy) \quad \frac{\partial S_{3,2}}{\partial y}=v\cos(vx)\cosh(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{3,2}}{\partial xy}=-v^2\sin(vx)\cosh(vy) \quad \frac{\partial S_{3,3}}{\partial yx}=-v^2\sin(vx)\cosh(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{3,2}}{\partial xx}=-v^2\cos(vx)\sinh(vy) \quad \frac{\partial S_{3,2}}{\partial yy}=v^2\cos(vx)\sinh(vy)$ \\
+
+\vspace{3mm}
+
+$\nabla S_{3,2}(x,y)=
+\begin{bmatrix}
+-v\sin(vx)\sinh(vy) \\
+v\cos(vx)\cosh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$D^2 S_{3,2}(x,y)=
+\begin{bmatrix}
+-v^2\cos(vx)\sinh(vy) & -v^2\sin(vx)\cosh(vy) \\
+-v^2\sin(vx)\cosh(vy) & v^2\cos(vx)\sinh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$\Delta S_{3,2}(x,y)=-v^2\cos(vx)\sinh(vy)+v^2\cos(vx)\sinh(vy)=0$
+
+\vspace{5mm}
+
+Class 4: \\
+
+For $S_{4,1}(x,y)=\sinh(vx)\cos(vy)$, \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{4,1}}{\partial x}=v\cosh(vx)\cos(vy) \quad \frac{\partial S_{4,1}}{\partial y}=v\sinh(vx)\sin(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{4,1}}{\partial xy}=-v^2\cosh(vx)\sin(vy) \quad \frac{\partial S_{4,1}}{\partial yx}=-v^2\cosh(vx)\sin(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{4,1}}{\partial xx}=v^2\sin(vx)\cos(vy) \quad \frac{\partial S_{4,1}}{\partial yy}=-v^2\sinh(vx)\cos(vy)$ \\
+
+\vspace{3mm}
+
+$\nabla S_{4,1}(x,y)=
+\begin{bmatrix}
+v\cosh(vx)\cos(vy) \\
+-v\sinh(vx)\sin(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$D^2 S_{4,1}(x,y)=
+\begin{bmatrix}
+v^2\sinh(vx)\cos(vy) & -v^2\cosh(vx)\sin(vy) \\
+-v^2\sinh(vx)\sin(vy) & -v^2\sinh(vx)\cos(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$\Delta S_{4,1}(x,y)=v^2\sinh(vx)\cos(vy)-v^2\sinh(vx)\cos(vy)=0$
+
+\vspace{5mm}
+
+For $S_{4,2}(x,y)=\sinh(vx)\cosh(vy)$, \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{4,2}}{\partial x}=v\cosh(vx)\cosh(vy) \quad \frac{\partial S_{4,2}}{\partial y}=v\sinh(vx)\sinh(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{4,2}}{\partial xy}=v^2\cosh(vx)\sinh(vy) \quad \frac{\partial S_{4,2}}{\partial yx}=v^2\cosh(vx)\sinh(vy)$ \\
+
+\vspace{3mm}
+
+$\frac{\partial S_{4,2}}{\partial xx}=v^2\sinh(vx)\cosh(vy) \quad \frac{\partial S_{4,2}}{\partial yy}=v^2\sinh(vx)\cosh(vy)$ \\
+
+\vspace{3mm}
+
+$\nabla S_{4,2}(x,y)=
+\begin{bmatrix}
+v\cosh(vx)\cosh(vy) \\
+v\sinh(vx)\sinh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$D^2 S_{4,2}(x,y)=
+\begin{bmatrix}
+v^2\sinh(vx)\cosh(vy) & v^2\cosh(vx)\sinh(vy) \\
+v^2\cosh(vx)\sinh(vy) & v^2\sinh(vx)\cosh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+$\Delta S_{4,2}(x,y)=v^2\sinh(vx)\cosh(vy)+v^2\sinh(vx)\cosh(vy)=2v^2\sinh(vx)\cosh(vy)$
+
+\vspace{5mm}
+
+4) \\
+
+Class 1: \\
+For $\vec F_{0}(x,y)=\nabla S_{0}(x,y)=
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}$
+
+\vspace{3mm}
+
+Divergence=$\nabla \cdot \vec F_{0}(x,y)$ \\
+Divergence=
+$\begin{bmatrix}
+0 \\
+0
+\end{bmatrix} \cdot 1=0$
+
+\vspace{3mm}
+
+Curl=$\nabla \times \vec F_{0}(x,y)$ \\
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+0-0
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}$ \\
+
+\vspace{5mm}
+
+For $\vec F_{1,1}(x,y)=\nabla S_{1,1}(x,y)=
+\begin{bmatrix}
+v\sinh(vx)\cos(vy) \\
+-v\cosh(vx)\sin(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+Divergence=$\nabla \cdot \vec F_{1,1}(x,y)$ \\
+
+\vspace{3mm}
+
+Divergence=$\frac{\partial}{\partial x}(v\sinh(vx)\cos(vy))+\frac{\partial}{\partial y}(-v\cosh(vx)\sin(vy))$ \\
+
+\vspace{3mm}
+
+Divergence=$v^2\cosh(vx)\cos(vy)+ (-v^2\cosh(vx)\cos(vy))$ \\
+
+\vspace{3mm}
+
+Divergence=$v^2\cosh(vx)\cos(vy)-v^2\cosh(vx)\cos(vy)=0$ \\
+
+\vspace{3mm}
+
+Curl=$\nabla \times \vec F_{1,1}(x,y)$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+-v^2\sinh(vx)\sin(vy)-(-v^2\sinh(vx)\sin(vy))
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+-v^2\sinh(vx)\sin(vy)+v^2\sinh(vx)\sin(vy))
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}$ \\
+
+\vspace{5mm}
+
+
+For $\vec F_{1,2}(x,y)=\nabla S_{1,2}(x,y)=
+\begin{bmatrix}
+-v\sin(vx)\cosh(vy) \\
+v\cos(vx)\sinh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+Divergence=$\nabla \cdot \vec F_{1,2}(x,y)$ \\
+
+\vspace{3mm}
+
+Divergence=$\frac{\partial}{\partial x}(-v\sin(vx)\cosh(vy))+\frac{\partial}{\partial y}(v\cos(vx)\sinh(vy))$ \\
+
+\vspace{3mm}
+
+Divergence=$-v^2\cos(vx)\cosh(vy)+v^2\cos(vx)\cosh(vy))$ \\
+
+\vspace{3mm}
+
+Divergence=$0$ \\
+
+\vspace{3mm}
+
+Curl=$\nabla \times \vec F_{1,1}(x,y)$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+-v^2\sin(vx)\sinh(vy)-(-v^2\sin(vx)\sinh(vy))
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+-v^2\sin(vx)\sinh(vy)+v^2\sin(vx)\sinh(vy))
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}$ \\
+
+\vspace{5mm}
+
+Class 2: \\
+For $\vec F_{3}(x,y)=\nabla S_{3}(x,y)=
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}$
+
+\vspace{3mm}
+
+Divergence=$\nabla \cdot \vec F_{3}(x,y)$ \\
+
+\vspace{3mm}
+
+Divergence=$\frac{\partial}{\partial x}(y)+\frac{\partial}{\partial y}(x)$ \\
+
+\vspace{3mm}
+
+Divergence=$0+0$ \\
+
+\vspace{3mm}
+
+Divergence=$0$ \\
+
+\vspace{3mm}
+
+Curl=$\nabla \times \vec F_{1,1}(x,y)$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+1-1
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}$ \\
+
+\vspace{5mm}
+
+For $\vec F_{2,1}(x,y)=\nabla S_{2,1}(x,y)=
+\begin{bmatrix}
+v\cosh(vx)\sin(vy) \\
+v\sinh(vx)\cos(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+Divergence=$\nabla \cdot \vec F_{2,1}(x,y)$ \\
+
+\vspace{3mm}
+
+Divergence=$\frac{\partial}{\partial x}(v\sinh(vx)\cos(vy))+\frac{\partial}{\partial y}(v\cosh(vx)\sin(vy))$ \\
+
+\vspace{3mm}
+
+Divergence=$v^2\cosh(vx)\cos(vy)+v^2\cosh(vx)\cos(vy)$ \\
+
+\vspace{3mm}
+
+Divergence=$2v^2\cosh(vx)\cos(vy)$ \\
+
+\vspace{3mm}
+
+Curl=$\nabla \times \vec F_{2,1}(x,y)$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+v^2\cosh(vx)\cos(vy)-v^2\cosh(vx)\cos(vy)
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}$ \\
+
+\vspace{5mm}
+
+For $\vec F_{2,2}(x,y)=\nabla S_{2,2}(x,y)=
+\begin{bmatrix}
+v\cos(vx)\sinh(vy) \\
+v\sin(vx)\cosh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+Divergence=$\nabla \cdot \vec F_{2,2}(x,y)$ \\
+
+\vspace{3mm}
+
+Divergence=$\frac{\partial}{\partial x}(v\sin(vx)\cosh(vy))+\frac{\partial}{\partial y}(v\cos(vx)\sinh(vy))$ \\
+
+\vspace{3mm}
+
+Divergence=$v^2\cos(vx)\cosh(vy)+v^2\cos(vx)\cosh(vy)$ \\
+
+\vspace{3mm}
+
+Divergence=$2v^2\cos(vx)\cosh(vy)$ \\
+
+\vspace{3mm}
+
+Curl=$\nabla \times \vec F_{2,2}(x,y)$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+v^2\cos(vx)\cosh(vy)-v^2\cos(vx)\cosh(vy)
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}$ \\
+
+\vspace{5mm}
+
+Class 3: \\
+
+For $\vec F_{3,1}(x,y)=\nabla S_{3,1}(x,y)=
+\begin{bmatrix}
+v\sinh(vx)\sin(vy) \\
+v\cosh(vx)\cos(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+Divergence=$\nabla \cdot \vec F_{3,1}(x,y)$ \\
+
+\vspace{3mm}
+
+Divergence=$\frac{\partial}{\partial x}(v\cosh(vx)\cos(vy))+\frac{\partial}{\partial y}(v\sinh(vx)\sin(vy))$ \\
+
+\vspace{3mm}
+
+Divergence=$v^2\sinh(vx)\cos(vy)+v^2\sinh(vx)\cos(vy)$ \\
+
+\vspace{3mm}
+
+Divergence=$2v^2\sinh(vx)\cos(vy)$ \\
+
+\vspace{3mm}
+
+Curl=$\nabla \times \vec F_{3,1}(x,y)$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+v^2\sinh(vx)\cos(vy)-v^2\sinh(vx)\cos(vy)
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}$ \\
+
+\vspace{5mm}
+
+For $\vec F_{3,2}(x,y)=\nabla S_{3,2}(x,y)=
+\begin{bmatrix}
+-v\sin(vx)\sinh(vy) \\
+v\cos(vx)\cosh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+Divergence=$\nabla \cdot \vec F_{3,2}(x,y)$ \\
+
+\vspace{3mm}
+
+Divergence=$\frac{\partial}{\partial x}(v\cos(vx)\cosh(vy))+\frac{\partial}{\partial y}(-v\sin(vx)\sinh(vy))$ \\
+
+\vspace{3mm}
+
+Divergence=$-v^2\sin(vx)\cosh(vy)-v^2\sin(vx)\cosh(vy)$ \\
+
+\vspace{3mm}
+
+Divergence=$-2v^2\sin(vx)\cosh(vy)$ \\
+
+\vspace{3mm}
+
+Curl=$\nabla \times \vec F_{3,2}(x,y)$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+-v^2\sin(vx)\cosh(vy)-(-v^2\sin(vx)\cosh(vy))
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+-v^2\sin(vx)\cosh(vy)+v^2\sin(vx)\cosh(vy)
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}$ \\
+
+\vspace{5mm}
+
+Class 4: \\
+
+For $\vec F_{4,1}(x,y)=\nabla S_{4,1}(x,y)=
+\begin{bmatrix}
+v\cosh(vx)\cos(vy) \\
+-v\sinh(vx)\sin(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+Divergence=$\nabla \cdot \vec F_{4,1}(x,y)$ \\
+
+\vspace{3mm}
+
+Divergence=$\frac{\partial}{\partial x}(-v\sinh(vx)\sin(vy))+\frac{\partial}{\partial y}(v\cosh(vx)\cos(vy))$ \\
+
+\vspace{3mm}
+
+Divergence=$-v^2\cosh(vx)\sin(vy)-v^2\cosh(vx)\sin(vy)$ \\
+
+\vspace{3mm}
+
+Divergence=$-2v^2\cosh(vx)\sin(vy)$ \\
+
+\vspace{3mm}
+
+Curl=$\nabla \times \vec F_{4,1}(x,y)$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+-v^2\cosh(vx)\sin(vy)-(-v^2\cosh(vx)\sin(vy))
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+-v^2\cosh(vx)\sin(vy)+v^2\cosh(vx)\sin(vy)
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}$ \\
+
+\vspace{5mm}
+
+For $\vec F_{4,2}(x,y)=\nabla S_{4,2}(x,y)=
+\begin{bmatrix}
+v\cosh(vx)\cosh(vy) \\
+v\sinh(vx)\sinh(vy)
+\end{bmatrix}$
+
+\vspace{3mm}
+
+Divergence=$\nabla \cdot \vec F_{4,2}(x,y)$ \\
+
+\vspace{3mm}
+
+Divergence=$\frac{\partial}{\partial x}(v\sinh(vx)\sinh(vy))+\frac{\partial}{\partial y}(v\cosh(vx)\cosh(vy))$ \\
+
+\vspace{3mm}
+
+Divergence=$v^2\cosh(vx)\sinh(vy)+v^2\cosh(vx)\sinh(vy)$ \\
+
+\vspace{3mm}
+
+Divergence=$2v^2\cosh(vx)\sinh(vy)$ \\
+
+\vspace{3mm}
+
+Curl=$\nabla \times \vec F_{4,2}(x,y)$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+v^2\cosh(vx)\sinh(vy)-v^2\cosh(vx)\sinh(vy)
+\end{bmatrix}$ \\
+
+\vspace{3mm}
+
+Curl=$\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}$ \\
+
+\vspace{5mm}
+
+\end{flushleft}
+
+\end{document}

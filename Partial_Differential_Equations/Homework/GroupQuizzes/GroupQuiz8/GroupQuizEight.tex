@@ -1,0 +1,711 @@
+\documentclass[executivepaper]{article}
+
+\usepackage{mathtools}
+
+\everymath{\displaystyle}
+
+\usepackage{amssymb}
+
+\usepackage{commath}
+
+\usepackage{kantlipsum,graphicx}
+
+\usepackage{amsmath}
+
+\usepackage{pgfplots}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{sectsty}
+
+\usepackage{float}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\rhead{Madison Hoff and Brendan Busey}
+
+\lhead{Group Quiz 8}
+
+\rfoot{Page \thepage}
+
+\sectionfont{\large}
+
+\subsectionfont{\normalsize}
+
+\begin{document}
+
+\begin{flushleft}
+
+2) Given Charlie's chimney design, we can now explicitly write out the boundary conditions for the electric potential. For the right walls, we have
+
+\begin{center}
+
+\[ \begin{cases} 
+      u(l_{1}, y)=\varphi(y)\\
+      u(-l_{1}, y)=\varphi(y)
+   \end{cases}
+\]
+
+\end{center}
+
+And, the front and back walls have the following boundary conditions
+
+\begin{center}
+
+\[ \begin{cases} 
+      u(x, y)=0\\
+      u(x, l_{2})=0
+   \end{cases}
+\]
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+3) Now, we want to find all separated solutions $u(x,y)=f(x)g(y)$ to Laplace's equation that also satisfy the appropriate \textit{zero-dirichlet boundary conditions}. First, suppose that $u(x,y)=f(x)g(y)$, which are separated solutions. We begin with $\Delta_{2}=u_{xx}+u_{yy}=0 \in \Omega$. Then, recall that $u_{xx}=\frac{\partial^2 u}{\partial x^2}$ and $u_{yy}=\frac{\partial^2 u}{\partial y^2}$. Moving on, we do the separation of variables by taking the second partial derivatives of $u(x,y)$ with respect to $x$ and $y$. 
+
+\begin{center}
+
+$\frac{\partial u}{\partial x}=f'(x)g(y)$
+
+\vspace{2mm}
+
+$\frac{\partial u}{\partial y}=f(x)g'(y)$
+
+\vspace{2mm}
+
+$\frac{\partial^2 u}{\partial x^2}=f''(x)g(y)$
+
+\vspace{2mm}
+
+$\frac{\partial^2 u}{\partial y^2}=f(x)g''(y)$
+
+\end{center}
+
+Thus, substituting the partial derivatives into the PDE, we get
+
+\begin{center}
+
+$f(x)g''(x)=f''(x)g(y)$
+
+\end{center}
+
+Now, putting all the $x$ parts on one side and all the $y$ parts on the other,
+
+\begin{center}
+
+$\frac{g''(y)}{g(y)}+\frac{f''(x)}{f(x)}=0$
+
+\end{center}
+
+Assume that $g(y)$ and $f(x)$ are not equal to zero so we can divide them over. Then, define a function
+
+\begin{center}
+
+$\lambda(x,y)=-\frac{1}{g(y)}g''(y)=-\frac{1}{f(x)}f''(x)$
+
+\end{center}
+
+we can write $\lambda$ in two ways, either in $x$ terms or in terms of $y$. First, we look at $\lambda$ in terms of $y$, and take the partial derivative with respect to $x$
+
+\begin{center}
+
+$\frac{\partial \lambda}{\partial x}=\frac{\partial}{\partial x}\bigg[-\frac{1}{g(y)}g''(y)\bigg]=0$
+
+\end{center}
+
+Now, take the partial derivative of the ``$x$-piece'' with respect to $y$
+
+\begin{center}
+
+$\frac{\partial \lambda}{\partial y}=\frac{\partial}{\partial x}\bigg[-\frac{1}{f(x)}f''(x)\bigg]=0$
+
+\end{center}
+
+Thus, $\lambda(x,y)=\lambda$, so $\lambda$ is a constant. Thus, $\lambda=-\frac{1}{g(y)}g''(y)$. Hence, $g''(y)+\lambda g(y)=0$. This looks a lot like the \textit{Dirichlet-Laplacian} eigenvalue problem. Recall from our previous work on the \textit{Dirichlet-Laplacian} eigenvalue problem. We denote the \textit{Dirichlet-Laplacian} eigenvalues as
+
+\begin{center}
+
+$\lambda_{n, D}=\bigg(\frac{ni \pi}{L}\bigg)^2, n \in \mathbb{N}$
+
+\end{center}
+
+We denote the We denote the \textit{Dirichlet-Laplacian} eigenfunctions as
+
+\begin{center}
+
+$u_{n, D}(x)=\sin\bigg(\frac{n \pi}{L} x\bigg), n \in \mathbb{N}$
+
+\end{center}
+
+In accordance with our problem, we re-label $u_{n, D}(x)$ as
+
+\begin{center}
+
+$g_{n, D}(y)=\sin\bigg(\frac{n \pi}{l_{2}}\bigg), n \in \mathbb{N}$
+
+\end{center}
+
+Now that we have the $g-problem$, we must do the $f$-problem: consider $\lambda=-\frac{1}{f(x)} f''(x)$. Thus, $f''(x)-\lambda f(x)=0$. Then, we suppose that $f(x)=e^{\omega x}$ for some $\omega$. Plugging this in, we get
+
+\begin{center}
+
+$\omega^2 e^{\omega x}-\lambda e^{\omega x}=0$
+
+\end{center}
+
+We divide out $e^{\omega x}$ to get: $e^{\omega x} [\omega^2 - \lambda]=0$. So, $\omega^2-\lambda=0$. So, $\omega=\pm \sqrt{\lambda}$. Then, recall that $\lambda=\bigg(\frac{n \pi}{l_{2}} x\bigg)^2$. So, our solution is
+
+\begin{center}
+
+$f_{n, D}(x)=A_{n}e^{\Big(\frac{n \pi}{l_{2}} x\Big)} + B_{n} e^{-\Big(\frac{ni \pi}{l_{2}} x\Big)}$
+
+\end{center}
+
+Finally, recall that we want $u(x,y)=f(x)g(y)$, so
+
+\begin{center}
+
+$u(x,y)=\bigg[\sin\bigg(\frac{n \pi}{l_{2}} y\bigg)\bigg] \bigg[A_{n} e^{\Big(\frac{n \pi}{l_{2}} x \Big)} + B_{n} e^{-\Big(\frac{n \pi}{l_{2}} x\Big)}\bigg] ~ \forall ~ n \in \mathbb{N}$
+
+\end{center}
+
+are the separable solutions.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+4) Now, we want to write the general solution $u(x,y)$ using the separable variables solution found in question 3:
+
+\begin{center}
+
+$u(x,y)=\sum_{n=1}^{\infty} \bigg[\bigg(A_{n} e^{\Big(\frac{n \pi}{l_{2}} x\Big)} + B_{n} e^{-\Big(\frac{n \pi}{l_{2}} x\Big)}\bigg) \bigg(\sin\bigg(\frac{n \pi}{l_{2}} y\bigg)\bigg)\bigg]$
+
+\end{center}
+
+Recall our nonzero boundary conditions:
+
+\begin{center}
+
+$u(-l, y, z)=\varphi(y)$
+
+\vspace{2mm}
+
+$u(l_{1}, y, z)=\varphi(y)$
+
+\end{center}
+
+Now, we can say:
+
+\begin{center}
+
+$\varphi(y)=\sum_{n=1}^{\infty} \bigg[\bigg(A_{n} e^{\Big(\frac{n \pi i_{1}}{l_{2}} \Big)} + B_{n} e^{-\Big(\frac{n \pi i_{1}}{l_{2}} x\Big)}\bigg) \bigg(\sin\bigg(\frac{n \pi}{l_{2}} y\bigg)\bigg)\bigg]$
+
+\end{center}
+
+Because $u$ is even in $x$, $A_{n}=B_{n}$. Therefore,
+
+\begin{center}
+
+$\varphi(y)=\sum_{n=1}^{\infty} A_{n} \bigg[\bigg(e^{\Big(\frac{n \pi i_{1}}{l_{2}} \Big)} + e^{-\Big(\frac{n \pi i_{1}}{l_{2}} x\Big)}\bigg) \bigg(\sin\bigg(\frac{n \pi}{l_{2}} y\bigg)\bigg)\bigg]$
+
+\end{center}
+
+Now, using the hint $2\cosh(\theta)=e^{\theta}+e^{-\theta}$, we can re-write:
+
+\begin{center}
+
+$\varphi(y)=\sum_{n=1}^{\infty} A_{n} \bigg(2\cosh\bigg(\frac{n \pi l_{1}}{l_{2}}\bigg)\bigg) \sin\bigg(\frac{n \pi}{l_{2}} y\bigg)$
+
+\end{center}
+
+Since $A_{n}$ is a constant that we don't know, two times $A_{n}$ is still a constant we don't know. So, we can let $A_{n}$ equal $2A_{n}$. This gives
+
+\begin{center}
+
+$\varphi(y)=\sum_{n=1}^{\infty} A_{n} \bigg(\cosh\bigg(\frac{n \pi l_{1}}{l_{2}}\bigg)\bigg) \sin\bigg(\frac{n \pi}{l_{2}} y\bigg) \quad (*)$
+
+\end{center}
+
+Now, we multiply $(*)$ by $\sin\bigg(\frac{m \pi}{l_{2}} y\bigg)$ and integrate from $0$ to $l_{2}$
+
+\begin{center}
+
+$\int_{0}^{l_{2}} \varphi(y) \sin\bigg(\frac{m \pi}{l_{2}} y \bigg)=\int_{0}^{l_{2}} \sum_{n=1}^{\infty} A_{n} \bigg(\cosh\bigg(\frac{n \pi l_{1}}{l_{2}}\bigg)\bigg) \sin\bigg(\frac{n \pi}{l_{2}} y\bigg) \cdot \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy$
+
+\end{center}
+
+Since we are integrating with respect to $y$, we can factor out everything that doesn't depend on $y$
+
+\begin{center}
+
+$=\sum_{n=1}^{\infty} A_{n} \bigg(\cosh\bigg(\frac{n \pi l_{1}}{l_{2}}\bigg)\bigg) \int_{0}^{l_{2}} \sin\bigg(\frac{n \pi}{l_{2}} y\bigg) \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy \quad (1)$
+
+\end{center}
+
+Here, we have two cases, when $n \neq m$ and when $n=m$. When $n \neq m$, we know that $\int_{0}^{l_{2}} \sin\bigg(\frac{n \pi}{l_{2}} y\bigg) \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy$ is equal to zero because of orthogonality. When $m=n$, we have $\int_{0}^{l_{2}} \sin^2\bigg(\frac{n \pi}{l_{2}} y\bigg)$, which is equal to $\frac{2}{L}$ by previous group quizzes. Now, if we replace the $n's$ with $m's$ in $(1)$, we have
+
+\begin{center}
+
+$\sum_{n=1}^{\infty} A_{m} \bigg(\cosh\bigg(\frac{m \pi l_{1}}{l_{2}}\bigg)\bigg) \int_{0}^{l_{2}} \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy + \sum_{n=1}^{\infty} A_{n} \bigg(\cosh\bigg(\frac{n \pi l_{1}}{l_{2}}\bigg)\bigg) \int_{0}^{l_{2}} \sin\bigg(\frac{n \pi}{l_{2}} y\bigg) \sin\bigg(\frac{n \pi}{l_{2}} y\bigg) \ dy$
+
+\end{center}
+
+Because $n \neq m$, $\int_{0}^{l_{2}} \sin\bigg(\frac{n \pi}{l_{2}} y\bigg) \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy=0$ because it is orthogonal. Because $n=m$, $\int_{0}^{l_{2}} \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy=\frac{2}{L}$. Thus, we can re-write:
+
+\begin{center}
+
+$\int_{0}^{l_{2}} \varphi(y) \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy=A_{m} \bigg(\cosh\bigg(\frac{m \pi l_{1}}{l_{2}}\bigg)\bigg) \bigg(\frac{2}{L}\bigg)$
+
+\vspace{2mm}
+
+$A_{m}=\frac{\int_{0}^{l_{2}} \varphi(y) \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy}{\bigg(\cosh\bigg(\frac{m \pi l_{1}}{l_{2}}\bigg)\bigg) \bigg(\frac{2}{L}\bigg)}$
+
+\end{center}
+
+Now, we can change our $m's$ back to $n's$
+
+\begin{center}
+
+$A_{n}=\frac{\int_{0}^{l_{2}} \varphi(y) \sin\bigg(\frac{n \pi}{l_{2}} y\bigg) \ dy}{\bigg(\cosh\bigg(\frac{n \pi l_{1}}{l_{2}}\bigg)\bigg) \bigg(\frac{2}{L}\bigg)}$
+
+\end{center}
+
+Continuing on, recall that we are given that $u(-x,y)=u(x,y)$. And, so, we can now write
+
+\begin{center}
+
+$u(-x,y)=\sum_{n=1}^{\infty} \bigg[\bigg(A_{n} e^{\Big(\frac{n \pi}{l_{2}} x\Big)} + B_{n} e^{-\Big(\frac{n \pi}{l_{2}} x\Big)}\bigg) \bigg(\sin\bigg(\frac{n \pi}{l_{2}} y\bigg)\bigg)\bigg]$
+
+\vspace{2mm}
+
+$u(x,y)=\sum_{n=1}^{\infty} \bigg[\bigg(A_{n} e^{\Big(\frac{n \pi}{l_{2}} x\Big)} + B_{n} e^{-\Big(\frac{n \pi}{l_{2}} x\Big)}\bigg) \bigg(\sin\bigg(\frac{n \pi}{l_{2}} y\bigg)\bigg)\bigg]$
+
+\end{center}
+
+Since we know that $u(-x,y)=u(x,y)$, we have $2u(x,y)$ if we add $u(x,y)$ and $u(-x,y)$. Adding together, we obtain
+
+\begin{center}
+
+$\sum_{n=1}^{\infty} \left[\left(2A_{n} \left(\frac{e^{\Big(\frac{n \pi}{l_{2}} x\Big)} + e^{\Big(\frac{n \pi}{l_{2}} -x\Big)}}{2} \right) + 2B_{n}\left(\frac{e^{-\Big(\frac{n \pi}{l_{2}} x\Big)} + e^{-\Big(\frac{n \pi}{l_{2}} -x\Big)}}{2} \right) \left(\sin\bigg(\frac{n \pi}{l_{2}} y\bigg)\right)\right)\right]$
+
+\vspace{2mm}
+
+$=\sum_{n=1}^{\infty} \left[ 2A_{n} \cosh\left(\frac{n \pi x}{l_{2}}\right) + 2B_{n} \cosh\left(\frac{n \pi}{l_{2}} x\right)\right] \sin\left(\frac{n \pi}{l_{2}} y\right)$
+
+\vspace{2mm}
+
+$=\sum_{n=0}^{\infty} \left[\hat{A_{n}} \cosh\left(\frac{n \pi}{l_{2}} x\right)\right] \sin\left(\frac{n \pi}{l_{2}}\right)$
+
+\end{center}
+
+Then, we know that
+
+\begin{center}
+
+$2u(x,y)=\sum_{n=0}^{\infty} \left[\hat{A_{n}} \cosh\left(\frac{n \pi}{l_{2}} x\right)\right] \sin\left(\frac{n \pi}{l_{2}}\right)$
+
+\vspace{2mm}
+
+$\implies u(x,y)=\frac{\sum_{n=0}^{\infty} \left[\hat{A_{n}} \cosh\left(\frac{n \pi}{l_{2}} x\right)\right] \sin\left(\frac{n \pi}{l_{2}}\right)}{2}$
+
+\vspace{2mm}
+
+$\implies u(x,y)=\sum_{n=0}^{\infty} \left[\frac{\hat{A_{n}}}{2} \cosh\left(\frac{n \pi}{l_{2}} x\right)\right] \sin\left(\frac{n \pi}{l_{2}}\right)$
+
+\end{center}
+
+Remembering that $\hat{A_{n}}=A_{n}$, we have
+
+\begin{center}
+
+$u(x,y)=\sum_{n=0}^{\infty} \left[A_{n} \cosh\left(\frac{n \pi}{l_{2}} x\right)\right] \sin\left(\frac{n \pi}{l_{2}}\right)$
+
+\end{center}
+
+Let $u(x,y)$ be defined as above with $A_{n}$ equal to
+
+\begin{center}
+
+$\frac{\int_{0}^{l_{2}} \varphi(y) \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy}{\left(\cosh\left(\frac{n \pi l_{1}}{l_{2}}\right)\right) \left(\frac{2}{L}\right)}$
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+5) Recall that the unique electric potential equation, $u(x,y)$, up to this point is defined as
+
+\begin{center}
+
+$u(x,y)=\sum_{n=0}^{\infty} \left[\frac{\int_{0}^{l_{2}} \varphi(y) \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy}{\left(\cosh\left(\frac{n \pi l_{1}}{l_{2}}\right)\right) \left(\frac{2}{L}\right)} \left(\cosh\left(\frac{n \pi}{l_{2}} x\right)\right)\right] \sin\left(\frac{n \pi}{l_{2}} y\right)$
+
+\end{center}
+
+Now, if we make the substitution $\varphi(y)=k_{0}$, where $k_{0} > 0$, we have
+
+\begin{center}
+
+$u(x,y)=\sum_{n=0}^{\infty} \left[\frac{\int_{0}^{l_{2}} k_{0} \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy}{\left(\cosh\left(\frac{n \pi l_{1}}{l_{2}}\right)\right) \left(\frac{2}{L}\right)} \left(\cosh\left(\frac{n \pi}{l_{2}} x\right)\right)\right] \sin\left(\frac{n \pi}{l_{2}} y\right)$
+
+\end{center}
+
+Then, if we factor out the constants $k_{0}$, $\cosh\left(\frac{n \pi l_{1}}{l_{2}}\right) \left(\frac{2}{L}\right)$ since they don't ``depend" on $y$, we have
+
+\begin{center}
+
+$u(x,y)=\sum_{n=0}^{\infty} \left[\int_{0}^{l_{2}} \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy \left(\cosh\left(\frac{n \pi}{l_{2}} x\right)\right)\right] \sin\left(\frac{n \pi}{l_{2}} y\right)$
+
+\end{center}
+
+Then, evaluating the integral $\int_{0}^{l_{2}} \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy$, we have
+
+\begin{center}
+
+$u=\frac{n \pi}{l_{2}} y$ $\quad$ $du=\frac{n \pi}{l_{2}} dy$
+
+\vspace{2mm}
+
+$\int_{0}^{l_{2}} \sin\bigg(\frac{m \pi}{l_{2}} y\bigg) \ dy=\frac{l_{2}}{n \pi} \int_{0}^{l_{2}} \sin(u) \ du=-\frac{l_{2}}{\pi n} \cos(u)_{0}^{l_{2}}=\left[-\frac{l_{2}}{\pi n} \cos\left(\frac{\pi n}{l_{2}} y\right)\right]_{0}^{l_{2}}$
+
+\end{center}
+
+Evaluating from $0$ to $l_{2}$, we have
+
+\begin{center}
+
+$\left[-\frac{l_{2}}{\pi n} \cos\left(\frac{\pi n}{l_{2}} \left(l_{2}\right)\right)\right]-\left[-\frac{l_{2}}{\pi n} \cos\left(\frac{\pi n}{l_{2}} (0)\right)\right]$
+
+\vspace{2mm}
+
+$=\left[-\frac{l_{2}}{\pi n} \cos\left(n \pi \right)\right]-\left[-\frac{l_{2}}{\pi n} (1)\right]$
+
+\vspace{2mm}
+
+$=\left[-\frac{l_{2}}{\pi n} \left(-1^{n} \right)\right]-\left[-\frac{l_{2}}{\pi n}\right]=\left[\frac{l_{2}}{\pi n} \left(1^{n} \right)\right]+\frac{l_{2}}{\pi n}=\frac{2 l_{2}}{\pi n}$
+
+\end{center}
+
+Plugging this result in, we have
+
+\begin{center}
+
+$u(x,y)=\sum_{n=0}^{\infty} \left[\frac{2 l_{2}}{\pi n} \left(\cosh\left(\frac{n \pi}{l_{2}} x\right)\right)\right] \sin\left(\frac{n \pi}{l_{2}} y\right)$
+
+\end{center}
+
+Putting our constants back in, we have
+
+\begin{center}
+
+$u(x,y)=\sum_{n=0}^{\infty} \left[\frac{\frac{2 l_{2}}{\pi n}}{\left(\cosh\left(\frac{n \pi l_{1}}{l_{2}}\right)\right)\left(\frac{2}{L}\right)} \left(\cosh\left(\frac{n \pi}{l_{2}} x\right)\right)\right] \sin\left(\frac{n \pi}{l_{2}} y\right)$
+
+\end{center}
+
+Then, multiplying by $\frac{L}{2}$ on the top and bottom of $\frac{\frac{2 l_{2}}{\pi n}}{\left(\cosh\left(\frac{n \pi l_{1}}{l_{2}}\right)\right)\left(\frac{2}{L}\right)}$ gives
+
+\begin{center}
+
+$u(x,y)=\sum_{n=0}^{\infty} \left[\frac{\frac{l_{2} l_{1}}{\pi n}}{\left(\cosh\left(\frac{n \pi l_{1}}{l_{2}}\right)\right)} \left(\cosh\left(\frac{n \pi}{l_{2}} x\right)\right)\right] \sin\left(\frac{n \pi}{l_{2}} y\right)$
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+6) Recall that the unique electric potential formula $u(x,y)$ for when $\varphi(y)=k-{0}$ is
+
+\begin{center}
+
+$u(x,y)=\sum_{n=0}^{\infty} \left[\frac{\frac{l_{2} l_{1}}{\pi n}}{\left(\cosh\left(\frac{n \pi l_{1}}{l_{2}}\right)\right)} \left(\cosh\left(\frac{n \pi}{l_{2}} x\right)\right)\right] \sin\left(\frac{n \pi}{l_{2}} y\right) \quad (*)$
+
+\end{center}
+
+Before we proceed, let $-l_{1}=1$ and $l_{1}=1$. Now, we want to approximate twelve points. Since we want to choose points between $-1$ and $1$, then we will start with the point $(0.9,0.9)$, then $(0.85,0.85)$, then $(0.75,0.75)$, $\ldots$, till we have twelve points. We will then approximate them by plugging the points into $(*)$. 
+
+\vspace{2mm}
+
+For the point $(0.9,0.9)$:
+
+\vspace{2mm}
+
+$n=1 \implies u(0.9,0.9)=\left[\frac{\frac{(1) (1)}{\pi (1)}}{\left(\cosh\left(\frac{(1) \pi (1)}{(1)}\right)\right)} \left(\cosh\left(\frac{(1) \pi}{(1)} (0.9)\right)\right)\right] \sin\left(\frac{(1) \pi}{(1)} (0.9)\right) \approx 0.0719618$
+
+\vspace{2mm}
+
+$n=2 \implies u(0.9,0.9)=\left[\frac{\frac{(1) (1)}{\pi (2)}}{\left(\cosh\left(\frac{(2) \pi (1)}{(1)}\right)\right)} \left(\cosh\left(\frac{(2) \pi}{(1)} (0.9)\right)\right)\right] \sin\left(\frac{(2) \pi}{(1)} (0.9)\right) \approx -0.492569$
+
+\vspace{2mm}
+
+$n=3 \implies u(0.9,0.9)=\left[\frac{\frac{(1) (1)}{\pi (3)}}{\left(\cosh\left(\frac{(3) \pi (1)}{(1)}\right)\right)} \left(\cosh\left(\frac{(3) \pi}{(1)} (0.9)\right)\right)\right] \sin\left(\frac{(3) \pi}{(1)} (0.9)\right) \approx 0.330121$
+
+\vspace{2mm}
+
+$n=4 \implies u(0.9,0.9)=\left[\frac{\frac{(1) (1)}{\pi (4)}}{\left(\cosh\left(\frac{(4) \pi (1)}{(1)}\right)\right)} \left(\cosh\left(\frac{(4) \pi}{(1)} (0.9)\right)\right)\right] \sin\left(\frac{43) \pi}{(1)} (0.9)\right) \approx -0.212591$
+
+\vspace{2mm}
+
+$n=5 \implies u(0.9,0.9)=\left[\frac{\frac{(1) (1)}{\pi (5)}}{\left(\cosh\left(\frac{(1) \pi (1)}{(1)}\right)\right)} \left(\cosh\left(\frac{(5) \pi}{(1)} (0.9)\right)\right)\right] \sin\left(\frac{(5) \pi}{(1)} (0.9)\right) \approx 0.130615$
+
+\vspace{2mm}
+
+Now, from here on out, the same \textbf{exact} formula will be used. The only things that will change are the $n$ values and the $x$ and $y$ coordinates. Therefore, to save paper and prevent the student from contracting carpal tunnel syndrome, only the results from the formula will be written.
+
+\vspace{2mm}
+
+For the point $(0.85,0.85)$:
+
+\vspace{1mm}
+
+$n=1 \rightarrow \approx 0.0904704$
+$n=2 \rightarrow \approx -0.495191$
+$n=3 \rightarrow \approx 0.251582$
+$n=4 \rightarrow \approx 0.0904704$
+$n=5 \rightarrow \approx 0.0421097$
+
+\vspace{2mm}
+
+For the point $(0.8,0.8)$:
+
+\vspace{1mm}
+
+$n=1 \rightarrow \approx 0.100282$
+$n=2 \rightarrow \approx -0.425200$
+$n=3 \rightarrow \approx 0.151220$
+$n=4 \rightarrow \approx -0.0373945$
+$n=5 \rightarrow \approx 0$
+
+\vspace{2mm}
+
+For the point $(0.75,0.75)$:
+
+\vspace{1mm}
+
+$n=1 \rightarrow \approx 0.103351$
+$n=2 \rightarrow \approx -0.326562$
+$n=3 \rightarrow \approx 0.0701830$
+$n=4 \rightarrow \approx 0$
+$n=5 \rightarrow \approx -0.00875376$
+
+\vspace{2mm}
+
+For the point $(0.7,0.7)$:
+
+\vspace{1mm}
+
+$n=1 \rightarrow \approx 0.101390$
+$n=2 \rightarrow \approx -0.226863$
+$n=3 \rightarrow \approx 0.0191458$
+$n=4 \rightarrow \approx 0.0106428$
+$n=5 \rightarrow \approx -0.00564437$
+
+\vspace{2mm}
+
+For the point $(0.65,0.65)$:
+
+\vspace{1mm}
+
+$n=1 \rightarrow \approx 0.0958608$
+$n=2 \rightarrow \approx -0.140976$
+$n=3 \rightarrow \approx -0.00605018$
+$n=4 \rightarrow \approx 0.00918691$
+$n=5 \rightarrow \approx -0.00181973$
+
+\vspace{2mm}
+
+The sum for $(0.9,0.9)$ is $\approx -0.1724622$
+
+The sum for $(0.85,0.85)$ is $\approx -0.2241739$
+
+The sum for $(0.8,0.8)$ is $\approx -0.2110925$
+
+The sum for $(0.75,0.75)$ is $\approx -0.1617876$
+
+The sum for $(0.7,0.7)$ is $\approx -0.1013287$
+
+The sum for $(0.65,0.65)$ is $\approx -0.0437982$
+
+The total some for the first six points is $\approx -0.8133144$
+
+\vspace{2mm}
+
+We continue plugging in points into $(*)$. We now consider the point $(0.6,0.6)$:
+
+\begin{center}
+
+$u(0.6,0.6)=\frac{\frac{1}{\pi} \left(\cosh\left(0.6\pi\right)\right)}{\cosh(\pi)} \left(\sin(0.6\pi)\right) + \frac{\frac{1}{2\pi} \left(\cosh\left((0.6)2\pi\right)\right)}{\cosh(2\pi)} \left(\sin((2\pi)0.6)\right) + \frac{\frac{1}{3\pi} \left(\cosh\left((0.6)3\pi\right)\right)}{\cosh(3\pi)} \left(\sin((3\pi)0.6)\right) + \frac{\frac{1}{4\pi} \left(\cosh\left((0.6)4\pi\right)\right)}{\cosh(4\pi)} \left(\sin((4\pi)0.6)\right) + \frac{\frac{1}{5\pi} \left(\cosh\left((0.6)5\pi\right)\right)}{\cosh(5\pi)} \left(\sin((5\pi)0.6)\right) \approx 0.0879821-0.0748284 - 0.0141906 + 0.0049011 + 0 \approx 0.00386421$
+
+\end{center}
+
+Now, we use the point $(0.55,0.55)$:
+
+\begin{center}
+
+$u(0.6,0.6)=\frac{\frac{1}{\pi} \left(\cosh\left(0.55\pi\right)\right)}{\cosh(\pi)} \left(\sin(0.55\pi)\right) + \frac{\frac{1}{2\pi} \left(\cosh\left((0.55)2\pi\right)\right)}{\cosh(2\pi)} \left(\sin((2\pi)0.55)\right) + \frac{\frac{1}{3\pi} \left(\cosh\left((0.55)3\pi\right)\right)}{\cosh(3\pi)} \left(\sin((3\pi)0.55)\right) + \frac{\frac{1}{4\pi} \left(\cosh\left((0.55)4\pi\right)\right)}{\cosh(4\pi)} \left(\sin((4\pi)0.55)\right) + \frac{\frac{1}{5\pi} \left(\cosh\left((0.55)5\pi\right)\right)}{\cosh(5\pi)} \left(\sin((5\pi)0.55)\right) \approx 0.777117-0.0287471 - 0.0134281 + 0.00161596 + 0.7369306 \approx 0.7369306$
+
+\end{center}
+
+Using the same formulas and methodology of the proceeding two points, we can continue this processes for the following 4 points:
+
+\begin{center}
+
+$u(0.5,0.5) \approx 0.680025 + 0 - 0.00940804 + 0 + 0.000243915 \approx 0.670860875$
+
+\vspace{2mm}
+
+$u(0.45,0.45) \approx 0.582795 + 0.0153746 - 0.00523333 - 0.000459924 + 0.0000786376 \approx 0.593549836$
+
+\vspace{2mm}
+
+$u(0.4,0.4) \approx 0.489493 + 0.0214252 - 0.00215576 - 0.000397019 + 0 \approx 0.508365421$
+
+\vspace{2mm}
+
+$u(0.35,0.35) \approx 0.402765 + 0.0216619 - 0.000358442 - 0.000211828 - 0.00001634774 \approx 0.6187973826$
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+7) Recall that the electrostatic field in $\Omega$ due to the surface electric charge is given by
+
+\begin{center}
+
+$\vec{E}(x,y,z)=-\nabla(x,y,z)$
+
+\end{center}
+
+To do this, we use the points we approximated values for in question 6
+
+\end{flushleft}
+
+\pagebreak
+
+\begin{flushleft}
+
+8) I think Charlie's chimney is a very interesting mathematical problem because of the four boundary conditions. However, I think Charlie's chimney was very difficult to work with because of the fact that it had four boundary conditions when we usually only have two. I also think it is remarkable that Charlie was able to find a battery powerful enough to maintain a specific potential $\varphi=\varphi(y)$ on the left and right walls. I must say, however, I do not think it is wise that anyone is standing inside the electrostatic chimney. This seems like a safety hazard.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+9) $\frac{\partial u}{\partial t}=-\nabla u$ for $t > 0$, $(x,y,z) \in \mathbb{R}^3$
+
+\vspace{2mm}
+
+$u(x,y,z=1$ for $(x,y,z) \in \mathbb{R}^3$ is our intial condition. To show that Charlie's though experiment is ill-posed, we want to show that it doesn't meet one of our conditions for well-posedness. The condition we focus on is continuous dependence. So, our problem is finding all $u(x,y,z)$ satisfying $\frac{\partial u}{\partial t}=-\nabla t$ for $t > 0$, $(x,y,z) \in \mathbb{R}^3$. To make the problem more pleasing to the eye, let $w(x,y,z,t)$ be $u(x,y,z,t)$ for $(x,y,z) \in \mathbb{R}^3$, $t > 0$. First, we take the derivative with respect to $t$:
+
+\begin{center}
+
+$\frac{\partial w}{\partial t}=\frac{\partial u}{\partial t}$
+
+\end{center}
+
+Then, take the $2^{nd}$ partial derivative with respect to $x$, then, $y$, then $z$:
+
+\begin{center}
+
+$\frac{\partial^2 w}{\partial x^2}=\frac{\partial^2 u}{\partial x^2}$
+
+\vspace{2mm}
+
+$\frac{\partial^2 w}{\partial y^2}=\frac{\partial^2 u}{\partial y^2}$
+
+\vspace{2mm}
+
+$\frac{\partial^2 w}{\partial z^2}=\frac{\partial^2 u}{\partial z^2}$
+
+\end{center}
+
+Now, the $u-problem$ becomes
+
+\begin{center}
+
+$\frac{\partial w}{\partial t}=\frac{\partial^2 w}{\partial x^2}+\frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2}$ with $w(x,y,z,0)=1$
+
+\end{center}
+
+Now, consider $w_{0}(x,t)=1+\frac{1}{n} e^{\alpha n^{2}t} \sin(n(x+y+z))$.
+
+\begin{center}
+
+$\frac{\partial w n}{\partial t}=\frac{-n^2 t}{n e \sin(n(x+y+z))} \rvert \rvert \frac{\partial ^2 w n}{\partial x^2}=-ne^{n^{2}t} \sin(n(x+y+z))$
+
+\vspace{2mm}
+
+$\frac{\partial w n}{\partial y^2}=-n e \sin(n(x+y+z)) \rvert \rvert \frac{\partial ^2 w n}{\partial z^2}=-ne^{n^{2}t} \sin(n(x+y+z))$
+
+\end{center}
+
+So, $w_{n}$ satisfies
+
+\begin{center}
+
+\[ \begin{cases} 
+      \frac{\partial w_{n}}{\partial t}=\frac{\partial^2 w_{n}}{\partial x^2}+\frac{\partial^2 w_{n}}{\partial y^2} + \frac{\partial^2 w_{n}}{\partial z^2} \\
+      w_{n}(x,y,z,0)=1 + \frac{1}{n} \sin(n(x+y+z))
+   \end{cases}
+\]
+
+\end{center}
+
+Now, we want to compare the $w$-problem with the $u_{n}$-problem. Since they are the same differential equation, we compare the initial conditions
+
+\begin{center}
+
+$\abs{w_{n}(x,y,z,0)-w(x,y,z,0)}=\abs{\frac{1}{n} \sin(n(x+y+z))}$
+
+\vspace{2mm}
+
+$\hspace*{43mm} \leq \frac{1}{n} \abs{\sin(n(x+y+z))}$
+
+\vspace{2mm}
+
+$\hspace*{37mm} \leq \frac{1}{n} \rightarrow 0$ as $n \rightarrow 0$
+
+\end{center}
+
+Then, compare the solutions of the $w_{n}$-function to the $w$-functions:
+
+\begin{center}
+
+$\abs{w_{n}(x,y,z,t)-w_{0}(x,y,z,t)}=\abs{1 + \frac{1}{n} e^{n^{2} t} \sin(n(x+y+z))-1}$
+
+\vspace{2mm}
+
+$\hspace*{33mm} \leq \frac{1}{n} e^{n^{2} t} \abs{\sin(n(x+y+z))}$
+
+\vspace{2mm}
+
+$\hspace*{14mm} \leq \frac{1}{n} e^{n^{2} t} \rightarrow \infty$
+
+\end{center}
+
+Thus, in conclusion, for $n$ that is really, really, really big, the initial conditions are close, but the solutions $w$ and $w_{n}$ are very far apart. Therefore, the problem is ill-posed.
+
+\end{flushleft}
+
+\pagebreak
+
+\begin{flushleft}
+
+10) We can interpret our results for the ill-posed problem using the following schematic diagrams for the initial conditions function space and solutions space, respectively:
+
+\vspace{120mm}
+
+These diagrams show that in the initial conditions space, the $w$ initial conditions are pretty close to the $w_{n}$ initial conditions. We can observe this by following the arrows. However, in the solution space, we can see that the $w$ solutions get progressively farther away from the $w_{n}$ solutions as $n$ increases. If we follow the arrows, we have $w$, then $w_{n}$, where $n=1$, then $w_{n}$, where $n=2$, and so on. As $n$ increases, $w$ and $w_{n}$ get farther and farther apart. This is the reason that the problem is ill-posed.
+
+\end{flushleft}
+
+\end{document}

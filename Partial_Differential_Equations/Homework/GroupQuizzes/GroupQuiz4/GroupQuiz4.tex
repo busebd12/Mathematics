@@ -1,0 +1,163 @@
+\documentclass[executivepaper]{article}
+
+\usepackage{fancyhdr}
+
+\usepackage{mathtools}
+
+\usepackage{amssymb}
+
+\usepackage{kantlipsum,graphicx}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{commath}
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\vspace*{-40mm}
+
+\begin{center}
+
+Group Quiz 4
+
+\end{center}
+
+\begin{flushright}
+
+Brendan Busey
+
+\end{flushright}
+
+\begin{flushleft}
+
+1) We want to show that $u_{1}(x,t) \leq u_{2}(x,t) {~} \forall {~} (x,t) \in \Omega_{LT}$
+
+\vspace{3mm}
+
+So, we begin by letting $\Big(\hat{x}, \hat{t}\Big)$ be a maximizer of $u_{1}(x,t)$ on the ``edges", and $u_{2}(x,t)$ be the maximum value on the ``edges." So, $u_{1}(x,t) \leq u_{2}(x,t) {~} \forall {~} (x,t)$ on the ``edges." Our goal is to show that the above claim holds $\forall {~} (x,t) \in \Omega_{LT}$. As with many proofs, let $\epsilon > 0$ be a fixed constant. Then, define $v(x,t)=u_{1}(x,t)+\epsilon x^2$ on $\Omega_{LT}$. Next, we want to establish some derivative relationships. Taking derivatives with respect to $x$ and $t$ for our $v(x,t)$ function, we have
+
+\begin{center}
+
+$\frac{\partial v}{\partial t}=\frac{\partial u}{\partial t} \quad$ and $\quad \frac{\partial^2 u}{\partial x^2}=\frac{\partial^2 u}{\partial x^2}+2 \epsilon$
+
+\end{center}
+
+Then, if we substitute correctly the above derivatives into our diffusion equation, we have 
+
+\begin{center}
+
+$\frac{\partial v}{\partial t}-D\frac{\partial^2 v}{\partial x^2}=\frac{\partial u}{\partial t}-D\bigg[\frac{\partial^2 u}{\partial x^2}+2\epsilon\bigg]$
+
+\vspace{3mm}
+
+$\frac{\partial v}{\partial t}-D\frac{\partial^2 v}{\partial x^2}=\frac{\partial u}{\partial t}-D\frac{\partial^2 u}{\partial x^2}-2D\epsilon$
+
+\vspace{3mm}
+
+$\frac{\partial v}{\partial t}-D\frac{\partial^2 v}{\partial x^2}=-2D\epsilon$
+
+\end{center}
+
+So, we now know that $\frac{\partial v}{\partial t}-D\frac{\partial^2 v}{\partial x^2} < 0 {~} \forall (x,t) \in \Omega_{LT}$.
+
+\vspace{3mm}
+
+Now, suppose $v(x,t)$ attains a maximum at an interior point $(x_{0},t_{0})$ of $\Omega_{LT}$ where $0 < x_{0} < L$, $0 < x_{0} < L$. If we apply Fermat's theorem, we get
+
+\begin{center}
+
+$\frac{\partial v}{\partial t}\Big(x_{0}, t_{0}\Big)=0 \quad$ and $\quad \frac{\partial v}{\partial x}\Big(x_{0}, t_{0}\Big)$
+
+\end{center}
+
+We also know that $\frac{\partial^2 v}{\partial x^2}\Big(x_{0}, t_{0}\Big) \leq 0$, so our function will be concave down. Next, plugging in what we have just discovered back into our diffusion equation, we arrive at
+
+\begin{center}
+
+$\frac{\partial v}{\partial t}\Big(x_{0}, t_{0}\Big)-D\frac{\partial^2 v}{\partial x^2}\Big(x_{0}, t_{0}\Big) \geq 0$
+
+\end{center}
+
+Which contradicts the earlier diffusion inequality we established. So, $v(x,t)$ cannot attain a maximum at an interior point. 
+
+\vspace{5mm}
+
+Next, consider the case where a maximizer, call it $\Big(x_{0}, t_{)}\Big)$, of $\Big(x,t)\Big)$ lies on the ``top edge", where $0 < x_{0} < L$ and $t=t_{0}$. Again, if we apply Fermat's theorem, we have
+
+\begin{center}
+
+$\frac{\partial v}{\partial x}\Big(x_{0}, t_{0}\Big)=0 \quad$ and $\quad \frac{\partial^2 v}{\partial x^2}\Big(x_{0}, t_{0}\Big) \leq 0 \quad$ and $\quad \frac{\partial v}{\partial t}\Big(x_{0}, t_{0}\Big) \geq 0$
+
+\end{center}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+Plugging in what we have just derived into our diffusion equation, we get
+
+\begin{center}
+
+$\frac{\partial v}{\partial x}\Big(x_{0}, t){0}\Big)-D\frac{\partial^2 v}{\partial x^2}\Big(x_{0}, t_{0}\Big) \geq 0$,
+
+\end{center}
+
+which is yet another contradiction to our diffusion inequality established at the beginning of the problem. So, $v(x,t)$ cannot attain a maximum at the ``top edge" either.
+
+\vspace{5mm}
+
+Therefore, the maximizer $\Big(x_{0}, t_{0}\Big)$ of $v(x,t)$ on the domain $\Omega_{LT}$ must be on the remaining ``edges." So, $v(x,t) \leq v\Big(x_{0}, t_{0}\Big) {~} \forall {~} (x,t) \in \Omega_{LT}$. So, $u(x,t) \leq v(x,t) \leq v\Big(x_{0}, t_{0}\Big) \leq u_{2}(x,t)+\epsilon(L)^2 {~} \forall {~} (x,t) \in \Omega_{LT}$. Thus, $u_{1}(x,t) \leq u_{2}(x,t)+\epsilon(L)^2 {~} \forall {~} (x,t) \in \Omega_{LT}$. Finally, if you consider $\epsilon \rightarrow 0$, then $u_{1}(x,t) \leq u_{2}(x,t) {~} \forall {~} (x,t) \in \Omega_{LT}$.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+2) For $u(x,0)$ and $u_{2}(x,0)$, since time is zero in both of these cases, we are only looking at values along the $x-axis$. However, from our work in question number one, we know that the $x-axis$ is one of the ``edges" where $u_{1}(x,t) \leq u_{2}(x,t) {~} \forall (x,t) \in$ the domain $\Omega_{LT}$. So, using the notation $\phi_{1}(x)$ and $\phi_{2}(x)$, we can write that $\phi_{1}(x) \leq \phi_{2}(x) \in$ our domain $\Omega_{LT}$.
+
+\vspace{5mm}
+
+Next, if we consider the first boundary condition(s)
+
+\begin{center}
+
+\[
+  \begin{cases} 
+   u_{1}(0,t)=g_{1}(t) \\
+   u_{1}(L,t)=h_{1}(t)
+  \end{cases}
+\]
+
+\end{center}
+
+We see that $u_{1}(0,t)=g_{1}(t)$ represents the concentration of the kool aid along the ``left" boundary (of the $t-axis$) as time progresses, and $u_{1}(L,t)=h_{1}(t)$ represents the concentration of kool aid along the ``right" boundary in our $x,t$ plane as time progresses.
+
+\vspace{5mm}
+
+If we then look at the secondary boundary condition(s) with the same lens as for the first boundary condition(s)
+
+\begin{center}
+
+\[
+  \begin{cases} 
+   u_{2}(0,t)=g_{2}(t) \\
+   u_{2}(L,t)=h_{2}(t)
+  \end{cases}
+\]
+
+\end{center}
+
+$u_{2}(0,t)=g_{2}(t)$ represents the concentration of the kool aid along the ``left" boundary (or the $t-axis$) as time progresses, and $u_{2}(L,t)=h_{2}(t)$ represents the concentration of kool aid along the ``right" boundary in our $x,t$ plane as time increases.
+
+\vspace{5mm}
+
+If we recall the conclusion we came to in question number one, that $u_{1}(x,t) \leq u_{2}(x,t)$, and think about it in the context of the initial conditions, then as time progresses, we know that $g_{1}(t)$ and $h_{1}(t)$ will increase at a rate less than or equal to $g_{2}(t)$ and $h_{2}(t)$. Physically, this corresponds to the concentration of kool aid in our experiment one increasing at a rate within the tube less than or equal to that of our experiment two along the left and right ``edges" in our $x,t$ plane over our domain $\Omega_{LT}$.
+
+\end{flushleft}
+
+\end{document}

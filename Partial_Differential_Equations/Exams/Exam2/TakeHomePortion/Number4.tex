@@ -1,0 +1,170 @@
+\documentclass[12pt, executivepaper]{article}
+\usepackage{mathtools}
+\usepackage{outlines}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{commath}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\everymath{\displaystyle}
+
+\begin{document}
+
+\vspace*{-40mm}
+
+\begin{flushleft}
+
+4) Let the \textit{Diffusion Equation} $\frac{\partial u}{\partial t}=D\frac{\partial^2 u}{\partial x^2}$ be given as defined. \\
+
+\begin{proof}
+
+First, suppose that solutions are of the form $u=u(x,t)$. After moving things around, we have
+
+\begin{center}
+
+$\frac{\partial u}{\partial t}-D\frac{\partial^2 u}{\partial x^2}=0$
+
+\end{center} 
+
+Now, multiply $\frac{\partial u}{\partial t}-D\frac{\partial^2 u}{\partial x^2}=0$ through by $u$ to get
+
+\begin{center}
+
+$u \frac{\partial u}{\partial t}-Du \frac{\partial^2 u}{\partial x^2}=0$
+
+\end{center}
+
+Now, before continuing, we note the following
+
+\vspace{2mm}
+
+\begin{center}
+
+$\frac{\partial}{\partial t} \bigg[\frac{1}{2} u^2\bigg]=u \bigg(\frac{\partial u}{\partial t}\bigg)$
+
+\end{center}
+
+Also,
+
+\begin{center}
+
+$\frac{\partial}{\partial x} \bigg[-Du \bigg(\frac{\partial u}{\partial x}\bigg) \bigg]=-Du \frac{\partial^2 u}{\partial x^2} -D \bigg(\frac{\partial u}{\partial x}\bigg)^2$
+
+\vspace{2mm}
+
+$\frac{\partial}{\partial x} \bigg[-Du \bigg(\frac{\partial u}{\partial x}\bigg) \bigg]+D \bigg(\frac{\partial u}{\partial x}\bigg)^2=-Du \frac{\partial^2 u}{\partial x^2}$
+
+\end{center}
+
+Okay, now, $u \frac{\partial u}{\partial t}-Du \frac{\partial^2 u}{\partial x^2}=0$ becomes
+
+\begin{center}
+
+$\frac{\partial}{\partial t} \bigg[\frac{1}{2} u^2\bigg] + \frac{\partial}{\partial x} \bigg[-Du \bigg(\frac{\partial u}{\partial x}\bigg) \bigg] + D \bigg(\frac{\partial u}{\partial x}\bigg)^2=0$
+
+\end{center}
+
+Then, we integrate over the interval $0 < x < L$ to get
+
+\begin{center}
+
+$\int_{0}^{L} \frac{\partial}{\partial t} \bigg[\frac{1}{2} u^2\bigg] \ dx + \int_{0}^{L} \frac{\partial}{\partial x} \bigg[-Du \bigg(\frac{\partial u}{\partial x}\bigg)\bigg] \ dx + D \int_{0}^{L} \bigg(\frac{\partial u}{\partial x}\bigg)^2 \ dx=0$
+
+\end{center}
+
+After using the \textit{Fundamental Theorem of Calculus}, we have
+
+\begin{center}
+
+$\frac{d}{dt}\int_{0}^{L} \frac{1}{2} u^2 \ dx + \bigg[-Du \bigg(\frac{\partial u}{\partial x}\bigg)\bigg] \Big|_{x=0}^{x=L}+ D \int_{0}^{L} \bigg(\frac{\partial u}{\partial x}\bigg)^2 \ dx=0$
+
+\end{center}
+
+Now, if we evaluate the middle term from $x=0$ to $x=L$, we can see that it becomes
+
+\begin{center}
+
+$-Du(L,t) \frac{\partial u}{\partial x}(L,t) + Du(0,t) \frac{\partial u}{\partial x}(0,t)$
+
+\end{center}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+So, now we have the following
+
+\begin{center}
+
+$\frac{d}{dt}\int_{0}^{L} \frac{1}{2} u^2 \ dx + \bigg(-Du(L,t) \frac{\partial u}{\partial x}(L,t) + Du(0,t) \frac{\partial u}{\partial x}(0,t)\bigg)+ D \int_{0}^{L} \bigg(\frac{\partial u}{\partial x}\bigg)^2 \ dx=0$
+
+\end{center}
+
+Next, remembering that our boundary conditions are
+
+\begin{center}
+
+$-\frac{\partial u}{\partial x}(0,t) + b_{0}u(0,t)=0 \quad$ and $\quad \frac{\partial u}{\partial x}(L,t) + b_{L} u(L,t)$
+
+\end{center}
+
+if we rearrange things a bit, we get
+
+\begin{center}
+
+$-\frac{\partial u}{\partial x}(0,t)=-b_{0}u(0,t) \quad$ and $\quad \frac{\partial u}{\partial x}(L,t)=-b_{L} u(L,t)$
+
+\end{center}
+
+So, upon comparing $-Du(L,t) \frac{\partial u}{\partial x}(L,t) + Du(0,t) \frac{\partial u}{\partial x}(0,t)$ with 
+
+\begin{center}
+
+$-\frac{\partial u}{\partial x}(0,t)=-b_{0}u(0,t)$ and $\frac{\partial u}{\partial x}(L,t)=-b_{L} u(L,t)$
+
+\end{center}
+
+we can substitute using the boundary conditions giving us
+
+\begin{center}
+
+$Du(L,t) b_{L} u(L,t) + Du(0,t) b_{0}u(0,t)$
+
+\end{center}
+
+So, at this point, we have
+
+\begin{center}
+
+$\frac{d}{dt}\int_{0}^{L} \frac{1}{2} u^2 \ dx + \bigg(Du(L,t) b_{L} u(L,t) + Du(0,t) b_{0}u(0,t)\bigg)+ D \int_{0}^{L} \bigg(\frac{\partial u}{\partial x}\bigg)^2 \ dx=0$
+
+\end{center}
+
+Okay, now, if we note that both the second and third term have a $D$ term that we can factor out, after combing terms, we have
+
+\begin{center}
+
+$\frac{d}{dt}\int_{0}^{L} \frac{1}{2} u^2 \ dx + D\bigg[u(L,t) b_{L} u(L,t) + u(0,t) b_{0}u(0,t) + \int_{0}^{L} \bigg(\frac{\partial u}{\partial x}\bigg)^2 \ dx\bigg]=0$
+
+\end{center}
+
+Then, if we move things around, we have
+
+\begin{center}
+
+$\frac{d}{dt}\int_{0}^{L} \frac{1}{2} u^2 \ dx=-D\bigg[u(L,t) b_{L} u(L,t) + u(0,t) b_{0}u(0,t) + \int_{0}^{L} \bigg(\frac{\partial u}{\partial x}\bigg)^2 \ dx\bigg] \leq 0$
+
+\end{center}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+Thus, the function $F(t)=\frac{d}{dt} \int_{0}^{L} \frac{1}{2} u(x,t)^2 \ dx$ by the above expression is a decreasing function.
+
+\end{proof}
+
+\end{flushleft}
+
+\end{document}

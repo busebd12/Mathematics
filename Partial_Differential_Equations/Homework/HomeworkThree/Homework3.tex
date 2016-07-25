@@ -1,0 +1,320 @@
+\documentclass[executivepaper]{article}
+
+\usepackage{mathtools}
+
+\usepackage{amssymb}
+
+\usepackage{kantlipsum,graphicx}
+
+\usepackage{amsmath}
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\vspace*{-40mm}
+
+\begin{center}
+
+Homework Three 
+
+\end{center}
+
+\begin{flushright}
+
+Brendan Busey
+
+Math 352
+
+\end{flushright}
+
+\begin{flushleft}
+
+1) Recall that the general solution to the wave equation is given by:
+
+\begin{center}
+
+$u(x,t)=\frac{1}{2} \big[\psi(x-\nu t)+\psi(x+\nu t)\big] + \frac{1}{2\nu} \int_{x-\nu t}^{x+\nu t} \psi(s) \ ds$
+
+\end{center}
+
+Now, we are given that $\psi=0$, so we can remove the first term, giving us:
+
+\begin{center}
+
+$u(x,t)=\frac{1}{2\nu} \int_{x-\nu t}^{x+\nu t} \psi(s) \ ds$
+
+\end{center}
+
+Based on the definition on $\psi$ given, we know that the integral is only non-zero if it is greater than or equal to $-L$ or less than or equal to $L$. In other words, $x-\nu t < L < x+\nu t$, $x-\nu t < -L < x+\nu t$, or both. So, considering our point $x_{0}$, we arrive the following function: 
+
+\begin{center}
+
+\[
+ u(x_{0},t)=
+  \begin{cases} 
+      \hfill 0    \hfill & \text{ if $L < x_{0}-\nu t$} \\[1em]
+      
+      \hfill \frac{1}{2\nu} \int_{x_{0}-\nu t}^{L} 1 \ ds \hfill & \text{ if $-L < x_{0}-\nu t < L < x_{0}+\nu t$} \\[2em]
+      
+      \hfill \frac{1}{2\nu} \int_{-L}^{L} 1 \ ds \hfill & \text{ if $x_{0}-\nu t < -L < L < x_{0}+\nu t$}
+  \end{cases}
+\]
+
+\end{center}
+
+Now, if we actually integrate the integrals in $u(x_{0},t)$, we get:
+
+\begin{center}
+
+\[
+ u(x_{0},t)=
+  \begin{cases}
+      \hfill 0    \hfill & \text{ if $L < x_{0}-\nu t$} \\[1em]
+      
+      \hfill \frac{L-x_{0}+\nu t}{2\nu} \hfill & \text{ if $-L < x_{0}-\nu t < L < x_{0}+\nu t$} \\[1em]
+      
+      \hfill \frac{L}{\nu} \hfill & \text{ if $x_{0}-\nu t < -L < L < x_{0}+\nu t$}
+  \end{cases}
+\]
+
+\end{center}
+
+\end{flushleft}
+
+\vspace{3mm}
+
+\begin{flushleft}
+
+2) Because $L < x_{0}$, the first time you feel the sledgehammer is when $L=x_{0}-\nu t$ since that is when the integral of $\psi$ will be non-zero. Then, if we solve for $t$, we have:
+
+\begin{center}
+
+$L=x_{0}-\nu t$
+
+\vspace{1mm}
+
+$L+\nu t=x_{0}$
+
+\vspace{1mm}
+
+$\nu t=x_{0}-L$
+
+\vspace{1mm}
+
+$t=\frac{x_{0}-L}{\nu}$
+
+\end{center}
+
+\end{flushleft}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{flushleft}
+
+3)The point reaches its maximum the when the integral of $\psi$ stops increasing since there will be no more thin slices of area under the wave allowing for any more increasing to take place. When the $\psi$ integral stops increasing, then we know the left end of the wave that is traveling to the right has passed $x_{0}$. In other words, $x_{0}-\nu t=-L$. Solving for t gives: 
+
+\begin{center}
+
+$x_{0}-\nu t=-L$
+
+\vspace{1mm}
+
+$x_{0}=-L+\nu t$
+
+\vspace{1mm}
+
+$x_{0}+L=\nu t$
+
+\vspace{1mm}
+
+$\frac{x_{0}+L}{\nu}=t$
+
+\end{center}
+
+Then, the maximum height is given by the following expression:
+
+\begin{center}
+
+$\frac{1}{2\nu} \int_{-L}^{L} 1 \ ds=\frac{1}{2\nu} 2L=\frac{L}{\nu}$
+
+\end{center}
+
+After this point, this interval $(-L, L)$ is encompassed by $(x-\nu t, x+\nu t)$, which are the limits of integration for \textit{d'Almbert's} formula. So, we end up integrating over the entire region $(-L,L)$, and no, the point does not ever ``come back down."
+
+\end{flushleft}
+
+\begin{flushleft}
+
+4) Since our friend is touching the wave at $7x_{0}$, we can use the same formula we derived in number two:
+
+\begin{center}
+
+$t=\frac{x_{0}-L}{\nu}$
+
+\end{center}
+
+Now, with the addition of the seven, the above becomes
+
+\begin{center}
+
+$t=\frac{7x_{0}-L}{\nu}$, which is the number of time units until the friend feels the wave
+
+\end{center}
+
+Using the same logic, it will take 
+
+\begin{center}
+
+$t=\frac{7x_{0}+L}{\nu}$ time units to reach the maximum height.
+
+\end{center}
+
+When we integrate to get the maximum height, since seven is just a constant, we can pull it out and so the height will still be $\frac{L}{\nu}$
+
+\end{flushleft}
+
+\begin{flushleft}
+
+5) For $-x_{0}$, simply multiply through by a negative one in $u(x_{0},t)$, which gives:
+
+\begin{center}
+
+\[
+ u(-x_{0},t)=
+  \begin{cases}
+      \hfill 0    \hfill & \text{ if $-x_{0}-\nu t < -L$} \\[1em]
+      
+      \hfill \frac{L-x_{0}+\nu t}{2\nu} \hfill & \text{ if $-L < x_{0}-\nu t < L < -x_{0}$} \\[1em]
+      
+      \hfill \frac{L}{\nu} \hfill & \text{ if $L < -x_{0}+\nu t$}
+  \end{cases}
+\]
+
+\end{center}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+By the same logic, $-7x_{0}$ is: 
+
+\begin{center}
+
+\[
+ u(-7x_{0},t)=
+  \begin{cases}
+      \hfill 0    \hfill & \text{ if $-7x_{0}-\nu t < -L$} \\[1em]
+      
+      \hfill \frac{L-x_{0}+\nu t}{2\nu} \hfill & \text{ if $-L < -7x_{0}-\nu t < L < -x_{0}$} \\[1em]
+      
+      \hfill \frac{L}{\nu} \hfill & \text{ if $L < -7x_{0}+\nu t$}
+  \end{cases}
+\]
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+6) Well, from my past experience with hitting metallic cables with sledge-hammers, the kinetic energy that you expend hitting the cable with the hammer will be transferred to the wave that results, giving it its traverse velocity, $\psi(x)$. Now, looking at the movement of the wave through a mathematical lens, as time increases and the wave moves along the $x-axis$ in our $xt$ plane in a left-to-right manner from its point of origin, the phase velocity, $\psi(x)$, will change depending on where the wave is during its traversal of the metallic cable. If the wave is either ``to the left'' of the region $-L \leq x \leq L$ (i.e. $x < -L$) or ``to the right" (i.e. $x > L$) of the region $-L \leq x \leq L$, then $\psi(x)$ will be zero. However, when our wave satisfies the condition of $-L < x < L$, then we know that the phase velocity will be non-zero. Finally, switching back to the ``physical" side of things, as time increases we know that the frequency at which the wave oscillates will eventually return back to zero as both the potential and kinetic energy of the wave dissipate. 
+
+\end{flushleft}
+
+\begin{flushleft}
+
+7 )Let $p_{0} \in \mathbb R$ satisfying $0 < p_{0} < L$ be given. Since $p_{0}$ is contained within our region $(-L,L)$ and thus the initial wave, we have to take into consideration both the left and right moving wave fronts. Now, we know that $\varphi=0$, so that will remove the firs term from \textit{d'Almbert's} formula. Also, since we are considering our point $p_{0}$ on a non-zero interval, from our piece-wise definition, $\psi$ will equal one. Putting this all together, we have
+
+\begin{center}
+
+\[
+ u(p_{0},t)=
+  \begin{cases}
+      \hfill \frac{1}{2\nu} \int_{p_{0}-\nu t}^{p_{0}+\nu t} 1 \ ds  \hfill & \text{ if $-L < -p_{0}-\nu t < p_{0}+\nu t < -L$} \\[1em]
+      
+      \hfill \frac{1}{2\nu} \int_{p_{0}-\nu t}^{L} 1 \ ds \hfill & \text{ if $-L < -p_{0}-\nu t < L < p_{0}+\nu t$} \\[1em]
+      
+      \hfill \frac{1}{2\nu} \int_{-L}^{L} 1 \ ds \hfill & \text{ if $-p_{0}-\nu t < -L < p_{0}+\nu t$}
+  \end{cases}
+\]
+
+\end{center}
+
+Next, if one calculates the integrals, you have
+
+\begin{center}
+
+\[
+ u(p_{0},t)=
+  \begin{cases}
+      \hfill t  \hfill & \text{ if $-L < -p_{0}-\nu t < p_{0}+\nu t < L$} \\[1em]
+      
+      \hfill \frac{L-p_{0}-\nu t}{2\nu} \hfill & \text{ if $-L < -p_{0}-\nu t < L < p_{0}+\nu t$} \\[1em]
+      
+      \hfill \frac{L}{\nu} \hfill & \text{ if $-p_{0}-\nu t < -L < p_{0}+\nu t$}
+  \end{cases}
+\]
+
+\end{center}
+
+\end{flushleft}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{flushleft}
+
+8) Using the same argument as in number five, the astute reader can see that $-p_{0}$ will be
+
+\begin{center}
+
+\[
+ u(-p_{0},t)=
+  \begin{cases}
+      \hfill t  \hfill & \text{ if $-L < -p_{0}-\nu t < -p_{0}+\nu t < L$} \\[1em]
+      
+      \hfill \frac{L-p_{0}+\nu t}{2\nu} \hfill & \text{ if $-p_{0}-\nu t <-L < -p_{0}+\nu t < L$} \\[1em]
+      
+      \hfill \frac{L}{\nu} \hfill & \text{ if $-p_{0}-\nu t < -L < L < -p_{0}+\nu t$}
+  \end{cases}
+\]
+
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+9) Suppose we zoom specifically on the region $(-L, L)$ and consider points $p_{0} \in \mathbb R$ within this region. Then, if we recall our piece-wise function for the any point $p_{0}$ (after integration):
+
+\begin{center}
+
+\[
+ u(p_{0},t)=
+  \begin{cases}
+      \hfill t  \hfill & \text{ if $-L < -p_{0}-\nu t < p_{0}+\nu t < L$} \\[1em]
+      
+      \hfill \frac{L-p_{0}-\nu t}{2\nu} \hfill & \text{ if $-L < -p_{0}-\nu t < L < p_{0}+\nu t$} \\[1em]
+      
+      \hfill \frac{L}{\nu} \hfill & \text{ if $-p_{0}-\nu t < -L < p_{0}+\nu t$}
+  \end{cases}
+\]
+
+\end{center}
+
+we can see that any for point $p_{0}$ within this region, its position will increase with a slope of one since the function satisfying this condition is linear (i.e. $u(p_{0}, t)=t$). However, when the first wavefront passes the point and is now ``straddling" our region, if you will, then the position of the point will then continue to increase linearly, but with a slope of one-half instead of one. Finally, when the second wavefront passes the point and causing the wave to pass beyond the region $(-L, L)$, then the slope of the position will switch to $\frac{L}{\nu}$ and remain here. 
+
+\end{flushleft}
+
+\begin{flushleft}
+
+10) It is important to distinguish between the mathematical picture and the physical picture because of the two different views on the wave equation problem that they present. While the physical picture gives a more intuitive and visual representation of what's happening as the wave moves along the metallic cable with respect to features of the wave such as amplitude, frequency, and phase velocity, the techniques we use in order to form the mathematical picture such as derivatives, integrals, etc. tell a more concrete and analytic story both in this case and in other physical situations.
+
+\end{flushleft}
+
+\end{document}

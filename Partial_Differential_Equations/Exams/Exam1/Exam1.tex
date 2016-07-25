@@ -1,0 +1,306 @@
+\documentclass[executivepaper]{article}
+
+\usepackage{mathtools}
+
+\everymath{\displaystyle}
+
+\usepackage{amssymb}
+
+\usepackage{kantlipsum,graphicx}
+
+\usepackage{amsmath}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{commath}
+
+\begin{document}
+
+\vspace*{-40mm}
+
+\begin{center}
+
+Exam 1
+
+\end{center}
+
+\begin{flushright}
+
+Brendan Busey
+
+\end{flushright}
+
+\begin{flushleft}
+
+1) The zero function is not an eigenfunction because by definition, an eigenfunction is any non-zero function $f$ defined on some function space that, in that space, returns from its linear operator just as is, and obviously, the zero function is not non-zero.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+3) Looking at plot of the $\lambda$-axis with the eigenvalues, for each eigenvalue, there will be an associated eigenfunction that comes along for the ride. If you pick an arbitrary eigenvalue and plug it in to the given differential equation, then the associated eigenfunction that that chosen eigenvalue satisfies both the differential equation itself as well as the boundary conditions for the differential equation. So, for any eigenvalue, the PDE will have as solutions, the eigenfunction and the trivial solution On the other hand, if you don't choose an eigenvalue, then when you plug that eigenvalue into the differential equation, the boundary conditions as well as the differential equation will not be satisfied since there is no associated eigenfunction because the value that was chosen was not an eigenvalue to begin with. Thus, for this case, the PDE will only have the unique solution of the zero function.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+4) To show that the \textit{Dirichlet-Laplacian eigenfunctions} are $L^2-orthogonal$, first suppose that $u$ is a solution to the differential equation given. Then, we multiply the differential equation by $w \in C^2(0,L)$ and integrate, giving:
+
+\begin{center}
+
+$\int u''(x) \ dx=-\lambda \int_{0}^{L_{1}} u(x)w \ dx$
+
+\end{center}
+
+Next, consider $\int_{0}^{L_{1}} u(x)w \ dx$. Our goal is to move the $\frac{d^2}{dx^2}$ from the $u$ to the $w$. Then, we have:
+
+\begin{center}
+
+$\int_{0}^{L_{1}} u''(x)w \ dx=\int_{0}^{L_{1}} wu''(x) \ dx$
+
+\vspace{2mm}
+
+$\int_{0}^{L_{1}} u''(x)w \ dx=wu' \Big|_0^{L_{1}} - \int_{0}^{L_{1}} w'u'(x) \ dx$
+
+\vspace{2mm}
+
+$\int_{0}^{L_{1}} u''(x)w \ dx=wu' \Big|_0^{L_{1}} - \bigg[ w'u(x) \Big|_0^{L_{1}} - \int_{0}^{L_{1}} u(x)w'' \ dx \bigg]$
+
+\end{center}
+
+Then, if we re-write $\int_{0}^{L_{1}} u''(x)w \ dx$ as 
+
+\begin{center}
+
+$\int_{0}^{L_{1}} u''(x)w \ dx=\int_{0}^{L_{1}} u''(x)w \ dx + \bigg[wu''(x)-w'u'(x)\bigg]\Big|_0^{L_{1}}$
+
+\end{center}
+
+poof, we get \textit{Lagrange's Identity}
+
+\vspace{3mm}
+
+Then, if we take $u=u_{n,D}$ and $w=u_{m,D}$ as distinct eigenfunctions, we get
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{center}
+
+$\int_{0}^{L_{1}} u''(x)_{n,D} u(x)_{m,D} \ dx=\int_{0}^{L_{1}} u(x)_{n,D} u(x)''_{m,D} \ dx + [0]$
+
+\vspace{2mm}
+
+$\lambda_{n,D} \int_{0}^{L_{1}} u(x)_{n,D} u(x)_{m,D} \ dx=\lambda_{m,D} \int_{0}^{L_{1}} u(x)_{n,D} u(x)_{m,D} \ dx$
+
+\vspace{2mm}
+
+$\bigg(\lambda_{n,D}-\lambda_{m,D}\bigg) \int_{0}^{L_{1}} u(x)_{n,D} u(x)_{m,D} \ dx=0$, which leads to
+
+\vspace{2mm}
+
+$\int_{0}^{L_{1}} u(x)_{n,D} u(x)_{m,D} \ dx=0$
+
+\end{center}
+
+which gives us that the \textit{Dirichlet-Laplacian eigenfunctions} are $L^2-orthogonal$. As for the boundary conditions, they are used in the limits of integration.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+5) To find the $L^2-norm$, we have to integrate the following: 
+
+\begin{center}
+
+$\int_{0}^{L_{1}} \sin^2\bigg(\frac{n \pi x}{L_{1}}\bigg) \ dx$
+
+\end{center}
+
+Looking at $\int_{0}^{L_{1}} \sin^2\bigg(\frac{n \pi x}{L_{1}}\bigg) \ dx$, we have:
+
+\begin{center}
+
+$\int_{0}^{L_{1}} \frac{1-\cos\bigg(\frac{n \pi x}{L_{1}}\bigg)}{2} \ dx$ by the identity $sin^2(x)=\frac{1-\cos(2x)}{2}$
+
+\end{center}
+
+Then, we have
+
+\begin{center}
+
+$\int_{0}^{L_{1}} 1 \ dx - \int_{0}^{L_{1}} \cos\bigg(\frac{n \pi x}{L_{1}}\bigg) \ dx$
+
+\vspace{2mm}
+
+$\int_{0}^{L_{1}} \cos\bigg(\frac{n \pi x}{L_{1}}\bigg) \ dx=L_{1}\sin\bigg(\frac{n \pi x}{L_{1}}\bigg) \big |_0^{L_{1}}$
+
+\vspace{2mm}
+
+$L_{1}\sin\bigg(\frac{n \pi L_{1}}{L_{1}}\bigg) - \sin\bigg(\frac{n \pi (0)}{L_{1}}\bigg)$
+
+\vspace{2mm}
+
+$\frac{L_{1}\sin\bigg(\frac{n \pi L_{1}}{L_{1}}\bigg)}{n \pi} -\frac{L_{1}\sin(0)}{n \pi})$
+
+\vspace{2mm}
+
+$\frac{L_{1}\sin\bigg(\frac{n \pi L_{1}}{L_{1}}\bigg)}{n \pi}-0=\frac{L_{1}\sin\bigg(\frac{n \pi L_{1}}{L_{1}}\bigg)}{n \pi}=\frac{L_{1}\sin(n \pi)}{n \pi}$
+
+\vspace{2mm}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+6) Let $u_{1},{D}=\sin\bigg(\frac{(1)\pi x}{L_{1}}\bigg)=\sin\bigg(\frac{\pi x}{L_{1}}\bigg)$
+
+\vspace{2mm}
+
+Then,
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{center}
+
+\[
+ p(x+\nu t)=
+  \begin{cases}
+      \hfill 0    \hfill & \text{ if $x+\nu t < 0$} \\[1em]
+      
+      \hfill u_{1,D}(x+\nu t) \hfill & \text{ if $0 \leq x+\nu t \leq L_{1}$} \\[1em]
+      
+      \hfill 0 \hfill & \text{ if $x+\nu t > 0$}
+  \end{cases}
+\]
+
+\end{center} 
+
+and 
+
+\begin{center}
+
+\[
+ p(x-\nu t)=
+  \begin{cases}
+      \hfill 0    \hfill & \text{ if $x+\nu t < 0$} \\[1em]
+      
+      \hfill u_{1,D}(x-\nu t) \hfill & \text{ if $0 \leq x-\nu t \leq L_{1}$} \\[1em]
+      
+      \hfill 0 \hfill & \text{ if $x+\nu t > 0$}
+  \end{cases}
+\]
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+7) Looking at our diagram, we can see that for $x < -\nu t$, there is no wave so this piece will be equal to zero. Next, we look at the piece where $-\nu t \leq x \leq \nu t$. The slope of the graph is $\sin(\frac{\pi}{L_{1}} (x+\nu t))$. Then, jumping ahead to where $L_{1}-\nu t \leq x < L_{1}$, the shape of the graph is $\sin(\frac{\pi}{L_{1}} (x-\nu t))$. We next see that for $x \geq L_{1}+\nu t$, the shape of the graph is again, zero. Here, the tricky part is where the bounds are $\nu t \leq x < L_{1}+\nu t$, we have two $\sin$ graphs. We have to combine the two $\sin$ equations into one. Putting this altogether and making note of the fact that $\psi=0$, we have
+
+\begin{center}
+
+\[
+ u(x,t_{1})=
+  \begin{cases}
+      \hfill 0  \hfill & \text{ if $x < -\nu t_{1}$} \\[1em]
+      
+      \hfill \sin\bigg(\frac{\pi}{L_{1}} (x+\nu t_{1})\bigg) \hfill & \text{ if $-\nu t_{1} \leq x < \nu t_{1}$} \\[1em]
+      
+      \hfill \frac{1}{2} \bigg[\sin\bigg(\frac{\pi}{L_{1}} (x+\nu t_{1})\bigg)+\sin\bigg(\frac{\pi}{L_{1}} (x-\nu t_{1})\bigg)\bigg] \hfill & \text{ if $\nu t{-1} \leq x < L_{1}+\nu t_{1}$} \\[1em]
+      
+      \hfill \sin(\frac{\pi}{L_{1}} (x-\nu t_{1})) \hfill & \text{ if $L_{1}-\nu t_{1} \leq x < L_{1}+\nu t_{1}$} \\[1em]
+      
+      \hfill 0 \hfill & \text{ if $x \geq L_{1}+\nu t_{1}$}
+  \end{cases}
+\]
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+9) By a similar argument as in question seven, we define $u(x,t_{2})$ as a piecewise function, with each piece being the region where $u(x,t_{2})$ has a different graphical representation. Looking at the schematic diagram, we see that our piecewise function is defined as
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{center}
+
+\[
+ u(x,t_{2})=
+  \begin{cases}
+      \hfill 0  \hfill & \text{ if $x < -\nu t_{2}$} \\[1em]
+      
+      \hfill \sin\bigg(\frac{\pi}{L_{1}} (x+\nu t_{2})\bigg) \hfill & \text{ if $-\nu t_{2} \leq x < 2\nu t_{2}$} \\[1em]
+      
+      \hfill \sin\bigg(\frac{\pi}{L_{1}} (x-\nu t_{2})\bigg) \hfill & \text{ if $2\nu t < x < L_{1}+2\nu t_{2}$} \\[1em]
+      
+      \hfill 0 \hfill & \text{ if $x > L_{1}+\nu t_{2}$}
+  \end{cases}
+\]
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+10) By a similar derivation as in numbers seven and nine, our formula for $(u,t_{3})$ will be piecewise and is defined as the following
+
+\begin{center}
+
+\[
+ u(x,t_{3})=
+  \begin{cases}
+      \hfill 0  \hfill & \text{ if $x < -\nu t_{3}$} \\[1em]
+      
+      \hfill \sin\bigg(\frac{\pi}{L_{1}} (x+\nu t_{3})\bigg) \hfill & \text{ if $-\nu t_{3} < x < L_{1}-\nu t_{3}$} \\[1em]
+      
+      \hfill 0  \hfill & \text{ if $L_{1}-\nu t_{3} \leq x \leq \nu t_{3}$} \\[1em]
+      
+      \hfill \sin\bigg(\frac{\pi}{L_{1}} (x-\nu t_{3})\bigg) \hfill & \text{ if $\nu t_{3} < x < L_{1}+L_{1}+\nu t_{3}$} \\[1em]
+      
+      \hfill 0 \hfill & \text{ if $x > L_{1}+\nu t_{3}$}
+  \end{cases}
+\]
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+11) After we pluck the cable and as time increases, we notice several changes to the wave. When $t > 0$ and as the wave moves from left-to-right, the wave begins with a slope of zero since the phase-velocity is given to be zero when the position is negative. Then, once the wave is between positions $0$ and $L_{1}$, the slope changes to one of a $\sin$ curve. Then, once the wave passes beyond the $L_{1}$ boundary, the slope returns to zero. With respect to the physical picture, this is going through the stages of the rising and falling of the wave when time is zero. Next, when $t_{1} > 0$ and the condition that $\nu t_{1} < L_{1}-\nu t$ is satisfied we see something interesting occurring. Because of the $\nu t_{1} < L_{1}-\nu t$ condition, the right-hand side of the wave is shifted to the left by a factor of $\nu t_{1}$ and the left-hand side of the wave is shifted to the right by a factor of $\nu t_{1}$, causing the two parts of the wave to cross each other as described by the $\frac{1}{2} \bigg[\sin\bigg(\frac{\pi}{L_{1}} (x+\nu t_{1})\bigg)+\sin\bigg(\frac{\pi}{L_{1}} (x-\nu t_{1})\bigg)\bigg]$ in the piecewise function derived in question seven. Considering the situation with $t_{2} > t_{1}$ and $\nu t_{2}=L_{1}-\nu t_{2}$, if we do some algebra, we find that $L_{1}=2\nu t$. If we apply this result to the schematic diagram, the gap under the two crossing waves that we had when $t_{1} > 0$, completely closes up since the two points at $\nu t_{2}$ and $L_{1}-\nu t_{2}$ are equal and become one. As a result, the wave takes on a shape similar to that of the letter $m$. Although it may not seem like it at first, the wave is in fact continuous, but at the "middle part" of the m-shape, the function representing the wave is not differentiable, however. Finally, in the case where $t_{3} > 1$ and the condition of $L_{1}-\nu t_{3} < \nu t_{3}$ satisfied, the wave continues to surprise us by this time the right-hand side and the left-hand side moving so far apart that we now have two separate waves. 
+
+\pagebreak
+
+\vspace*{-40mm}
+
+The left-most wave is described by the curve $\sin\bigg(\frac{\pi}{L_{1}} (x+\nu t_{3}\bigg)$, the right-most wave described by $\sin\bigg(\frac{\pi}{L_{1}} (x-\nu t_{3})\bigg)$, and any other parts of the wave are zero.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+12) The approaches to homework three and this assignment differed in several ways. First off, on homework three we focused on looking at different points along the wave and what was occurring at those different points. On the other hand, here we looked at different time intervals subject to specific conditions, and how those impacted both the movement and shape of the wave in our schematic diagrams. Another minor difference is that in this assignment we were considering the physical and mathematical effect of plucking the cable, while in homework three, we were noting the physical and mathematical effects of hitting the cable with a sledgehammer. Finally, this assignment put a greater emphasis on the the impact of eigenvalues and how they related to the existence and uniqueness of solutions for PDE's, which homework three made no mention of.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+13) Mathematically, most if not all of the equations would be the same except that they would have a two in them instead of a one. Also, with the addition of the two, this will cause the oscillation of the sinusoidal curve to increase which corresponds, physically, the the frequency of the wave increasing. Finally, the physical impact use of the second \textit{Dirichlet-Laplacian eigenfunction} is like we plucked the cable multiple times instead of just once.
+
+\end{flushleft}
+
+Note: see attached papers for the schematic diagrams as well as question two.
+
+\end{document}

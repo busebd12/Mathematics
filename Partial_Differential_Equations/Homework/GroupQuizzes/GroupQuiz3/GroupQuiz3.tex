@@ -1,0 +1,311 @@
+\documentclass[executivepaper]{article}
+
+\usepackage{mathtools}
+
+\usepackage{amssymb}
+
+\usepackage{kantlipsum,graphicx}
+
+\usepackage{amsmath}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{commath}
+
+\usepackage{amsmath}
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\vspace*{-40mm}
+
+\begin{center}
+
+Group Quiz 3
+
+\end{center}
+
+\begin{flushright}
+
+Brendan Busey
+
+\end{flushright}
+
+\begin{flushleft}
+
+1) Let $u(x,t)=2L^2-x^2-2Dt$ be given. In order to show that $u(x,t)$ satisfies the diffusion equation, we have to show the relationship $\frac{\partial u}{\partial t}=D\frac{\partial^2 u}{\partial x^2}$. So, if we take a first derivative with respect to $t$, we have
+
+\begin{center}
+
+$\frac{\partial u}{\partial t}=-2D$
+
+\end{center}
+
+Then, we take the second derivative with respect to $x$ to get
+
+\begin{center}
+
+$\frac{\partial^2 u}{\partial x^2}=-2$
+
+\end{center}
+
+So, we have
+
+\begin{center}
+
+$\frac{\partial u}{\partial t}=D\frac{\partial^2 u}{\partial x^2}$
+
+\vspace{1mm}
+
+$-2D=D(-2)$
+
+\vspace{1mm}
+
+$-2D=-2D$
+
+\end{center}
+
+Thus, we have shown that $u(x,t)$ satisfies the diffusion equation, as desired.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+2) Since the initial concentration of kool aid is at when time $t=0$ and the general concentration of kool aid is given by the function $u(x,t)=2L^2-x^2-2Dt$, we plug in $t=0$ for $u(x,t)$ to get
+
+\begin{center}
+
+$u(x,0)=2L^2-x^2$
+
+\end{center}
+
+So, our $\varphi$ function is $\varphi(x)=2L^2-x^2$
+
+\end{flushleft}
+
+\begin{flushleft}
+
+3) Due to the \textit{Weak Maximum Principle} and the \textit{Weak Minimum Principle} for the diffusion equation, we know that only the ``corners" need to be considered. So, if we define these ``corner cases" using the functions $u(0,t)$, $u(x,0)$, and $u(L,t)$, then we have the following
+
+\begin{center}
+
+For $u(0,t)$, $u(0,t)=2L^2-2Dt$, which we consider on the domain $\Omega_{0 < t < T}$
+
+\vspace{3mm}
+
+For $u(x,0)$, $u(x,0)=2L^2-x^2$, which we consider on the domain $\Omega_{0 < x < L}$
+
+\vspace{3mm}
+
+For $u(L,t)$, $u(L,t)=L^2-2Dt$, which we consider on the domain $\Omega_{0 < t < T}$
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+4) To find the minimum and maximum values, we employ tools from Calc I and take the derivative of each of our edge functions with respect to their single-variables. 
+
+\begin{center}
+
+For $u(0,t)=2L^2-2Dt$, we have
+
+\vspace{3mm}
+
+$\frac{du}{dt}=-2D$
+
+\pagebreak
+
+\vspace*{-40mm}
+
+If we set $\frac{du}{dt}$ equal to zero and solve, we get $-2D=0 \implies D=0$. Because we are given that $D > 0$, we know that the minimum or maximum cannot be on this edge, so we consider the corners $(0,0)$ and $(0,T)$ as the critical points.
+
+\vspace{3mm}
+
+Next, we look at $u(x,0)=2L^2-x^2$. Taking the derivative and solving, we get
+
+\vspace{3mm}
+
+$\frac{du}{dx}=-2x$
+
+\vspace{3mm}
+
+$-2x=0 \implies x=0$
+
+\vspace{3mm}
+
+So, the critical point we get $(0,0)$. We also consider the other corner for this edge, which is $(L,0)$
+
+\vspace{3mm}
+
+Finally, we consider $u(L,t)=L^2-2Dt$:
+
+\vspace{3mm}
+
+$\frac{du}{dt}=-2D$
+
+\vspace{3mm}
+
+So, we know that $-2D \neq 0$ because we are given that $D > 0$. Therefore, the only critical points we consider for this edge are the corners, which are $(L,0)$ and $(L,t)$
+
+\vspace{5mm}
+
+\begin{tabular}{||c c||} 
+ \hline
+ $(x,y)$ & Critical Value  \\ [0.5ex] 
+ \hline\hline
+ $(0,0)$ & $2L^2-2(0)(0)=2L^2$ \\ 
+ \hline
+ $(0,T)$ & $2L^2-2D(T)=2L^2-2DT$ \\
+ \hline
+ $(L,0)$ & $2L^2-L^2=L^2$ \\
+ \hline
+ $(L,T)$ & $L^2-2D(T)=L^2-2DT$ \\[1ex]
+ \hline
+\end{tabular}
+
+\vspace{5mm}
+
+So, by the \textit{Weak Maximum Principle} and the \textit{Weak Minimum Principle}, we do not consider the top edge. So, the minimizer and maximizer only lie on the bottom and lateral edges.
+Looking at the above table, since both $T$ and $D$ are greater than zero, we know that the maximum value will be $\alpha=2L^2$ and the maximizer will be $\Big(\tilde{x}, \tilde{t}\Big)=(0,0)$, while the minimum value will be $\beta=L^2$ and the minimizer will be $\Big(\hat{x}, \hat{t}\Big)=(L,T)$.
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+5) If we look at the attached, associated schematic diagram for this question, we note that the diagram shows that the function $u(x,t)$ attains a minimum at $(0,0)$ and attains a maximum at $(L,T)$. Also, it would seem that $u(x,t)$ is increasing on the domain $\Omega_{L,T}$
+
+\end{flushleft}
+
+\begin{flushleft}
+
+6) To find the points of minimum and maximum concentration of kool aid in the tube of length $L$ at time $t_{1}$, we do the following:
+
+\begin{center}
+
+First, plug in $t_{1}$ into $u(x,t)$ to get $u(x,t_{1})=2L^2-x^2-2Dt_{1}$. Taking the derivative with respect to $x$, we get
+
+\vspace{3mm}
+
+$\frac{du}{dx}=-2x$
+
+\vspace{3mm}
+
+$-2x=0 \implies x=0$
+
+\vspace{3mm}
+
+Plugging in the value of x into $u(x,t_{1})$, we get
+
+\pagebreak
+
+\vspace*{-40mm}
+
+$u(x,t_{1})=2L^2-(0)^2-2Dt_{1}$
+
+\vspace{3mm}
+
+$u(x,t_{1})=2L^2-2Dt_{1}$
+
+\vspace{3mm}
+
+We also have to consider the corners $(0,0)$ and $(L,t_{1})$. But, we have already done $(0,0)$, so we just have $(L,t_{1})$ left. Looking at $(L,t_{1})$ we have 
+
+\vspace{3mm}
+
+$u(L,t_{1})=2L^2-L^2-2Dt_{1}=L^2-2Dt_{1}$
+
+\vspace{3mm}
+
+Now, if we take the derivative with respect to $L$, we get $\frac{du}{dL}=2L$. Solving for $L$, we have $2L=0 \implies L=0$.
+
+\vspace{3mm}
+
+If we plug the value of $L$ back into the $u(L, t_{1})$ function, we get
+
+\vspace{3mm}
+
+$u(0, t_{1})=(0)^2-2Dt_{1}=-2Dt_{1}$
+
+\vspace{3mm}
+
+Thus, the points of maximum and minimum concentration are $(0,0)$ and $(0,L)$ and $\alpha(t_{1})=-2Dt_{1}$ and $\beta(t_{1})=L^2-2Dt_{1}$
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+7) Using the formula $\alpha=L^2-2DT$, we first set $\alpha=0$ since this is where the minimum value equals zero. Then, we solve
+
+\begin{center}
+
+$L^2-2DT=0$
+
+\end{center}
+
+For $T$ to find the specific $T_{0}$ value
+
+\begin{center}
+
+$L^2-2DT=0$
+
+\vspace{3mm}
+
+$2DT=L^2$
+
+\vspace{3mm}
+
+$T=\frac{L^2}{2D}$
+
+\end{center}
+
+So, as the physical parameters change, so will the length of the tube. As the tube length shrinks, the time for the minimum concentration of kool aid will take place earlier, and as the tube length increases, the time for the maximum concentration of kool aid will happen later.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+8) Although we are given a function $u(x,t)$ that describes the concentration of kool aid for a time $t$ at a point $x$, we do not know the rate at which the kool aid disperses throughout the tube as time increases. Also, for the point in time $t_{2}$ we are interested in, we are given no information about the position that is associated with it. So, If we consider a point in time, in this case $t_{2}$, that is greater than the time when the concentration of kool aid is at it's minimum, then because this point is in the future, we don't have any information about the concentration of kool aid will look like at that point in time since we have no information on how the kool aid disperses over time in the tube or an associated position that is goes with it. Since the latter is an actual variable of the function $u(x,t)$, then $u(x,t)$ would not be a good tool to describe the concentration of kool aid in the tube for a time $t_{2} > T_{0}$.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+9) In order to test to see if a function is increasing or decreasing along an interval, we have to consider the function's derivative.
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{center}
+
+$\alpha(T)=L^2-2Dt$
+
+\vspace{3mm}
+
+Now, after taking the first derivative of $\alpha$, we have,
+
+\vspace{3mm}
+
+$\frac{d\alpha}{dT}=-2D$
+
+\end{center}
+
+As the reader can see, the above derivative is negative and so $\alpha$ will be decreasing as a function of $T$ with $0 < T \leq T_{0}$. For the kool aid `experiment', this means that 
+
+\end{flushleft}
+
+\begin{flushleft}
+
+10) After some deep and thoughtful reconsideration of the information we have obtained about the functions $u(0,t)$, $u(x,0)$, and $u(L,t)$, one can see that the concentration of the kool aid within the tube changes over time. 
+The function $u(x,0)$ represents the dispersion of the kool aid throughout the whole entire tube when we consider time to be zero. For the function $u(0,t)$, since the position within the tube is held constant at $0$, this function represents how the concentration of kool aid changes over time at that specific position within the tube. Finally, for $u(L,t)$, this functions shows how the concentration of the kool aid changes over time at the `corner case' L. So, together, these functions give a picture of how the concentration of the kool aid changes as time increases over our entire $0 < x < L$ interval.
+
+\end{flushleft}
+
+\end{document}

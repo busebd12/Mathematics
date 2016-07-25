@@ -1,0 +1,1030 @@
+\documentclass[executivepaper]{article}
+
+\usepackage{mathtools}
+
+\everymath{\displaystyle}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{kantlipsum,graphicx}
+
+\usepackage{amsmath}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{sectsty}
+
+\usepackage{float}
+
+\usepackage{commath}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{adjustbox}
+
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\rhead{Madison Hoff and Brendan Busey}
+
+\lhead{Group Quiz 5}
+
+\rfoot{Page \thepage}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\renewcommand{\footrulewidth}{1pt}
+
+%\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\begin{document}
+
+\begin{flushleft}
+
+1) Let the differentiable equation $f''(x)+\lambda f(x)=0$ be given and let $g(x)$ be a twice differentiable function. \\ 
+
+\begin{proof}
+
+Now, multiply $f''(x)+\lambda f(x)=0$ by $g(x)$ to obtain
+
+\begin{center}
+
+$f''(x)g(x)+\lambda f(x)g(x)=0$
+
+\end{center}
+
+Now, we want to integrate $f''(x)g(x)+\lambda f(x)g(x)=0$ by parts. But, before we do, let use the \textit{properties of integrals} to obtain
+
+\begin{center}
+
+$\int_{0}^{L} f''(x)g(x) \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+Okay, first, consider the case where $\lambda > 0$. Next, integrate $\int_{0}^{L} f''(x)g(x) \ dx$ by parts
+
+\begin{center}
+
+$u=g(x)$ $\quad$ $du=g''(x)$ $\quad$ $dv=f''(x)$ $\quad$ $v=\int f''(x)=f'(x)+c$
+
+\vspace{2mm}
+
+$\int_{0}^{L} f''(x)g(x)= \bigg[g(x)f'(x)\bigg] \bigg|_{0}^{L} - \int_{0}^{L} f'(x)g'(x) \ dx$
+
+\end{center}
+
+Substituting in for $\int_{0}^{L} f''(x)g(x) \ dx$, we have
+
+\begin{center}
+
+$\int_{0}^{L} f''(x)g(x) \ dx + \int_{0}^{L} \lambda f(x)g(x)=0$
+
+\vspace{2mm}
+
+$=\bigg[g(x)f'(x)\bigg]_{0}^{L} - \int_{0}^{L} f'(x)g'(x) \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+Now, if we use $f_{n,N}'(x)=-\sqrt{\lambda_{n,D}} f_{n,D}(x)$, and $g_{n,M}'(x)=-\sqrt{\lambda_{m,D}} f_{m,D}(x)$, we get
+
+\begin{center}
+
+$\bigg[g(x) (-\sqrt{\lambda_{n,D}} f_{n,D}(x))\bigg]_{0}^{L} - \int_{0}^{L} -\sqrt{\lambda_{n,D}} f_{n,D}(x) \cdot -\sqrt{\lambda_{m,D}} f_{m,D}(x) \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+Then, making the substitution $f(x)=f_{n,N}(x)$ and $g(x)=f_{m,N}(x)$, we have
+
+\begin{center}
+
+$\bigg[f_{m,N}(x) (-\sqrt{\lambda_{n,D}} f_{n,D}(x))\bigg]_{0}^{L} - \int_{0}^{L} -\sqrt{\lambda_{n,D}} f_{n,D}(x) \cdot -\sqrt{\lambda_{m,D}} f_{m,D}(x) \ dx + \int_{0}^{L} \lambda f_{n,N}(x)f_{m,N}(x) \ dx=0$
+
+\end{center}
+
+Simplifying, we have
+
+\begin{center}
+
+$\bigg[f_{m,N}(x) (-\sqrt{\lambda_{n,D}} f_{n,D}(x))\bigg]_{0}^{L} -(\sqrt{\lambda_{n,D}} \cdot \sqrt{\lambda_{m,D}}) \int_{0}^{L} f_{n,D}(x) \cdot  f_{m,D}(x) \ dx + \int_{0}^{L} \lambda f_{n,N}(x)f_{m,N}(x) \ dx=0$
+
+\end{center}
+
+Since we know that the \textit{Dirichlet-Laplacian} eigendata inner-product is zero, the
+
+\begin{center}
+
+$(\sqrt{\lambda_{n,D}} \cdot \sqrt{\lambda_{m,D}}) \int_{0}^{L} f_{n,D}(x) \cdot  f_{m,D}(x) \ dx$
+
+\end{center}
+
+term will be zero, leaving us with
+
+\begin{center}
+
+$\bigg[f_{m,N}(x) (-\sqrt{\lambda_{n,D}} f_{n,D}(x))\bigg]_{0}^{L} + \int_{0}^{L} \lambda f_{n,N}(x)f_{m,N}(x) \ dx=0$
+
+\end{center}
+
+Now, if you evaluate $-\sqrt{\lambda_{n,D}} f_{n,D}(x)$ from $0$ to $L$, we know that by the properties of \textit{Dirichlet-Laplacian} eigendata, this term will go to zero. This leaves us with
+
+\begin{center}
+
+$\int_{0}^{L} \lambda f_{n,N}(x)f_{m,N}(x) \ dx=0$
+
+\vspace{2mm}
+
+$=\lambda \int_{0}^{L} f_{n,N}(x)f_{m,N}(x) \ dx=0$
+
+\vspace{2mm}
+
+$=\int_{0}^{L} f_{n,N}(x)f_{m,N}(x) \ dx=0$
+
+\end{center}
+
+as desired.
+
+\vspace{5mm}
+
+Now, we turn our attention to calculating the \textit{norm} for the \textit{Neumann-Laplacian} eigenfunction(s). First, let the differentiable equation $f''(x)+\lambda f(x)=0$ be given and let $g(x)$ be a twice differentiable function. Now, multiply $f''(x)+\lambda f(x)=0$ by $g(x)$ to obtain
+
+\begin{center}
+
+$f''(x)g(x)+\lambda f(x)g(x)=0$
+
+\end{center}
+
+Now, we want to integrate $f''(x)g(x)+\lambda f(x)g(x)=0$ by parts. But, before we do, let's use the properties of integrals to obtain
+
+\begin{center}
+
+$\int_{0}^{L} f''(x)g(x) \ dx +\int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+Next, we integrate $\int_{0}^{L} f''(x)g(x) \ dx$ by parts
+
+\begin{center}
+
+$u=g(x) \quad du=g'(x) \quad dv=f''(x) \quad v=\int f''(x)=f'(x)+c$
+
+\end{center}
+
+We can now re-write $\int_{0}^{L} f''(x)g(x) \ dx$ as
+
+\begin{center}
+
+$\int_{0}^{L} f''(x)g(x) \ dx=\bigg[g(x)f'(x)\bigg]_{0}^{L} - \int_{0}^{L} f'(x)g'(x) \ dx$
+
+\end{center}
+
+If we then substitute in for  $\int_{0}^{L} f''(x)g(x) \ dx$, we have
+
+\begin{center}
+
+$\int_{0}^{L} f''(x)g(x) \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\vspace{2mm}
+
+$=\bigg[g(x)f'(x)\bigg]_{0}^{L} - \int_{0}^{L} f'(x)g'(x) \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+Now, if we use $f'_{n, N}(x)=-\sqrt{\lambda_{n, D}} f_{n, D}$ and $g'_{n, N}(x)=-\sqrt{\lambda_{n, D}} f_{n, D}$, we have
+
+\begin{center}
+
+$\bigg[g(x) (\sqrt{\lambda_{n, D}} f_{n, D}(x))\bigg]_{0}^{L} - \int_{0}^{L} - \sqrt{\lambda_{n, D}} f_{n, D}(x) \cdot \sqrt{\lambda_{n, D}} \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+If we evaluate $\sqrt{\lambda_{n, D}} f_{n, D}(x)$ from $0$ to $L$, we know that by the properties of \textit{Dirichlet-Laplacian} eigendata, this term will go to zero, leaving us with
+
+\begin{center}
+
+$- \int_{0}^{L} - \sqrt{\lambda_{n, D}} f_{n, D}(x) \cdot \sqrt{\lambda_{n, D}} \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+Then, if we factor our constants, we have
+
+\begin{center}
+
+$-(-\sqrt{\lambda_{n, D}})(-\sqrt{\lambda_{n, D}}) \int_{0}^{L} f_{n,D}(x) f_{n, D}(x) \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+Then, if we combine our integrals, we have
+
+\begin{center}
+
+$-(-\sqrt{\lambda_{n, D}})(-\sqrt{\lambda_{n, D}}) \int_{0}^{L} f_{n,D}(x) f_{n, D}(x) +  \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+Dividing out our constants, we find
+
+\begin{center}
+
+$\int_{0}^{L} f_{n,D}(x) f_{n, D}(x) \ dx +  \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+Re-expanding our integrals, we have
+
+\begin{center}
+
+$-\int_{0}^{L} f_{n,D}(x) f_{n, D}(x) \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\vspace{2mm}
+
+$\implies \int_{0}^{L} \lambda f(x)g(x) \ dx=\int_{0}^{L} f_{n,D}(x) f_{n, D}(x) \ dx$
+
+\vspace{2mm}
+
+$\implies \int_{0}^{L} \lambda f(x)g(x) \ dx=\sqrt{\frac{L}{2}},  ~ since ~ we ~ know ~ that ~ \norm{f_{n,D}}=\sqrt{\frac{L}{2}} $
+
+\end{center}
+
+Finally, making the substitution $f(x)=f){n, N}(x)$ and $g(x)=f_{n, N}(x)$, we have
+
+\begin{center}
+
+$\int_{0}^{L} \lambda f(x)g(x) \ dx=\sqrt{\frac{L}{2}}$, as desired.
+
+\end{center}
+
+\end{proof}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+2) 
+\begin{proof}
+
+First, we begin by supposing that the solution $f(x)$ has the specific form $f(x)=e^{kx}$, so $f''(x)=k^2e^{kx}$. We then plug-in $f(x)$ and $f''(x)$ into our ODE giving us
+
+\begin{center}
+
+$k^2e^{kx}+\lambda e^{kx}=0$
+
+\end{center}
+
+Next, we factor our the $e^{kx}$ term, leaving us with
+
+\begin{center}
+
+$e^{kx}\bigg[k^2+\lambda \bigg]=0$
+
+\end{center}
+
+Which simplifies to
+
+\begin{center}
+
+$k^2+\lambda=0$, which is our \textit{auxiliary equation}
+
+\end{center}
+
+Now, we want to consider the case where $\lambda < 0$, or when $\lambda$ is strictly negative. Using the auxiliary equation $k^2+\lambda=0$, we solve for $k$
+
+\begin{center}
+
+$k=\pm \sqrt{-\lambda}$, when $\lambda < 0$
+
+\end{center}
+
+This gives us the following solutions
+
+\begin{center}
+
+$v_{1}(x)=e^{\sqrt{-\lambda} x}$ $\quad$ and $\quad$ $v_{2}(x)=e^{-\sqrt{-\lambda} x}$
+
+\end{center}
+
+We save showing linear independence for later and instead, impose our \textit{mixed-boundary} conditions
+
+\begin{center}
+
+$v_{1}(x)=e^{\sqrt{-\lambda} x}$ $\quad$ and $\quad$ $v_{2}(x)=e^{-\sqrt{-\lambda} x}$
+
+\vspace{2mm}
+
+$v_{1}(0)=e^{\sqrt{-\lambda} (0)}$ $\quad$ and $\quad$ $v_{2}(x)=e^{-\sqrt{-\lambda} (0)}$
+
+\vspace{2mm}
+
+$v_{1}(0)=e^{0}$ $\quad$ and $\quad$ $v_{2}(x)=e^{0}$
+
+\vspace{2mm}
+
+$v_{1}(0)=1 \neq 0$ $\quad$ and $\quad$ $v_{2}(x)=1 \neq 0$
+
+\end{center}
+
+Therefore, neither $v_{1}(x)$ nor $v_{2}(x)$ are eigenfunctions because they do not satisfy the \textit{mixed-boundary} conditions
+
+\vspace{5mm}
+
+Moving on, we consider the case where $\lambda=0$. When $\lambda=0$, our ODE becomes $f''(x)=0$. We can solve for $f(x)$ by integrating twice
+
+\begin{center}
+
+$f'(x)=c_{1}$
+
+$f''(x)=c_{1}x+c_{2}$
+
+\end{center}
+
+This gives us the following two solutions
+
+\begin{center}
+
+$h_{1}(x)=x$ $\quad$ and $\quad$ $h_{2}(x)=1$
+
+\end{center}
+
+Now, we impose our \textit{mixed-boundary} conditions
+
+\begin{center}
+
+$h_{1}(x)=x$ $\quad$ and $\quad$ $h_{2}(x)=1$
+
+\vspace{2mm}
+
+$h_{1}(0)=0$ $\quad$ and $\quad$ $h_{2}(0)=1 \neq 0$
+
+\vspace{2mm}
+
+$h_{1}(1)=1 \neq 0$
+
+\end{center}
+
+Therefore, neither $h_{1}(x)$ or $h_{2}(x)$ are eigenfunctions because they don't satisfy our \textit{mixed-boundary} conditions
+
+\vspace{5mm}
+
+Finally, we consider the case where $\lambda > 0$, or $\lambda$ is strictly positive. Using the previously calculated equation, $k^2+\lambda=0$, we solve for $k$
+
+\begin{center}
+
+$k=\pm \sqrt{-\lambda}$ $\quad$ or $\quad$ $k=\pm i\sqrt{\lambda}$
+
+\end{center}
+
+So, we obtain the solutions
+
+\begin{center}
+
+$u_{1}(x)=e^{i\sqrt{\lambda} x}$ $\quad$ and $\quad$ $u_{2}(x)=e^{-i\sqrt{\lambda} x}$
+
+\end{center}
+
+However, we only want real valued solutions. So, we use \textit{Euler's formula}
+
+\begin{center}
+
+$\tilde{u}_{1}(x)=\frac{1}{2} \bigg[u_{1}(x) + u_{2}(x)\bigg]$
+
+\vspace{2mm}
+
+$\tilde{u}_{1}(x)=\frac{1}{2} \bigg[\cos\bigg(\sqrt{\lambda} x\bigg) + i\sin\bigg(\sqrt{\lambda x}\bigg) + \cos\bigg(\sqrt{-\lambda x}\bigg) + i\sin\bigg(\sqrt{-\lambda x}\bigg)\bigg]$
+
+\vspace{2mm}
+
+$\tilde{u}_{1}(x)=\cos\bigg(\sqrt{\lambda x}\bigg)$
+
+\vspace{2mm}
+
+$\tilde{u}_{2}(x)=\frac{1}{2i} \bigg[\cos\bigg(\sqrt{\lambda} x\bigg) + i\sin\bigg(\sqrt{\lambda x}\bigg) - \cos\bigg(\sqrt{-\lambda x}\bigg) + i\sin\bigg(\sqrt{-\lambda x}\bigg)\bigg]$
+
+\vspace{2mm}
+
+$\tilde{u}_{2}(x)=\sin\bigg(\sqrt{\lambda x}\bigg)$
+
+\end{center}
+
+Now, we want to impose our \textit{mixed-boundary} conditions
+
+\begin{center}
+
+$\tilde{u}_{1}(x)=\cos\bigg(\sqrt{\lambda x}\bigg)$ $\quad$ $\tilde{u}_{2}(x)=\sin\bigg(\sqrt{\lambda x}\bigg)$
+
+\vspace{2mm}
+
+$\tilde{u}_{1}(0)=1 \neq 0$ $\quad$ $\tilde{u}_{2}(x)=\sin(0)=0$
+
+\end{center}
+
+Because  $\tilde{u}_{2}(x)=\sin\bigg(\sqrt{\lambda x}\bigg)$ satisfies our first boundary condition, we want to make it so that $\tilde{u}_{2}'(L)=0$. So
+
+\begin{center}
+
+$\sqrt{\lambda} \cos\bigg(\sqrt{\lambda} L\bigg)=0$
+
+\end{center}
+
+Solving for $\lambda$, we have
+
+\begin{center}
+
+$\sqrt{\lambda} \cos\bigg(\sqrt{\lambda} L\bigg)=0$
+
+\vspace{2mm}
+
+$\cos\bigg(\sqrt{\lambda} L\bigg)=0$
+
+\vspace{2mm}
+
+$\cos^{-1}\Bigg(\cos\bigg(\sqrt{\lambda L}\bigg)\Bigg)=\cos^{-1}(0)$
+
+\end{center}
+
+So, $(\lambda L)=(2n-1)\frac{\pi}{2}$, where $2n-1$ are odd numbers. So, $\lambda=\bigg(\frac{(n \pi - \frac{\pi}{2})}{L}\bigg)^2,  ~ \forall ~ n \in \mathbb{N}$
+
+Therefore, our \textit{DN-Laplacian} eigenvalues are denoted as:
+
+\begin{center}
+
+$\lambda_{n, DN}=\bigg(\frac{(n \pi - \frac{\pi}{2})}{L}\bigg)^2, ~ \forall ~ n \in \mathbb{N}$
+
+\end{center}
+
+Thus, our \textit{DN-Laplacian} eigenfunctions are
+
+\begin{center}
+
+$f_{n,DN}(x)=\sin\bigg(\frac{(n \pi - \frac{\pi}{2})}{L} x\bigg), ~ \forall ~ n \in \mathbb{N}$
+
+\end{center}
+
+\end{proof}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+3)
+
+\begin{proof}
+
+First, we suppose that the solutions are of the form $y(x)=e^{kx}$. Now, we have already demonstrated the derivation of our \textit{auxiliary equation} in the previous question, so we will not repeat that work again here. So, using our previously obtained \textit{auxiliary equation}
+
+\begin{center}
+
+$k^2+\lambda=0$
+
+\end{center}
+
+and the work shown in the previous question, we know that our two solutions are
+
+\begin{center}
+
+$y_{1}(x)=e^{\sqrt{-\lambda} x}$ $\quad$ and $\quad$ $y_{2}(x)=e^{-\sqrt{-\lambda} x}$
+
+\end{center}
+
+Now, to apply our \textit{mixed-boundary conditions}, we take some derivatives
+
+\begin{center}
+
+$y_{1}'(x)=\sqrt{-\lambda} e^{\sqrt{-\lambda} x}$ $\quad$ and $\quad$ $y_{2}'(x)=-\sqrt{-\lambda} e^{\sqrt{-\lambda} x}$
+
+\end{center}
+
+Applying our \textit{mixed-boundary conditions}, we have
+
+\begin{center}
+
+$y_{1}'(x)=\sqrt{-\lambda} e^{\sqrt{-\lambda} x}$ $\quad$ and $\quad$ $y_{2}'(x)=-\sqrt{-\lambda} e^{\sqrt{-\lambda} x}$
+
+\vspace{2mm}
+
+$y_{1}'(0)=\sqrt{-\lambda} e^{\sqrt{-\lambda} (0)}$ $\quad$ and $\quad$ $y_{2}'(0)=-\sqrt{-\lambda} e^{\sqrt{-\lambda} (0)}$
+
+\vspace{2mm}
+
+$0=\sqrt{-\lambda}$ $\quad$ and $\quad$ $0=-\sqrt{-\lambda}$
+
+\end{center}
+
+Therefore, neither $y_{1}(x)$ nor $y_{2}(x)$ are eigenfunctions since they do not satisfy our \textit{mixed-boundary conditions}
+
+\vspace{5mm}
+
+Moving on, we consider the case where $\lambda=0$. Plugging-in $\lambda=0$, our ODE becomes $f''(x)=0$. The astute reader might also notice that we have done the work to derive our solutions
+
+\begin{center}
+
+$h_{1}(x)=x$ $\quad$ and $\quad$ $h_{2}(x)=1$
+
+\end{center}
+
+in the previous question, so we won't repeat said work here. Again, in order to apply our \textit{mixed-boundary conditions}, we will have to calculate some derivatives
+
+\begin{center}
+
+$h_{1}(x)=x$ $\quad$ and $\quad$ $h_{2}(x)=1$
+
+\vspace{2mm}
+
+$h_{1}'(x)=1$ $\quad$ and $\quad$ $h_{2}'(x)=0$
+
+\end{center}
+
+Applying our \textit{mixed-boundary conditions}, we find that
+
+\begin{center}
+
+$h_{1}'(x)=1$ $\quad$ and $\quad$ $h_{2}'(x)=0$
+
+\vspace{2mm}
+
+$h_{1}'(0)=1$ $\quad$ and $\quad$ $h_{2}'(0)=0$
+
+\end{center}
+
+Therefore, $h_{2}(x)$ is the only solution that satisfies our \textit{mixed-boundary conditions}
+
+\vspace{5mm}
+
+Finally, we want to consider the case where $\lambda > 0$. Again, using our work from the previous question, we know that our solutions are of the form
+
+\begin{center}
+
+$z_{1}(x)=\cos\bigg(\sqrt{\lambda} x\bigg)$ $\quad$ and $\quad$ $z_{2}(x)=\sin\bigg(\sqrt{\lambda} x\bigg)$
+
+\end{center}
+
+Taking some derivatives, since that allows us to apply our \textit{mixed-boundary conditions}, we find that
+
+\begin{center}
+
+$z_{1}(x)=\cos\bigg(\sqrt{\lambda} x\bigg)$ $\quad$ and $\quad$ $z_{2}(x)=\sin\bigg(\sqrt{\lambda} x\bigg)$
+
+\vspace{2mm}
+
+$z_{1}'(x)=-\sqrt{\lambda} \sin\bigg(\sqrt{\lambda} x\bigg)$ $\quad$ and $\quad$ $z_{2}'(x)=\sqrt{\lambda} \cos\bigg(\sqrt{\lambda} x\bigg)$
+
+\end{center}
+
+Applying our \textit{mixed-boundary conditions} we have
+
+\begin{center}
+
+$z_{1}'(x)=-\sqrt{\lambda} \sin\bigg(\sqrt{\lambda} x\bigg)$ $\quad$ and $\quad$ $z_{2}'(x)=\sqrt{\lambda} \cos\bigg(\sqrt{\lambda} x\bigg)$
+
+\vspace{2mm}
+
+$z_{1}'(0)=-\sqrt{\lambda} \sin\bigg(\sqrt{\lambda} (0)\bigg)$ $\quad$ and $\quad$ $z_{2}'(0)=\sqrt{\lambda} \cos\bigg(\sqrt{\lambda} (0)\bigg)$
+
+\vspace{2mm}
+
+$z_{1}'(0)=-\sqrt{\lambda} \sin(0)$ $\quad$ and $\quad$ $z_{2}'(0)=\sqrt{\lambda} \cos(0)$
+
+\vspace{2mm}
+
+$0=0$ $\quad$ and $\quad$ $0 \neq 1$
+
+\end{center}
+
+Since $z_{1}(x)=\cos\bigg(\sqrt{\lambda} x\bigg)$ satisfies our first \textit{mixed-boundary condition}, we want to make it so that $z_{1}'(L)=0$
+
+\begin{center}
+
+$z_{1}'(x)=-\sqrt{\lambda} \sin\bigg(\sqrt{\lambda} x\bigg)$
+
+\vspace{2mm}
+
+$z_{1}'(L)=-\sqrt{\lambda} \sin\bigg(\sqrt{\lambda} L\bigg)$
+
+\vspace{2mm}
+
+$0=-\sqrt{\lambda} \sin\bigg(\sqrt{\lambda} L\bigg)$
+
+\vspace{2mm}
+
+$0=\sin\bigg(\sqrt{\lambda} L\bigg)$
+
+\vspace{2mm}
+
+$\sin^{-1}(0)=\sin^{-1}\Bigg(\sin\bigg(\sqrt{\lambda} L\bigg)\Bigg)$
+
+\end{center}
+
+So, $(\lambda L)=(2n-1)\frac{\pi}{2}$, where $2n-1$ are odd numbers. So, $\lambda=\bigg(\frac{(n \pi - \frac{\pi}{2})}{L}\bigg)^2,  ~ \forall ~ n \in \mathbb{N}$
+
+Thus, our \textit{ND-Laplacian} eigenfunctions are
+
+\begin{center}
+
+$f_{n,DN}(x)=\cos\bigg(\frac{(n \pi - \frac{\pi}{2})}{L} x\bigg), ~ \forall ~ n \in \mathbb{N}$
+
+\end{center}
+
+\end{proof}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+4) Let the differentiable equation $f''(x)+\lambda f(x)=0$ be given and let $g(x)$ be a twice differentiable function. \\ 
+
+\begin{proof}
+
+Now, multiply $f''(x)+\lambda f(x)=0$ by $g(x)$ to obtain
+
+\begin{center}
+
+$f''(x)g(x)+\lambda f(x)g(x)=0$
+
+\end{center}
+
+Now, we want to integrate $f''(x)g(x)+\lambda f(x)g(x)=0$ by parts. But, before we do, let use the \textit{properties of integrals} to obtain
+
+\begin{center}
+
+$\int_{0}^{L} f''(x)g(x) \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+Next, integrate $\int_{0}^{L} f''(x)g(x) \ dx$ by parts
+
+\begin{center}
+
+$u=g(x)$ $\quad$ $du=g''(x)$ $\quad$ $dv=f''(x)$ $\quad$ $v=\int f''(x)=f'(x)+c$
+
+\vspace{2mm}
+
+$\int_{0}^{L} f''(x)g(x)= \bigg[g(x)f'(x)\bigg] \bigg|_{0}^{L} - \int_{0}^{L} f'(x)g'(x) \ dx$
+
+\end{center}
+
+Substituting in for $\int_{0}^{L} f''(x)g(x) \ dx$ with the above result, we have
+
+\begin{center}
+
+$\int_{0}^{L} f''(x)g(x) \ dx=\bigg[g(x)f'(x)\bigg] \bigg|_{0}^{L} - \int_{0}^{L} f'(x)g'(x) \ dx$
+
+\end{center}
+
+We can now re-write $\int_{0}^{L} f''(x)g(x) \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$ as
+
+\begin{center}
+
+$\bigg[g(x)f'(x)\bigg] \bigg|_{0}^{L} - \int_{0}^{L} f'(x)g'(x) \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+To continue, we want to integrate by parts yet again
+
+\begin{center}
+
+$u=g'(x)$ $\quad$ $du=g''(x)$ $\quad$ $dv=f'(x)$ $\quad$ $v=\int f'(x) \ dx= f(x)$
+
+\end{center}
+
+We can now re-write  $\int_{0}^{L} f'(x)g'(x) \ dx$ as
+
+\begin{center}
+
+$\bigg[g'(x)f(x)\bigg]_{0}^{L} - \int_{0}^{L} f(x)g''(x) \ dx$
+
+\end{center}
+
+Substituting back-in, we can re-write $\bigg[g(x)f'(x)\bigg] \bigg|_{0}^{L} - \int_{0}^{L} f'(x)g'(x) \ dx + \int_{0}^{L} \lambda f(x)g(x) \ dx=0$ as
+
+\begin{center}
+
+$\bigg[g(x)f'(x)\bigg]_{0}^{L}\bigg[g'(x)f(x)\bigg]_{0}^{L} - \int_{0}^{L} f(x)g''(x) \ dx+ \int_{0}^{L} \lambda f(x)g(x) \ dx=0$
+
+\end{center}
+
+which is the \textit{Lagrange-Identity} from the beginning of the semester
+
+\vspace{5mm}
+
+Now, we turn our attention to showing the orthogonality of the mixed \textit{DN-Laplacian} eigenfunctions. First, let the differentiable equation $f''(x)+\lambda f(x)=0$ be given and let $g(x)$ be a twice differentiable function. Now, multiply $f''(x)+\lambda f(x)$ to obtain
+
+\begin{center}
+
+$f''(x)g(x)+\lambda f(x)g(x)$
+
+\end{center}
+
+Now, we want to integrate $f''(x)g(x)$ by parts
+
+\begin{center}
+
+$u=g(x) \quad du=g'(x) \quad dv=f''(x) \quad v=\int f''(x)=f'(x)$
+
+\end{center}
+
+We can now re-write $f''(x)g(x)$ as
+
+\begin{center}
+
+$f''(x)g(x)=\bigg[g(x)f'(x)\bigg]_{0}^{L} + \int_{0}^{L} f'(x)g'(x) \ dx$
+
+\end{center}
+
+To continue, we want to integrate by parts yet again
+
+\begin{center}
+
+$u=g'(x) \quad du=g''(x) \quad dv=f'(x) \quad v=\int f'(x)=f(x)$
+
+\end{center}
+
+We can now re-write $\bigg[g(x)f'(x)\bigg]_{0}^{L} + \int_{0}^{L} f'(x)g'(x) \ dx$ as
+
+\begin{center}
+
+$\bigg[g(x)f'(x)\bigg]_{0}^{L} - \bigg[g'(x)f(x)\bigg]_{0}^{L} - \int_{0}^{L} f(x)g''(x) \ dx$
+
+\end{center}
+
+So, at this point, we have
+
+\begin{center}
+
+$f''(x)g(x)=\bigg[g(x)f'(x)\bigg]_{0}^{L} - \bigg[g'(x)f(x)\bigg]_{0}^{L} - \int_{0}^{L} f(x)g''(x) \ dx$
+
+\end{center}
+
+Now, if we make the substitution $g(x)=f_{m,DN}(x)$ and $f(x)=f_{n,DN}(x)$, we have
+
+\begin{center}
+
+$\int_{0}^{L} f''_{n, DN}(x)f_{m, DN}(x) \ dx=\bigg[f_{m, DN}(x)f'_{n, DN}(x)\bigg]_{0}^{L} - \bigg[f'{m, DN}(x)f_{n, DN}(x)\bigg]_{0}^{L} - \int_{0}^{L} f_{n, DN}(x)f''_{m, DN}(x) \ dx$
+
+\end{center}
+
+Looking at the $\bigg[f_{m, DN}(x)f'_{n, DN}(x)\bigg]_{0}^{L}$ term, if we apply the boundary conditions
+
+\begin{center}
+
+\[ \begin{cases} 
+      f(0)=0 \\
+      f'(L)=0
+   \end{cases}
+\]
+
+\end{center}
+
+then this term will go to zero. This leaves us with
+
+\begin{center}
+
+$\int_{0}^{L} f''_{n, DN}(x)f_{m, DN}(x) \ dx=- \bigg[f'{m, DN}(x)f_{n, DN}(x)\bigg]_{0}^{L} - \int_{0}^{L} f_{n, DN}(x)f''_{m, DN}(x) \ dx$
+
+\end{center}
+
+Then, if we look at the $- \bigg[f'{m, DN}(x)f_{n, DN}(x)\bigg]_{0}^{L}$ term, we can see that if we again apply the boundary conditions
+
+\begin{center}
+
+\[ \begin{cases} 
+      f(0)=0 \\
+      f'(L)=0
+   \end{cases}
+\]
+
+\end{center}
+
+this term will also go to zero. So, are we are left with is
+
+\begin{center}
+
+$\int_{0}^{L} f''_{n, DN}(x)f_{m, DN}(x) \ dx=- \int_{0}^{L} f_{n, DN}(x)f''_{m, DN}(x) \ dx$
+
+\end{center}
+
+Now, if we return to our twice differentiable function
+
+\begin{center}
+
+$f''(x)+\lambda f(x)=0$
+
+\end{center}
+
+and re-arrange terms, we have
+
+\begin{center}
+
+$f''(x)=-\lambda f(x)$
+
+\end{center}
+
+If we substitute this into our integral, we have
+
+\begin{center}
+
+$\int_{0}^{L} -\lambda f_{n, DN}(x)f_{m, DN}(x)=-\int_{0}^{L} f_{n, DN}(x) \cdot -\lambda f_{m, DN}(x) \ dx$
+
+\end{center}
+
+Simplifying, we have
+
+\begin{center}
+
+$-\int_{0}^{L} f_{n, DN}(x) \cdot -\lambda f_{m, DN}(x) \ dx=\int_{0}^{L} -\lambda f_{n, DN}(x)f_{m, DN}(x) \ dx$
+
+\vspace{2mm}
+
+$\implies -(-\lambda) \int_{0}^{L} f_{n, DN}(x)f_{m, DN}(x) \ dx=-\lambda \int_{0}^{L} f_{n, DN}(x)f_{m, DN}(x) \ dx$
+
+\vspace{2mm}
+
+$\implies -(-\lambda_{n}) \int_{0}^{L} f_{n, DN}(x)f_{m, DN}(x) \ dx + \lambda_{m} \lambda \int_{0}^{L} f_{n, DN}(x)f_{m, DN}(x) \ dx$
+
+\vspace{2mm}
+
+$\implies -(-\lambda_{n}) \int_{0}^{L} \lambda_{m} f_{n, DN}(x)f_{m, DN}(x) \ dx=0$
+
+\vspace{2mm}
+
+$\implies -(\lambda_{m}-\lambda_{n}) \int_{0}^{L} \lambda_{m} f_{n, DN}(x)f_{m, DN}(x) \ dx=0$
+
+\end{center}
+
+Now, since $m$ and $n$ are assumed to be different, we know that $(\lambda_{m}-\lambda_{n})$ cannot be equal to zero. Thus, $\int_{0}^{L} \lambda_{m} f_{n, DN}(x)f_{m, DN}(x) \ dx$ has to be equal to zero, as desired.
+Hence, we have shown the orthogonality of the mixed \textit{DN-Laplacian} eigenfunctions.
+
+\vspace{5mm}
+
+We now move on to show the orthogonality of the mixed \textit{ND-Laplacian} eigenfunctions. Like the calculation we just finished, let the differentiable equation $f''(x)+\lambda f(x)=0$ be given and let $g(x)$ be a twice differentiable function. Now, multiply $f''(x)+\lambda f(x)$ to obtain
+
+\begin{center}
+
+$f''(x)g(x)+\lambda f(x)g(x)$
+
+\end{center}
+
+Now, we want to integrate $f''(x)g(x)$ by parts
+
+\begin{center}
+
+$u=g(x) \quad du=g'(x) \quad dv=f''(x) \quad v=\int f''(x)=f'(x)$
+
+\end{center}
+
+We can now re-write $f''(x)g(x)$ as
+
+\begin{center}
+
+$f''(x)g(x)=\bigg[g(x)f'(x)\bigg]_{0}^{L} + \int_{0}^{L} f'(x)g'(x) \ dx$
+
+\end{center}
+
+To continue, we want to integrate by parts yet again
+
+\begin{center}
+
+$u=g'(x) \quad du=g''(x) \quad dv=f'(x) \quad v=\int f'(x)=f(x)$
+
+\end{center}
+
+We can now re-write $\bigg[g(x)f'(x)\bigg]_{0}^{L} + \int_{0}^{L} f'(x)g'(x) \ dx$ as
+
+\begin{center}
+
+$\bigg[g(x)f'(x)\bigg]_{0}^{L} - \bigg[g'(x)f(x)\bigg]_{0}^{L} - \int_{0}^{L} f(x)g''(x) \ dx$
+
+\end{center}
+
+So, at this point, we have
+
+\begin{center}
+
+$f''(x)g(x)=\bigg[g(x)f'(x)\bigg]_{0}^{L} - \bigg[g'(x)f(x)\bigg]_{0}^{L} - \int_{0}^{L} f(x)g''(x) \ dx$
+
+\end{center}
+
+Now, if we make the substitution $g(x)=f_{m,ND}(x)$ and $f(x)=f_{n,ND}(x)$, we have
+
+\begin{center}
+
+$\int_{0}^{L} f''_{n, ND}(x)f_{m, ND}(x) \ dx=\bigg[f_{m, ND}(x)f'_{n, ND}(x)\bigg]_{0}^{L} - \bigg[f'{m, ND}(x)f_{n, ND}(x)\bigg]_{0}^{L} - \int_{0}^{L} f_{n, DN}(x)f''_{m, ND}(x) \ dx$
+
+\end{center}
+
+Looking at the $\bigg[f_{m, ND}(x)f'_{n, ND}(x)\bigg]_{0}^{L}$ term, if we apply the boundary conditions
+
+\begin{center}
+
+\[ \begin{cases} 
+      f(0)=0 \\
+      f'(L)=0
+   \end{cases}
+\]
+
+\end{center}
+
+then this term will go to zero. This leaves us with
+
+\begin{center}
+
+$\int_{0}^{L} f''_{n, ND}(x)f_{m, ND}(x) \ dx=- \bigg[f'{m, ND}(x)f_{n, ND}(x)\bigg]_{0}^{L} - \int_{0}^{L} f_{n, ND}(x)f''_{m, ND}(x) \ dx$
+
+\end{center}
+
+Then, if we look at the $- \bigg[f'{m, ND}(x)f_{n, ND}(x)\bigg]_{0}^{L}$ term, we can see that if we again apply the boundary conditions
+
+\begin{center}
+
+\[ \begin{cases} 
+      f(0)=0 \\
+      f'(L)=0
+   \end{cases}
+\]
+
+\end{center}
+
+this term will also go to zero. So, are we are left with is
+
+\begin{center}
+
+$\int_{0}^{L} f''_{n, ND}(x)f_{m, ND}(x) \ dx=- \int_{0}^{L} f_{n, ND}(x)f''_{m, ND}(x) \ dx$
+
+\end{center}
+
+Now, if we return to our twice differentiable function
+
+\begin{center}
+
+$f''(x)+\lambda f(x)=0$
+
+\end{center}
+
+and re-arrange terms, we have
+
+\begin{center}
+
+$f''(x)=-\lambda f(x)$
+
+\end{center}
+
+If we substitute this into our integral, we have
+
+\begin{center}
+
+$\int_{0}^{L} -\lambda f_{n, ND}(x)f_{m, ND}(x)=-\int_{0}^{L} f_{n, ND}(x) \cdot -\lambda f_{m, ND}(x) \ dx$
+
+\end{center}
+
+Simplifying, we have
+
+\begin{center}
+
+$-\int_{0}^{L} f_{n, ND}(x) \cdot -\lambda f_{m, ND}(x) \ dx=\int_{0}^{L} -\lambda f_{n, DN}(x)f_{m, ND}(x) \ dx$
+
+\vspace{2mm}
+
+$\implies -(-\lambda) \int_{0}^{L} f_{n, ND}(x)f_{m, ND}(x) \ dx=-\lambda \int_{0}^{L} f_{n, ND}(x)f_{m, ND}(x) \ dx$
+
+\vspace{2mm}
+
+$\implies -(-\lambda_{n}) \int_{0}^{L} f_{n, ND}(x)f_{m, ND}(x) \ dx + \lambda_{m} \lambda \int_{0}^{L} f_{n, ND}(x)f_{m, ND}(x) \ dx$
+
+\vspace{2mm}
+
+$\implies -(-\lambda_{n}) \int_{0}^{L} \lambda_{m} f_{n, ND}(x)f_{m, ND}(x) \ dx=0$
+
+\vspace{2mm}
+
+$\implies -(\lambda_{m}-\lambda_{n}) \int_{0}^{L} \lambda_{m} f_{n, ND}(x)f_{m, ND}(x) \ dx=0$
+
+\end{center}
+
+Now, since $m$ and $n$ are assumed to be different, we know that $(\lambda_{m}-\lambda_{n})$ cannot be equal to zero. Thus, $\int_{0}^{L} \lambda_{m} f_{n, DN}(x)f_{m, DN}(x) \ dx$ has to be equal to zero, as desired.
+Thus, we have shown the orthogonality of the mixed \textit{ND-Laplacian} eigenfunctions.
+
+\end{proof}
+
+5) Looking at the \textit{eigendata} from these two mixed problems, we notice that they are similar in that they both are of the form
+
+\begin{center}
+
+$\lambda=\bigg(\frac{(n \pi - \frac{\pi}{2})}{L}\bigg)^2,  ~ \forall ~ n \in \mathbb{N}$
+
+\end{center}
+
+yet they differ in the form of their associated \textit{eigenfunctions}.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+6)Looking at the \textit{eigendata} from our mixed \textit{DN-Laplacian} eigenproblem and our regular \textit{Dirichlet} eigenproblem, we see that for the \textit{DN-Laplacian} eigenproblem our $n$ values in the $\lambda$ expression are only odd-numbers $\in \mathbb{N}$, while for the \textit{Dirichlet} eigenproblem, we considered all values of $n \in \mathbb{N}$.
+
+\end{flushleft}
+
+\end{document}
