@@ -1,5 +1,5 @@
 # Mathematics
-All assignments and exams for math classes taken during the spring semester of my senior year at University, written in LaTeX.
+All assignments, exams, and study guide(s) for math classes taken during the spring semester of my senior year at Wake Forest University, written in LaTeX.
 
 I would like to thank Madison Hoff for her help. Much of the work you see here was a collaborative effort.
 
