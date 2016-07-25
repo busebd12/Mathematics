@@ -1,0 +1,288 @@
+\documentclass[executivepaper]{article}
+
+\usepackage{mathtools}
+
+\usepackage{amssymb}
+
+\usepackage{kantlipsum,graphicx}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{commath}
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\vspace*{-40mm}
+
+\begin{center}
+
+Take Home Exam One
+
+\end{center}
+
+\begin{flushright}
+
+Brendan Busey
+
+\end{flushright}
+
+\begin{flushleft}
+
+1) 
+
+\begin{center}
+
+\begin{proof}
+
+Let $H$ be given as defined. Then, let $I$ be $n \times n$ identity matrix. In order to show that a matrix is orthogonal, we multiply the matrix by its transpose. If the result is the identity matrix, then the matrix is orthogonal. 
+Looking at $I$, we have $II^{T}=II=I$. Hence, $I$ is orthogonal and so $I \in H$.
+
+\vspace{5mm}
+
+Next, let $A, B \in H$. Then, we want to show that $\Big(AB^{-1}\Big)^{T}=\Big(AB^{-1}\Big)^{-1}$. So, looking at $\Big(AB^{-1}\Big)^{T}$, one has
+
+\begin{center}
+
+$\Big(AB^{-1}\Big)^{T}$
+
+\vspace{3mm}
+
+$\implies \Big(B^{-1}\Big)^{T}\Big(A\Big)^{T}$
+
+\vspace{3mm}
+
+$\implies \Big(B^{T}\Big)^{-1}\Big(A\Big)^{T}$
+
+\vspace{3mm}
+
+$\implies \Big(B^{-1}\Big)^{-1}\Big(A\Big)^{T}$
+
+\vspace{3mm}
+
+$\implies B(A)^{-1}$
+
+\end{center}
+
+\vspace{5mm}
+
+If one examines $\Big(AB^{-1}\Big)^{-1}$, one sees that 
+
+\begin{center}
+
+$\Big(AB^{-1}\Big)^{-1}=\Big(B^{-1}\Big)^{-1} A^{-1}=BA^{-1}$.
+
+\end{center}
+
+Hence, we have shown that for any $A,B \in H$, we have that $\Big(AB^{-1}\Big)^{T}=\Big(AB^{-1}\Big)^{-1}$. Thus, we have for any $A,B \in H$, $AB^{-1} \in H$. Therefore, by the ``Fastest Gun" theorem, $H$ is a subgroup, as desired.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+2)
+
+\begin{center}
+
+\begin{proof}
+Let $n \geq 2$ and $H$ be a subgroup of $S_{n}$. If all elements of $H$ are even, then we finished. So, we assume $H$ contains an odd permutation, call it $\sigma$. Then, let $H_{even}$ denote the set of even permutations $\in H$ and let $H_{odd}$ be the set of odd permutations $\in H$. Next, define a function $f: H_{even} \rightarrow H_{odd}$ by $f(p)=\sigma p$. Since $H$ is a subgroup and because the product of an even and odd permutation is an odd permutation, we know that $f$ is well-defined. Also, we can claim that $f$ is a bijection.
+
+\vspace{2mm}
+
+To verify the above claim, suppose that $f(p_{1})=f(p_{2})$. Then, $\sigma p_{1}=\sigma p_{2}$. Then, by cancelation in $H$, we have that $p_{1}=p_{2}$. Hence, $f$ is one-to-one. To show $f$ is onto, let $\gamma \in H_{odd}$. Next, consider the element $p=\sigma^{-1} \gamma$. Since $H$ is a subgroup, we know that $p \in H$. Furthermore, since $\sigma^{-1}$ and $\gamma$ are odd permutations \pagebreak \vspace*{-40mm} we know that $p$ is an even permutation. Therefore, $p \in H_{even}$. Now, $f(p)=\sigma (\sigma^{-1} \gamma)=\gamma$. So, $f$ is onto. Thus, $f$ is a bijection between the finite sets $H_{even}$ and $H_{odd}$, and we can say $\abs{H_{even}}=\abs{H_{odd}}$, and we are done.
+
+\end{proof}
+
+\end{center} 
+
+\end{flushleft}
+
+\begin{flushleft}
+
+3)
+
+\begin{center}
+
+\begin{proof}
+
+Let $H$ and $K$ be given as defined. The, let $X \in K$ be the matrix defined as
+
+\begin{center}
+ 
+ $X=\begin{pmatrix}
+  \cos(\theta) & \sin(\theta) & \cdots & \sin(\theta) \\
+  \sin(\theta) & \cos(\theta) & \cdots & \sin(\theta) \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  \sin(\theta) & \sin(\theta) & \cdots & \cos(\theta) 
+ \end{pmatrix}
+ $
+\end{center}
+
+Then, letting $\theta=0$, we will have $\cos(\theta)=\cos(0)=1$ and $\sin(\theta)=\sin(0)=1$, giving the identity matrix which is in $GL_{n}(\mathbb{R})$
+
+\vspace{5mm}
+
+Next, let $A,B \in K$. Looking at $AB^{-1}$, we note a couple of things. First, sicne $B$ has a non-zero determinant by virtue of $B$ being in $K$, we know that $B$ is invertible. However, inverting an $n \times n$ matrix does not change the dimensions of the matrix, so, $B^{-1}$ is still an $n \times n$ matrix. Then, one sees that for $AB^{-1}$, since we are multiplying two $n \times n$ matrices, the condition for matrix multiplication is fulfilled, so the product will be an $n \times n$ matrix, which is in $GL_{n}(\mathbb{R})$. Thus, by the ``Fastest Gun" theorem, $K$ is a subgroup of $GL_{n}(\mathbb{R})$.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+5) Need to show the associative law, the existence of the identity element, and the existence of the inverse element
+
+\begin{center}
+
+\underline{Associative law}
+
+\begin{proof}
+
+Let $(g_{1}, h_{1}) \in (G \times H)$, $(g_{2}, h_{2}) \in (G \times H)$, and $(g_{3}, h_{3}) \in (G \times H)$. Then, one has:
+
+\vspace{3mm}
+
+$\bigg((g_{1},h_{1})\bigg)(g_{3}, h_{3})$
+
+\vspace{3mm}
+
+$\implies \bigg(g_{1}g_{2}^{h_{1}}, h_{1}h_{2}\bigg)(g_{3}, h_{3})$
+
+\vspace{3mm}
+
+$\implies \bigg((g_{1}g_{2}^{h_{1}}), (h_{1}h_{2})\bigg)(g_{3},h_{3})$
+
+\vspace{3mm}
+
+$\implies \bigg((g_{1}g_{2}^{h_{1}})g_{3}^{(h_{1}h_{2})}, (h_{1}h_{2})h_{3}\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg((g_{1}g_{2}^{h_{1}})g_{3}^{(h_{1}h_{2})}, h_{1}(h_{3}h_{2})\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg((g_{1}g_{2}^{h_{1}})g_{3}^{h_{1}}g_{3}^{h_{2}}, h_{1}(h_{3}h_{2})\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg(g_{1}\bigg(g_{2}^{h_{1}}g_{3}^{h_{1}}g_{3}^{h_{2}}\bigg), h_{1}(h_{3}h_{2})\bigg)$
+
+\pagebreak
+
+\vspace*{-40mm}
+
+$\implies \bigg(g_{1}(g_{2}g_{3}^{h_{2}})^{h_{1}}, h_{1}(h_{2}h_{3})\bigg)$
+
+$\implies (g_{1}, h_{1})\bigg((g_{2}, h_{2})(g_{3}, h_{3})\bigg)$
+
+\vspace{3mm}
+
+Therefore, the associative law holds
+
+\end{proof}
+
+\end{center}
+
+\vspace{3mm}
+
+\begin{center}
+
+\underline{Existence of the identity element}
+
+\begin{proof}
+
+Let $(g,h) \in (G \times H)$. Then, we have:
+
+\vspace{3mm}
+
+$(g,h)(e_{G}, e_{H})=\bigg(ge_{G}^{e_{H}}, he_{H}\bigg)=(g,h)=\bigg(e_{G}^{e_{H}}g^{e_{H}}, e_{H}h\bigg)=\bigg(e_{G}g, e_{H}h\bigg)=(e_{G}, e_{H}),(g,h)$
+
+\vspace{3mm}
+
+Therefore, $(e_{G}, e_{H})$ is the identity for this operation.
+
+\end{proof}
+
+\end{center}
+
+\begin{center}
+
+\underline{Existence of the inverse element}
+
+\begin{proof}
+
+Let $(g,h) \in (G \times H)$. Then, consider:
+
+\vspace{3mm}
+
+$(g,h)(g^{-1}h^{-1})$
+
+\vspace{3mm}
+
+$\implies \bigg(g(g^{-1})^{h},hh^{-1}\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg(g(g^{h})^{-1},hh^{-1}\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg(g(g^{e_{H}})^{-1},hh^{-1}\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg(gg^{-1},hh^{-1}\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg(e_{G},e_{H}\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg(g^{-1}g,h^{-1}h\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg(g^{-h}g^h,h^{-1}h\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg(g^{-h}\bigg(g^1\bigg)^h,h^{-1}h\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg(g^{-1}\bigg(g^h\bigg)^1,h^{-1}h\bigg)$
+
+\vspace{3mm}
+
+$\implies \bigg(g^{-1}g^h,h^{-1}h\bigg)$
+
+\pagebreak
+
+\vspace*{-40mm}
+
+$\implies \bigg(g^{-1}g^{h^{-1}},h^{-1}h\bigg)=(g^{-1}h^{-1})(g,h)$
+
+\vspace{3mm}
+
+Hence, we have found the identity element and thus, $S$ is a group under the operation $\star$
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\end{document}

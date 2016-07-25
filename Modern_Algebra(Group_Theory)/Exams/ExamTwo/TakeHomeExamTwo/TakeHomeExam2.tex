@@ -1,0 +1,195 @@
+\documentclass[executivepaper]{article}
+
+\usepackage{mathtools}
+
+\everymath{\displaystyle}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{kantlipsum,graphicx}
+
+\usepackage{amsmath}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[english]{babel}
+
+\usepackage{sectsty}
+
+\usepackage{float}
+
+\usepackage{commath}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{adjustbox}
+
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\rhead{Brendan Busey}
+
+\lhead{Take Home Exam Two}
+
+\rfoot{Page \thepage}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\begin{flushleft}
+
+1)
+
+\begin{proof}
+
+To begin, we will prove some lemmas that will be useful later.
+
+\begin{lemma}
+
+If $G$ is a group with $H \triangleleft G$, $K \triangleleft G$ such that $H \cap K=\{e\}$. then $hk=kh ~ \forall ~ h \in H$ and $k \in K$.
+
+\end{lemma}
+
+\vspace{3mm}
+
+\begin{proof}
+
+Let $h \in H$ and $k \in K$. So, $h^{-1} \in H$. Now, since both are normal subgroups, we have that $kh^{-1}k^{-1} \in H$ and $hkh^{-1} \in K$. Since $kh^{-1}k^{-1} \in H$ and $h \in H$, then $hkh^{-1}k^{-1} \in H$. Similarly,  since $hkh^{-1} \in K$ and $k^{-1} \in K$, then $hkh^{-1}k^{-1} \in K$. Therefore, $hkh^{-1}k^{-1} \in H \cap K$. So, $hkh^{-1}k^{-1}=e$ and hence, $hk=kh$. So, since we have shown that $kh=hk ~ \forall ~ k \in K$ and $\forall ~ h \in H$, we have that $HK=KH$.
+
+\end{proof}
+
+\vspace{5mm}
+
+\begin{lemma}
+
+$G=HK$
+
+\end{lemma}
+
+\vspace{3mm}
+
+\begin{proof}
+
+Part one: we know the subset $HK \subseteq G$ has size
+
+\begin{center}
+
+$\abs{HK}=\frac{\abs{H}\abs{K}}{\abs{H \cap K}}$
+
+\end{center} 
+
+So, $\abs{H : H \cap K}=\frac{\abs{HK}}{\abs{K}} \leq \frac{\abs{G}}{\abs{K}}=[G : K]$ with equality if and only if $\abs{HK}=\abs{G}$, i.e. $HK=G$.
+
+\vspace{3mm}
+
+Part two: we know that $\abs{G : K}$ divides $\abs{G : H \cap K}=\abs{G : H}\abs{H : H \cap K}$. Since $\abs{G : K}$ and $\abs{G : H}$ are co-prime, $\abs{G : H}$ divides $\abs{H : H \cap K}$. In particular, $\abs{G : K} \leq \abs{H : H \cap K}$. We always have the reverse inequality by part one. So, we get equality and again, by part one, we conclude $HK=G$. 
+
+\end{proof}
+
+\vspace{5mm}
+
+\begin{lemma}
+
+The direct product $G_{1} \times G_{2}$ of two groups is abelian if and only if both $G_{1}$ and $G_{2}$ are abelian.
+
+\end{lemma}
+
+\vspace{3mm}
+
+\begin{proof}
+
+Suppose that $G_{1} \times G_{2}$ is abelian. Let $a, b \in G$ and let $e_{2} \in G_{2}$ be the identity element of $G_{2}$. Then,
+
+\begin{center}
+
+$(ab, e_{2})=(a, e_{2}) \cdot (b, e_{2})=(b, e_{2}) \cdot (a, e_{2})=(ba, e_{2})$
+
+\end{center}
+
+so, $ab=ba$. Next, let $c, d \in G_{2}$ and let $e_{1} \in G_{1}$ be the identity element of $G_{1}$. Then,
+
+\begin{center}
+
+$(e_{1}, cd)=(e_{1}, c) \cdot (e_{1}, d)=(e_{1}, d) \cdot (e_{1}, c)=(e_{1}, dc)$
+
+\end{center}
+
+so, $cd=dc$. Thus, $G_{1}$ and $G_{2}$ are both abelian.
+
+\end{proof}
+
+\vspace{5mm}
+
+Now, that we have gotten that out of the way, on to the problem! So, suppose that $g_{1} \in G$ and $g_{2} \in G$. Then, $g_{1} \in G/H$, $g_{1} \in G/K$, $g_{2} \in G/H$, and $g_{2} \in G/K$. Then, we have
+
+\begin{center}
+
+$g_{1}Hg_{2}Hg_{1}Kg_{2}K$
+
+\vspace{2mm}
+
+$=(g_{1}g_{2})H ~ (g_{1}g_{2})K$
+
+\vspace{2mm}
+
+$=(g_{1}g_{2})HK$
+
+\vspace{2mm}
+
+$=g_{2}g_{1}KH$
+
+\end{center}
+
+Since the product of two abelian groups is abelian by our lemma. Now, if we look more closely at
+
+\begin{center}
+
+$g_{1}g_{2}HK=g_{2}g_{1}KH$
+
+\end{center}
+
+and divide out by $g_{1}g_{2}$, we have that $HK=KH$. Now, by our lemma, we showed that $hk=kh ~ \forall ~ k \in K$ and $h \in H$, and so we have $HK=KH$. And, since we already have $KH=HK$ after dividing $g_{1}g_{2})HK=g_{2}g_{1}KH$ by $g_{1}g_{2}$, we have that $hk=kh$. Next, by our lemma 2, we have that $G=KH$. Also, by definition of the problem, we have $H \cap K=\{e_{G}\}$. So, at this point, we have satisfied all three of the necessary conditions for $G$ to be an internal direct product of $H$ and $K$. Now, we have shown that $HK=KH$, or that the internal direct product of subgroups $H$ and $K$ are abelian. Then, since we have show $G$ to be an internal direct product of $H$ and $K$, then by \textit{Theorem 9.27} from the chapter on Isomorphisms, $G$ is isomorphic to $H \times K$. Finally, since $H \times K$ is abelian and $G$ is isomorphic to $H \times K$, then we have that $G$ is abelian.
+
+\end{proof}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+3)
+
+\begin{proof}
+
+Let $x+H$ have finite order in $G/H$. Then, there is some integer $n > 0$ such that $nx+H=H$. So, $nx$ is in $H$. It then follows that $nx$ has finite order in $G$. So, there is some integer $m > 0$ such that $m(nx)=0$. Next, note that $m(nx)=(mn)x$. Using this, we arrive at $(mn)x=0$. Therefore, $x$ has finite order in $G$, so $x$ is in $H$, and $x+H=H$ was the identity in $G/H$.
+
+\end{proof}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+4)
+
+\begin{proof}
+
+Let $G=A_{4}$, $H=\{(12)(34), (13)(24), (14)(23), e\}$,  $K=\{e, (12)(34)\}$. Then, $H$ is normal in $G$ and $K$ is normal in $H$. But, K is not normal in $G$.
+
+\end{proof} 
+
+\end{flushleft}
+
+\end{document}

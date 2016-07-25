@@ -1,0 +1,240 @@
+\documentclass[executivepaper]{article}
+
+\usepackage{mathtools}
+
+\everymath{\displaystyle}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{kantlipsum,graphicx}
+
+\usepackage{amsmath}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{sectsty}
+
+\usepackage{float}
+
+\usepackage{commath}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{adjustbox}
+
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\rhead{Brendan Busey}
+
+\lhead{Homework 9}
+
+\rfoot{Page \thepage}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+\begin{flushleft}
+
+1) W know that any matrix in $O(2)$ must either take the form of
+
+\begin{center}
+
+$\bigl(\begin{smallmatrix}
+a&-b \\ b&a
+\end{smallmatrix} \bigr)$
+
+\end{center}
+
+or
+
+\begin{center}
+
+$\bigl(\begin{smallmatrix}
+a&b \\ b&-a
+\end{smallmatrix} \bigr)$
+
+\end{center}
+
+And, since any matrix in $O(2)$ either reflects or rotates a vector in $\mathbb{R}^2$, the determinant of any matrix in $O(2)$ will be $\pm 1$. Therefore, the only elements that commute are $Z(G)=\{ \pm I \}$, or the identity matrix. 
+
+\end{flushleft}
+
+\begin{flushleft}
+
+2)
+
+\begin{proof}
+
+Doing the prime-factorization of 2016, we get $2016=2^5 \cdot 3^2 \cdot 7$. So, by the \textit{Fundamental Theorem of Finitely Generated Abelian Groups}, we have
+
+\begin{center}
+
+$\mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{3} \times \mathbb{Z}_{3} \times \mathbb{Z}_{7}$
+
+\vspace{2mm}
+
+$\mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{9} \times \mathbb{Z}_{7}$
+
+\vspace{2mm}
+
+$\mathbb{Z}_{2} \times \mathbb{Z}_{16} \times \mathbb{Z}_{3} \times \mathbb{Z}_{3} \times \mathbb{Z}_{7}$
+
+\vspace{2mm}
+
+$\mathbb{Z}_{2} \times \mathbb{Z}_{16} \times \mathbb{Z}_{9} \times \mathbb{Z}_{7}$
+
+\vspace{2mm}
+
+$\mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{8} \times \mathbb{Z}_{3} \times \mathbb{Z}_{3} \times \mathbb{Z}_{7}$
+
+\vspace{2mm}
+
+$\mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{8} \times \mathbb{Z}_{9} \times \mathbb{Z}_{7}$
+
+\vspace{2mm}
+
+$\mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{4} \times \mathbb{Z}_{3} \times \mathbb{Z}_{3} \times \mathbb{Z}_{7}$
+
+\vspace{2mm}
+
+$\mathbb{Z}_{2} \times \mathbb{Z}_{2} x \mathbb{Z}_{2} \times \mathbb{Z}_{4} \times \mathbb{Z}_{9} \times \mathbb{Z}_{7}$
+
+\vspace{2mm}
+
+$\mathbb{Z}_{32} \times \mathbb{Z}_{3} \times \mathbb{Z}_{3} \times \mathbb{Z}_{7}$
+
+\vspace{2mm}
+
+$\mathbb{Z}_{32} \times \mathbb{Z}_{9} \times \mathbb{Z}_{7}$
+
+\end{center} 
+
+\end{proof}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+3)
+
+\end{flushleft}
+
+\begin{flushleft}
+
+4)
+
+\begin{proof}
+
+Let the order of $G$ be $m$ = $p_1^{\alpha_1} \ldots p_k^{\alpha_k}$. It is known that $G$ is a direct product of $p$-groups, say:
+
+\begin{center}
+ 
+$G = G_1 \times \ldots \times G_k$
+
+\end{center}
+
+where each $G_i$ is a $p_i$-group. By the \textit{fundamental theorem of finite abelian groups}, each $G_i$ is isomorphic to a direct product of cyclic groups of the form
+
+\begin{center}
+
+$\mathbb{Z}_{{p_i}^{\beta_1}} \times \ldots \times \mathbb{Z}_{{p_i}^{\beta_l}},$
+
+where $\beta_1, \ldots, \beta_l$ are positive integers such that $\sum_{j=1}^l \beta_j = \alpha_i$.
+
+\end{center}
+
+Now if $n$ divides $m$, then we must have
+
+\begin{center}
+
+$n = p_1^{\gamma_1} \ldots p_k^{\gamma_k}$
+
+for some $\gamma_1, \ldots, \gamma_k$ with $0 \leq \gamma_i \leq \alpha_i$.
+
+\end{center}
+
+Which brings us to the following claim: \textit{Each $G_i$ has a subgroup of order $p_i^{\gamma_i}$}
+
+Proof: As above, we have that
+
+$ G_i \cong \mathbb{Z}_{{p_i}^{\beta_1}} \times \ldots \times \mathbb{Z}_{{p_i}^{\beta_l}} $ where $\beta_1, \ldots, \beta_l$ are positive integers such that $\sum_{j=1}^l \beta_j = \alpha_i$. 
+Now since $0 \leq \gamma_i \leq \alpha_i$, we can find$l$ numbers $\delta_1, \ldots , \delta_l$ such that $\gamma_i = \sum_{j=1}^l \delta_j$, and $0 \leq \delta_j \leq \beta_j$. (This choice of numbers is not necessarily unique).
+Then, $p_i^{\delta_j} | p_i^{\beta_j}$ for each $j = 1, \ldots , l$. Hence, for each factor $\mathbb{Z}_{{p_i}^{\beta_j}}$, there exists a subgroup of order $p_i^{\delta_j}$, namely $\mathbb{Z}_{{p_i}^{\delta_j}}$ (using the fact that the converse of Lagrange's theorem is true for finite cyclic groups). Taking the direct product of each of these subgroups, we get a new subgroup $G_i'$ of $G_i$:
+
+\begin{center}
+
+$G_i' \cong \mathbb{Z}_{{p_i}^{\delta_1}} \times \ldots \times \mathbb{Z}_{{p_i}^{\delta_l}}$
+
+\end{center}
+
+The order of this subgroup is $p_i^{\delta_1} \times \ldots \times p_i^{\delta_l} = p_i^{\delta_1 + \ldots + \delta_l} = p_i^{\gamma_i} $. So, we have found a subgroup of $G_i$ of order $p_i^{\gamma_i}$, as required. So, each factor $G_i$ in the product $G = G_1 \times \ldots \times G_k$ has a subgroup $G_i'$ of order $p_i^{\gamma_i}$. Therefore, $G$ has a subgroup
+
+\begin{center}
+
+$G_1' \times G_2' \times \ldots \times G_k'$
+
+of order $p_1^{\gamma_i}...p_k^{\gamma_k} = n$,
+
+\end{center}
+
+which completes the proof.
+
+\end{proof}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+5) 
+\begin{proof}
+
+Similar to problem $2$, we first compute the prime factorization of 16
+
+\begin{center}
+
+$16=2^4$
+
+\end{center}
+
+Then, by the \textit{Fundamental Theorem of Finitely Generated Abelian Groups}, we have
+
+\begin{center}
+
+$G \cong \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{2}$
+
+\vspace{2mm}
+
+$G \cong \mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{4}$
+
+\vspace{2mm}
+
+$G \cong \mathbb{Z}_{2} \times \mathbb{Z}_{8}$
+
+\vspace{2mm}
+
+$G \cong \mathbb{Z}_{4} \times \mathbb{Z}_{4}$
+
+\vspace{2mm}
+
+$G \cong \mathbb{Z}_{16}$
+
+\end{center}
+
+Now, if we can rule out $\mathbb{Z}_{2} \times \mathbb{Z}_{2} \times \mathbb{Z}_{4}$, $\mathbb{Z}_{2} \times \mathbb{Z}_{8}$, and $\mathbb{Z}_{16}$, as $\mathbb{Z}_{4}$, $\mathbb{Z}_{8}$, and $\mathbb{Z}_{16}$ each have elements of order 2, but $a^2=b^2$ in each case. However, in $\mathbb{Z}_{4} \times \mathbb{Z}_{4}$, the order of $(1,0)$ is 4 and $(1,0)^2=(2,0)$, and for $(0,1)$, the order is also 4. But, $(0,1)^2=(0,2) \neq (2,0)$. Therefore, the isomorphism class of $G$ is $\mathbb{Z}_{4} \times \mathbb{Z}_{4}$. 
+
+\end{proof}
+
+\end{flushleft}
+
+\end{document}

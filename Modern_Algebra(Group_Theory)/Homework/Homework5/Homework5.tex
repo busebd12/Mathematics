@@ -1,0 +1,402 @@
+\documentclass[executivepaper]{article}
+
+\usepackage{mathtools}
+
+\usepackage{outlines}
+
+\usepackage{amsfonts}
+
+\usepackage{booktabs}
+
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+
+\usepackage{graphics}
+
+\usepackage{commath}
+
+\usepackage{adjustbox}
+
+\usepackage{listings}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{pst-solides3d}
+
+\everymath{\displaystyle}
+
+\begin{document}
+
+\vspace*{-40mm}
+
+\begin{center}
+
+Homework 5
+
+\end{center}
+
+\begin{flushright}
+
+Brendan Busey
+
+\end{flushright}
+
+\begin{flushleft}
+
+1) Want to force $\sigma$ to be in $A_{n}$, the alternating group on $n$ letters.
+
+\begin{center}
+
+So, we would need $\mu_{1},...,\mu_{k}$ to be made up of alternating elements. So, for any $\mu_{i} \in \sigma$, we would need $\mu_{i}=\mu_{i+2}$, $\mu_{i+1}=\mu_{i+3}$, etc.
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+2) For $S_{3}$, we have the element $(123)$. For $S_{4}$, we have the element $(1234)$. For $S_{5}$, we have the elements $(12345)$ and $(123)(45)$. For $S_{6}$, we have the elements $(123456)$, $(123)(456)$, and $(123)(45)$. For $S_{7}$, we have the elements $(1234567)$ and $(1234)(567)$. For $S_{8}$, we have $(123)(45678)$. For $S_{9}$, we have $(12345)(678)$.
+
+\end{flushleft}
+
+\begin{flushleft}
+
+3a) We need to show symmetry, reflexivity, and transitivity
+
+\begin{center}
+
+\underline{For Reflexivity}
+
+\begin{proof}
+
+Let $x \in Cl(g)$. Then, by definition, we have $x=hxh^{-1}$ where $h \in G$. Since $h \in G$ and $G$ is a group, we know that $G$ has the identity element. Let $h$ be the identity element. After substitution, we have $x=exe^{-1}=x$.
+
+\end{proof}
+
+\end{center}
+
+\vspace{3mm}
+
+\begin{center}
+
+\underline{For transitivity}
+
+\begin{proof}
+
+Let $a,b,c \in Cl$. Then, we have $Cl(a)=hah^{-1}, Cl(b)=hbh^{-1}$, and $Cl(c)=hch^{-1}$ for $h \in G$. Next, suppose $a \sim b$ and $b \sim c$. So we have $Cl(a)=Cl(b)$ or $hah^{-1}=hbh^{-1}$ and $Cl(b)=Cl(c)$ or $hbh^{-1}=hch^{-1}$. Since $h \in G$ and $G$ is a group, we know the identity is in $G$. So let $h$ be the identity element. After substitution, we have
+
+\begin{center}
+
+$eae^{-1}=ebe^{-1}$ and $ebe^{-1}=ece^{-1}$
+
+\end{center}
+
+which simplifies to 
+
+\begin{center}
+
+$a=b$ and $b=c$
+
+\end{center}
+
+Substitute $a$ for $b$ and the result follows
+
+\end{proof}
+
+\end{center}
+
+\begin{center}
+
+\underline{For symmetry}
+
+\begin{proof}
+
+Let $x,y \in Cl$. Then, we have $Cl(x)=hxh^{-1}$ and $Cl(y)=hyh^{-1}$ for $h \in G$. For $xy$, we have $xy=hxh^{-1} \cdot hyh^{-1}$. Now, since multiplication is associative, we can write $hxh^{-1} \cdot hyh^{-1}$ as $hyh^{-1} \cdot hxh^{-1}$. So, we have
+
+\begin{center}
+
+$hxh^{-1} \cdot hyh^{-1}=hyh^{-1} \cdot hxh^{-1}$
+
+\end{center}
+
+Now, because $h \in G$ and $G$ is a group, $G$ contains the identity element. Let $h$ be the identity element. Then, after substitution, we have
+
+\begin{center}
+
+$exe^{-1} \cdot eye^{-1}=eye^{-1} \cdot exe^{-1}$
+
+\vspace{1mm}
+
+$x \cdot y=y \cdot x$, as desired
+
+\end{center}
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+3b)
+
+\begin{center}
+
+\begin{proof}
+
+Suppose that $g \in Z(G)$. Then, we know that $g$ is an element that commutes with every element in $G$. Next, for $Cl(g)$, we have $Cl(g)=hgh^{-1}$ for $h \in G$. Now, since $g$ communicates with all elements in $G$, we can write $hgh^{-1}$ as $hh^{-1}g$. Now, since $G$ is a group, we know that $G$ contains its identity element. Let $h$ be the identity of $G$. Then, we have $hh^{-1}g=ee^{-1}g=g$, as desired
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+3c)
+
+\begin{center}
+
+For $S_{3}$, there are three conjugate classes because $3$ can be written as an ascending sum in three different ways: $3+0$, $1+2$, and $1+1+1$. The conjugate classes are $\{e\}, \{(12),(13)(23)\}, \{(123),(321)\}$
+
+\vspace{3mm}
+
+For $S_{4}$, there are five conjugate classes because four can be written as ascending sum in five different ways: $4+0$, $4+1$, $1+3$, $1+1+2$, $2+2$, and $1+1+1+1$. The conjugate classes are $\{e\}, \{(12),(13),(14),(23),(24), 34)\} \{(12)(34), (13)(24), (14)(23) \} \{(123), (132), (124), (142), (134), (143), (234), (243)\} \{(1234), (1342), (1243), (1423), (1324), (1432)\}$.
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+3d) Two elements of $S_{n}$ are conjugate when they have the same cycle type
+
+\end{flushleft}
+
+\begin{flushleft}
+
+4a) Need to show one-to-one and onto
+
+\begin{center}
+
+\begin{proof}
+
+Suppose that $\lambda_{g}(h_{1})=\lambda_{g}(h_{2})$. Then, $gh_{1}=gh_{2}$ and so $h_{1}=g^{-1}gh_{1}=g^{-1}gh_{2}=h_{2}$. Thus, $\lambda_{g}$ is one-to-one.
+
+\end{proof}
+
+\end{center}
+
+\begin{center}
+
+\begin{proof}
+
+A function $\lambda_{g}(h)=gh$ is onto if every element of the codomain $gh$ is the image of some element of $h$. Let $y \in gh$. We can show that $\exists$ a $x \in h$ such that $\lambda_{g}(x)=y$. Choose $x=\lambda_{g}^{-1}(y)$ and so $\lambda_{g}(\lambda_{g}^{-1}(y))=y$. So, $\forall y \in gh$, $\exists$ a $x \in h$ such that $\lambda_{g}(x)=y$. 
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+4b)
+
+\begin{center}
+
+\begin{proof}
+
+Suppose that $\lambda_{g}=\lambda_{h}$. Then, for some $k$, we have $\lambda_{g}(k)=kg$ and $\lambda_{h}(k)=kg$, where $g \in G$ and $h \in G$. We also have $kg=kh$, by supposition. Next, just divide through by $k$ and, poof, $g=h$, as desired.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{flushleft}
+4c)
+
+\begin{center}
+
+\begin{proof}
+
+Let $\lambda_{gh}$ be given. Then, for some $k$, we have have $\lambda_{gh}(k)=kgh$. Then, suppose we have $\lambda_{g} \circ \lambda_{h}$. By definition of function composition, $\lambda_{g} \circ \lambda_{h}=\lambda{_g}(\lambda_{h}(k))$ for some $k$. Next, doing some algebra yields the following:
+
+\begin{center}
+
+$\lambda{_g}(\lambda_{h}(k))=\lambda_{g}(kh)=khg$
+
+\end{center}
+
+Finally, since multiplication is associative, we can write $khg$ as $kgh$. Thus, $\lambda_{gh}=\lambda_{g} \circ \lambda_{h}$, as desired.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+5)
+
+\begin{center}
+
+\begin{proof}
+
+Let $\sigma \in S_{n}$ be a non-identity element, and suppose $\pi(i)=j$, for $j \neq i$. Then, since $n \geq 3$, $\exists$ a $k \neq i, j$. Let $\tau=(jk)$. Then, 
+
+\begin{center}
+
+$\tau \sigma=\tau(j)=k \neq j=\sigma(i)=\sigma \tau(i)$
+
+\end{center}
+
+Hence, for every non-identity permutation in $S_{n}$, $\exists$ some element not commuting with it. Thus, $Z(S_{n})$ must be trivial.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+6) We want $(12)(34)h=h(12)(34)$ or $(12)(34)h((12)(34))^{-1}=h$. So, we have our centralizers:
+
+\begin{center}
+
+$(12)(34) \rightarrow (12)(34)(12)(34)(21)(43)=(12)(34)$
+
+\vspace{1mm}
+
+$(13)(24) \rightarrow (12)(34)(13)(24)(21)(43)=(13)(24)$
+
+\vspace{1mm}
+
+$(14)(23) \rightarrow (12)(34)(14)(23)(21)(43)=(14)(23)$
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+7)
+
+\psset{viewpoint=40 10 10 rtp2xyz,lightsrc=viewpoint,Decran=30}
+
+\begin{pspicture}[solidmemory](-2,-2)(3,3)
+
+\psSolid[object=tetrahedron,r=3,action=draw*,name=T,num=1 2 3]% without 0
+
+\psSolid[object=point,definition=solidgetsommet,args=T 0,text=Top,pos=uc]% Point T0 (top)
+
+\end{pspicture}
+
+For each of the four faces, we have two non-identity rotations and one identity rotation. However, we don't want to count the identity rotation more times than necessary, so we will only count it once. So, up to this point, we have nine rotation symmetries. Now, if we consider the sides (the lines coming down from the top-vertex) of the tetrahedron, then, for each pair of sides together with the top-vertex, we can rotate over/around the top-vertex forwards or backwards. So, adding those three rotations to our collection of rotations, we have twelve rotations in total, which happens to be $A_{4}$.
+
+\end{flushleft}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{flushleft}
+
+8a)
+
+\end{flushleft}
+
+\begin{flushleft}
+
+8b) Let $A_{\sigma}$ and $A_{\tau}$ be matrices in $S_{n}$. Then, according to the definition of matrix multiplication, we have
+
+\begin{center}
+
+$\bigg(A_{\sigma} A_{\tau}\bigg)_{ij}=\sum_{k=1}^{n} A_{\sigma} A_{\tau}$
+
+\vspace{1mm}
+
+$\bigg(A_{\sigma} A_{\tau}\bigg)_{ij}=\sum_{k=1}^{n} 1$
+
+\end{center}
+
+Since in our definition of $\bigg(A_{\sigma}\bigg)_{jk}$ and $\bigg(A_{\tau}\bigg)_{kj}$, which is
+
+\begin{center}
+
+$$
+\bigg(A_{\sigma}\bigg)_{ik}=
+\begin{cases}
+1 & \text{if } \text{$\sigma(k)=i$} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+$$
+\bigg(A_{\tau}\bigg)_{kj}=
+\begin{cases}
+1 & \text{if } \text{$\tau(j)=k$} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+\end{center}
+
+We are only interested in the case where $\bigg(A_{\sigma}\bigg)_{ik}=1$ and $\bigg(A_{\tau}\bigg)_{kj}=1$, because otherwise, the product will be zero. Now, if $\bigg(A_{\sigma}\bigg)_{ik}=1$ and $\bigg(A_{\tau}\bigg)_{kj}=1$, we will have 
+
+\begin{center}
+
+$\sigma(k)=i$ and $\tau_{j}=k$, since $\sigma$ and $\tau$ are one-to-one and onto
+
+\end{center}
+
+Now, if we plug-in $\tau(j)=k$ for the $k$ in the $\sigma(k)=i$, we obtain:
+
+\begin{center}
+
+$$
+\begin{cases}
+1 & \text{if } \text{$\sigma(\tau(j))=i$} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+\end{center}
+
+Which becomes
+
+\begin{center}
+
+$$
+\begin{cases}
+1 & \text{if } \text{$\tau(j)=k$} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+\end{center}
+
+Which is $A_{\sigma \tau}$
+
+\end{flushleft}
+
+\begin{flushleft}
+
+8c)
+
+\end{flushleft}
+
+\end{document}

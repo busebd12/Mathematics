@@ -1,0 +1,455 @@
+\documentclass[executivepaper]{article}
+
+\usepackage{mathtools}
+
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+
+\usepackage{gensymb}
+
+\everymath{\displaystyle}
+
+\usepackage{kantlipsum,graphicx}
+
+\vspace*{-40mm}
+
+\begin{document}
+
+\begin{center}
+
+Homework 3
+
+\end{center}
+
+\begin{flushright}
+
+Brendan Busey
+
+\end{flushright}
+
+\begin{flushleft}
+
+1) Need to show that the set of rotational symmetries of the square contains the identity
+
+\vspace{3mm}
+
+\begin{center}
+
+\begin{proof}
+
+Let $S$ be a square. Also, let $G$ be $D_{4}$, the group of all symmetries of the square. Also, let $H$ be the set of rotational symmetries of the square. Then, if we apply no rotations to the square or rotate the square by zero degrees, we obtain the same square with which we started. Hence, this is the identity rotation. And, since this was a rotation, it is contained within $H$. Thus, $H$, or the set of rotational symmetries of the square contains the identity.
+
+\end{proof}
+
+\end{center}
+
+Need to show that the set of rotational symmetries of the square is closed under the operation of $D_{4}$, the composition operation
+
+\begin{center}
+
+\begin{proof}
+
+Recall the Caley table that we worked through in class. The result follows from this.
+
+\end{proof}
+
+\end{center}
+
+Need to show that the set of rotational symmetries of the square is closed under inverses in $D_{4}$.
+
+\begin{center}
+
+\begin{proof}
+
+Let $S$ be a square. Also, let $G$ be $D_{4}$, the group of all symmetries of the square. Then, if we rotate $S$ by 90\degree and then rotate $S$ by 90\degree in the opposite direction, we will return to the same place at which we began. If we apply this process to any rotation or combination of, we will always get back to our starting position. Thus, this process represents the inverse and because our choice for our square was arbitrary, then it will work for any and all squares.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+2) $\mathbb{Z}_{9}=\big\{[0], [1], [2], [3], [4], [5], [6], [7], [8]\big\}$
+
+\vspace{3mm}
+
+$\mathbb{Z}_{3}=\big\{[0], [1], [2]\big\}$
+
+\vspace{3mm}
+
+$\mathbb{Z}_{3} \times \mathbb{Z}_{3}=\big\{[0], [1], [2]\big\} \times \big\{[0], [1], [2]\big\}$
+
+\vspace{3mm}
+
+$\mathbb{Z}_{3} \times \mathbb{Z}_{3}=\big\{(0,0), (0,1), (0,2), (1,0), (1,1), (1,2), (2,0), (2,1), (2,2)\big\}$
+
+\vspace{3mm}
+
+The subgroups of $\mathbb{Z}_{3} \times \mathbb{Z}_{3}$ are: 
+
+\vspace{3mm}
+
+$\big\{(0,0)\big\}$
+
+\vspace{3mm}
+
+$\big\{(0,0), (0,1), (0,2)\big\}$
+
+\vspace{3mm}
+
+$\big\{(1,0), (1,1), (1,2)\big\}$
+
+\vspace{3mm}
+
+$\big\{(2,0), (2,1), (2,2)\big\}$
+
+\vspace{3mm}
+
+$\mathbb{Z}_{3} \times \mathbb{Z}_{3}$
+
+\vspace{3mm}
+
+The subsets of $\mathbb{Z}_{9}$ are:
+
+\vspace{3mm}
+
+$\big\{(0,0)\big\}$
+
+\vspace{3mm}
+
+$\big\{(0, 3, 6)\big\}$
+
+\vspace{3mm}
+
+$\mathbb{Z}_{9}$
+
+\vspace{3mm}
+
+Since there are a different number of subgroups in each group, $\mathbb{Z}_{3} \times \mathbb{Z}_{3} \neq \mathbb{Z}_{9}$.
+
+\end{flushleft}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{flushleft}
+
+4) Need to show that $H$ contains the identity of $G$
+
+\begin{center}
+
+\begin{proof}
+
+First, note by the definition, $H$ is non-empty. Then, let $h \in H$. By definition, this matrix $h$ has a determinant equal to $2^d$. If we select $d$ to be $0$, then the determinant will be $1$, which is the determinant of the identity matrix. Because our selection of $h$ was arbitrary, this will hold for any matrix $h$ in $H$. Thus, we have shown that $H$ contains the identity of $G$.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $H$ is closed under $G$\textsc{\char13}s operation
+
+\begin{center}
+
+\begin{proof}
+
+First, note that matrix multiplication is associative and that $G$ is closed under it. Then, let $h \in H$. Then, by definition, we have $h \in G$. So, since $h \in G$, $h$ is also closed under matrix multiplication. However, since our choice for $h$ was arbitrary, then $\forall h \in H$ is closed under the operation of $G$. Thus, $H$ is closed under the operation of $G$.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $H$ is closed under inverses in $G$
+
+\begin{center}
+
+\begin{proof}
+
+Let $h \in H$. Then, we have $h \cdot_{H} h^{-1}=h \cdot_{G} h^{-1}=e_{G}=e_{H}$ and $h^{-1} \cdot_{H} h =h^{-1} \cdot_{G} h =e_{G}=e_{H}$
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+5) Need to show that $S$ contains the identity for $GL(2, \mathbb{R})$
+
+\begin{center}
+
+\begin{proof}
+
+First, note that $S$ is non-empty by definition. Then, by convention, the set $S$ contains, at minimum, the trivial set, which, in this case, is the two by two identity matrix, as desired.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $S$ is closed under $GL(2, \mathbb{R})$\textsc{\char13}s operation
+
+\begin{center}
+
+\begin{proof}
+
+Let $A, B \in S$. Then, $AB$ is also in $S$ since $det(AB)=det(A)det(B)$.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $S$ is closed under inverses
+
+\begin{center}
+
+\begin{proof}
+
+Let $m \in S$. Then, $S$ is closed under inverses since $det(m^{-1})=\frac{1}{det(m)}$.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+6a) Need to show that $H \cap K$ contains the identity element for $G$
+
+\begin{center}
+
+\begin{proof}
+
+By definition of a subgroup, both $H$ and $K$ each contain the identity element for $G$. Then, by definition of intersection, $H \cap K$ contains all common elements between $H$ and $K$, one of which is the identity.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $H \cap K$ is closed under $G$\textsc{\char13}s operation
+
+\begin{center}
+
+\begin{proof}
+
+By definition of a subgroup, both $H$ and $K$ are individually closed under $G$\textsc{\char13}s operation. Then, by definition of intersection, $H \cap K$ will only contain elements that are closed under $G$\textsc{\char13}s operation. Thus, $H \cap K$ is closed under $G$\textsc{\char13}s operation.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $H \cap K$ is closed under inverses for $G$
+
+\begin{center}
+
+\begin{proof}
+
+By definition of a subgroup, both $H$ and $K$ are each closed under inverses of $G$. Then, by definition of intersection, $H \cap K$ will only contain elements that are closed under inverses of $G$. Thus, $H \cap K$ is closed under inverses $G$.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+6c) Need to show that $HK$ contains the identity element
+
+\begin{center}
+
+\begin{proof}
+
+Since, individually, $h$ and $k$ contain the identity for $G$, then it follows that a group that is made up of $h$ and $k$ contains the identity for $G$.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $HK$ is closed under $G$\textsc{\char13}s operation
+
+\begin{center}
+
+\begin{proof}
+
+Let $h_{1}, h_{2} \in h$ and $k_{1}, k_{2} \in k$. Then, we have $(h_{1} k_{1})(h_{2}k_{2})=h_{1}k_{1}h_{2}k_{2}=(h_{1}h_{2})(k_{1}k_{2})$ since $G$ is abelian.
+
+\end{proof}
+
+\end{center}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+Need to show that $HK$ is closed under inverses for $G$
+
+\begin{center}
+
+\begin{proof}
+
+Let $h_{1} \in h$ and $k_{1} \in k$. Then, $(h_{1}k_{1})^{-1}=k_{1}^{-1}h_{1}^{-1}$ and because $G$ is abelian, $k_{1}^{-1}h_{1}^{-1}=h_{1}^{-1}k_{1}^{-1} \in HK$.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+6d) 
+
+\begin{proof}
+
+Suppose that $G$ is not abelian. Then, in order to show that $HK$ is not a subgroup, we have to show that one of three conditions to be a subgroup is not satisfied by $HK$. Now, consider the condition that $HK$ has to be closed under inverses for $G$. Let $h_{1}k_{1} \in HK$. Then, we have $(h_{1}k_{1})^{-1}=k^{-1}h^{-1}$. In showing that $HK$ was a subgroup, we had the condition that $G$ was abelian, so we could write $(h_{1}k_{1})^{-1}=k^{-1}h^{-1}=h^{-1}k^{-1} \in HK$. However, because G is now not abelian, we can no longer write the above statement. Thus, $HK$ fails the condition of being closed under inverses of $G$. Hence, $HK$ cannot be a subgroup of $G$, as desired.
+
+\end{proof}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+7a) Need to show that the identity for $G$ is in $Z(G)$
+
+\begin{center}
+
+\begin{proof}
+
+We have $eb=b=be, \forall b \in G$, which implies $e \in G$.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $Z(G)$ is closed under the operation of $G$
+
+\begin{center}
+
+\begin{proof}
+
+Let $a,b \in Z(G)$. Then, $ax=xa$ and $bx=xb \hspace{1mm} \forall x \in G$. Then, we calculate the following: $(ab)x=a(bx)=a(xb)=(ax)b=(xa)b=x(ab)$. And, the above calculation means $ab \in Z(G)$ whenever $a,b \in Z(G)$.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $Z(G)$ is closed under taking inverses
+
+\begin{center}
+
+\begin{proof}
+
+Let $a \in Z(G)$. Then, $\forall x \in G, a^{-1}x=(x^{-1}a)^{-1}=(ax^{-1})^{-1}=xa^{-1}$. Thus, $a^{-1} \in Z(G)$.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+7b) Need to show that the identity for $G$ is in $C_{G}(x)$
+
+\begin{center}
+
+\begin{proof}
+
+We have $ey=y=ye, \forall b \in G$, which implies $e \in C_{G}(x)$.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $C_{G}(x)$ is closed under the operation of $G$
+
+\begin{center}
+
+\begin{proof}
+
+Let $a,b \in C_{G}(x)$. Then, $ax=xa$ and $bx=xb \hspace{1mm} \forall x \in C_{G}(x)$. Then, we calculate the following: $(ab)x=a(bx)=a(xb)=(ax)b=(xa)b=x(ab)$. And, the above calculation means $ab \in C_{G}(x)$ whenever $a,b \in C_{G}(x)$.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $Z(G)$ is closed under taking inverses
+
+\begin{center}
+
+\begin{proof}
+
+Let $y \in G$. Then, $\forall y \in G, y^{-1}x=(x^{-1}y)^{-1}=(yx^{-1})^{-1}=xy^{-1}$. Thus, $y^{-1} \in C_{G}(x)$.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\pagebreak
+
+\vspace*{-40mm}
+
+\begin{flushleft}
+
+7c) 
+
+\begin{center}
+
+Centralizer of $R_{90} \rightarrow xR_{90}=R_{90}x \rightarrow R_{270}$
+
+\vspace{3mm}
+
+Center of $G \rightarrow \big\{id, R_{180}\big\}$
+
+\end{center}
+
+\end{flushleft}
+
+\begin{flushleft}
+
+8) Need to show that $gHg^{-1}$ contains the identity element of $H$
+
+\begin{center}
+
+\begin{proof}
+
+Let $ghg^{-1} \in H$ be given. Then, we have the following: $ghg^{-1}=geg^{-1}$ (since we know the identity element is in H because it is a subgroup by definition)$=gg^{-1}=e$. Thus, we have that $gHg^{-1}$ contains the identity element of $H$, as desired.
+
+\end{proof}
+
+\end{center}
+
+Need to show that $gHg^{-1}$ is closed under $H$\textsc{\char13}s operation
+
+\begin{center}
+
+\begin{proof}
+
+Let $h_{1}, h_{2} \in H$ be given. Then, we have $(gh_{1}g^{-1})(gh_{2}g^{-1})=gh_{1}g^{-1}gh_{2}g^{-1}=g(h_{1}h_{2})g^{-1}$. Hence, we have shown that $gHg^{-1}$ is closed under $H$\textsc{\char13}s operation.
+
+\end{proof}
+
+\end{center}
+
+Need to show that that $gHg^{-1}$ is closed under taking inverses
+
+\begin{center}
+
+\begin{proof}
+
+Let $ghg^{-1} \hspace{1mm} | \hspace{1mm} h \in H$ be given. Then, we have $(ghg^{-1})^{-1}=(g^{-1})^{-1}h^{-1}g^{-1}=g(h^{-1})g^{-1}$. Thus, we have showed that $gHg^{-1}$ is closed under taking inverses, as desired.
+
+\end{proof}
+
+\end{center}
+
+\end{flushleft}
+
+\end{document}
